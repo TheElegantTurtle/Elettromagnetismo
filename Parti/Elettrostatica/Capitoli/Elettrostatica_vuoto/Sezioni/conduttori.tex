@@ -1,0 +1,167 @@
+\begin{defn}[Conduttore]
+    Si definisce conduttore un oggetto indeformabile all'interno del quale vi sono elettroni liberi di muoversi
+\end{defn}
+Un'ipotesi fondamentale dell'elettrostatica è l'invarianza temporale delle grandezze in gioco.
+In particolare questo vale per le distribuzioni di carica: è necessario supporre allora che le cariche libere nei conduttori
+non si muovano, ovvero che \textit{all'interno dei conduttori il campo elettrico sia nullo}.
+Quando un conduttore viene immerso in un campo elettrico le cariche libere si muovono
+alla ricerca di una configurazione di equilibrio, che viene raggiunta quando la loro disposizione
+è tale da annullare il campo elettrico che si è formato internamente al conduttore.
+\begin{thm}
+    Passando da un mezzo materiale ad un altro, la componente tangenziale del campo elettrico non può subire discontinuità.
+    \label{lemma:discontinuità_E}
+\end{thm}
+\begin{proof}
+    La dimostrazione segue dal fatto che il campo elettrico è conservativo. Si ha infatti che l'integrale di linea
+    lungo un qualsiasi percorso chiuso deve essere nullo. Chiamando $\vb{E}_1$ il campo elettrico in un materiale
+    e $\vb{E}_2$ il campo elettrico nell'altro, con a priori $\vb{E}_1\neq\vb{E}_2$, si consideri un percorso rettangolare
+    prossimo alla superficie di separazione dei due materiali. Si chiamino $dl$ i segmenti paralleli alla superficie
+    -uno in un mezzo ed uno nell'altro- e $dn$ i segmenti ortogonali alla superficie. Al tendere di $dn$ a 0,
+    il contributo alla circuitazione dato dai tratti ortogonali è nullo. Si ha quindi che
+    \[
+        \vb{E}_1\vdot d\vb{l} - \vb{E}_2\vdot d\vb{l}=E_1^t\,dl-E_2^t\,dl=0
+    \]
+    Dove con $E^t$ si indica la componente del campo elettrico tangente alla superficie.
+    Segue immediatamente la tesi.
+\end{proof}
+
+\begin{cor}
+    \label{cor:ortogonalità}
+    In prossimità di un conduttore il campo elettrico è ortogonale alla superficie del conduttore.
+\end{cor}
+\begin{proof}
+    Nel lemma, si consideri uno dei due mezzi come un conduttore, sia questo il secondo dei due mezzi.
+    Si ha quindi $\vb{E}_2=0$ e in particolare $E_2^t=0$.
+    Segue allora che la componente tangenziale del campo esterno al conduttore è nulla.
+\end{proof}
+
+Dalle proprietà appena discusse del campo elettrico, seguono immediatamente quelle del potenziale
+\begin{cor}
+    Il volume interno e la superficie dei conduttori sono equipotenziali.
+\end{cor}
+\begin{proof}
+    Ricordando che $\vb{E}=-\grad{V}$ il fatto che il volume sia equipotenziale segue immediatamente dal fatto che
+    il campo elettrico interno è nullo.
+    La seconda parte dell'asserto si ottiene considerando che il gradiente è ortogonale alle superfici equipotenziali
+    e che il campo elettrico è ortogonale alla superficie del conduttore.
+\end{proof}
+
+Si vuole trovare ora una relazione fra il potenziale interno e quello esterno al conduttore. Si introduce la definizione:
+\begin{defn}[lavoro di estrazione]
+    Si definisce lavoro di estrazione $L_e$ il lavoro necessario per portare una carica di prova $q$ dall'interno
+    all'esterno del conduttore, in prossimità della superficie.
+    \begin{equation}
+        \Delta V=V_i-V_e=-\frac{L_e}{q}
+    \end{equation}
+\end{defn}
+
+\begin{obses}
+    Si osserva che $V_i-V_e$ è una quantità positiva dipendente esclusivamente dal materiale che cotituisce il conduttore.
+    Viene detta \textit{funione lavoro}.
+\end{obses}
+
+Si ha infine questo importante corollario:
+\begin{cor}
+    Le cariche presenti su un conduttore si dispongono tutte sulla superficie del conduttore.
+\end{cor}
+\begin{proof}
+    Si consideri una superficie chiusa arbitraria $\Sigma$ interna al coduttore. Essendo il campo elettrico nullo,
+    il flusso attraverso questa superficie è nullo. Per il teorema di Gauss la carica totale interna a $\Sigma$ è nulla.
+    Essendo la superficie arbitraria, si può fare il limite per $\Sigma$ tendente ad un qualsiasi punto interno al conduttore.
+    L'unica possibilità per una carica sul conduttore è quindi quella di disporsi sulla superficie esterna di quest'ultimo.
+\end{proof}
+Segue quindi che la distribuzione delle cariche di un conduttore viene descritta da una distribuzione di superficie e non di volume.
+
+Un importante risultato relativo ai conduttori è il \textit{teorema di Coulomb}.
+\begin{thm}[teorema di Coulomb]
+    In un punto vicino ad un conduttore il campo elettrico vale
+    \[
+        E=\frac{\sigma}{\epsilon_0}
+    \]
+    diretto secondo la normale uscente se $\sigma>0$, entrante se $\sigma<0$
+\end{thm}
+\begin{proof}
+    Si consideri un conduttore C ed un cilindretto di base $dS$ e altezza $dh$, in modo tale che questa sia un infinitesimo
+    di ordine superiore rispetto alla base. L'altezza del cilindro è ortogonale alla superficie di C. Si vuole applicare
+    al cilindretto il teorema di Gauss. Il flusso uscente, per il corollario \ref{cor:ortogonalità}, si riduce al
+    flusso attraverso la base superiore. La carica interna è $dQ=\sigma dS$.
+    Si ha quindi:
+    \[
+        \vb{E}\vdot d\vb{S}=\frac{\sigma dS}{\epsilon_0}
+    \]
+    Per il corollario a cui si è già fatto riferimento $\vb{E}=E\vu{n}$. D'altro canto $d\vb{S}=dS\vb{n}$, da cui la tesi.
+\end{proof}
+
+Un altro importante risultato emerge a partire dalla seguente considerazione intuitiva: le cariche libere si dispongono
+lungo la superficie del conduttore formando uno strato con uno spessore nell'ordine dell'[Angstrom]. Queste cariche
+esercitano una forza di mutua repulsione che si deve tradurre in una pressione elettrostatica. Vale infatti il seguente teorema:
+\begin{thm}%RIVED QUAND USARE MODULI O VETTORI
+    In un punto della superficie del conduttore la pressione elettrostatica è pari alla densità di energia del campo
+    elettrostatico in vicinanza del punto.
+\end{thm}
+\begin{proof}
+    Si consideri un campo elettrico attorno al quale sia presente un campo elettrostatico $\vb{E}$ generato dalla distribuzione
+    di cariche sul conduttore e dalle cariche nello spazio circostante. Si supponga di modificare per una quantità
+    infinitesima e in maniera quasistatica (in modo da trascurare l'energia cinetica dovuta al movimento) la geometria
+    del conduttore, facendolo espandere verso l'esterno di un tratto $\delta \vb{x}$ ogni elemento di superficie
+    $dS$ ortogonalmente a se stesso. Per farlo è necessario applicare una forza esterna $\delta \vb{F}^{(e)}$ che
+    compirà un lavoro $\delta L^{(e)}=\delta\vb{F}^{(e)}\vdot\delta\vb{x}$. Gli spostamenti sono chiamati \textit{spostamenti virtuali};
+    i lavori \textit{lavori virtuali}. In assenza di energia cinetica il lavoro corrisponde alla variazione di energia elettrostatica del sistema
+    \[
+        \delta U=\delta L^{(e)}=\delta\vb{F}^{(e)}\vdot\delta\vb{x}
+    \]
+    Considerando che essendo la trasformazione quasistatica la forza esterna deve essere uguale e opposta alla forza elettrostatica si ha, in modulo:
+    \[
+        \delta\vb{F}^{(e)}=-\delta\vb{F}=\frac{\delta U}{\delta x}
+    \]
+    L'elemento di volume $dS\delta x$ aveva prima dello spostamento energia $\delta U_i=u\,ds\delta x$ e dopo lo spostamento
+    ha energia $\delta U_f=0$, in quanto tutto l'elemento di volume si trova dentro al conduttore dove il campo elettrico
+    è nullo. Si ha quindi $\delta U=\delta U_f -\delta U_i=-u\,dS\delta x$. Da questo segue che
+    \[
+        \delta F=-\frac{\delta U}{\delta x}=u\,dS
+    \]
+    Dividendo per l'elemento di superficie, dalla definizione di pressione, si ottiene la tesi.
+\end{proof}
+Il metodo dei lavori virtuali può essere usato per calcolare qualcunque sollecitazione meccanica agente sul
+conduttore. A titolo di esempio, si consideri un conduttore spostato rigidamente di un tratto $\delta \vb{x}$.
+La risultante delle forze elettrostatiche $R_x$ compie un lavoro $R_x \delta x=-\delta U$ con $U$ l'energia elettrostatica,
+da cui si ha che $R_x=-\delta U/\delta x$. Una trattazione più approfondita delle problematiche relative a questo
+metodo verrà svolta nel capitolo sulla corrente stazionaria.
+
+Con quanto appena visto è possibile osservare due effetti non intuitivi caratteristici dei conduttori.
+
+\subsubsection{Schermo elettrostatico}
+Si consideri un conduttore cavo, carico con una carica $q$. La carica, per quanto visto, si dispone sulla superficie
+del conduttore. Sia per assurdo $\vb{E}$ il campo interno alla cavità. Si consideri un percorso chiuso in parte interno
+alla cavità ed in parte interno al conduttore: lungo questo percorso l'integrale di linea del campo elettrico non
+sarebbe nullo, infatti la parte di percorso interna al conduttore darebbe contributo nullo, ma non si potrebbe dire
+lo stesso per la parte interna alla cavità. Si viola quindi la conservatività del campo elettrico. Questo ragionamento
+può essere ripetuto identicamente considerando anche una distribuzione di carica esterna al conduttore. Il conduttore
+cavo funziona quindi da schermo elettrostatico.
+
+\subsubsection{Potere delle punte}
+Si immaginino due sfere con diverso raggio in cui tutte le grandezze fisiche caratteristiche abbiano simmetria sferica
+(e quindi, sufficientemente lontane affinchè la distribuzione di carica di una non perturbi la distribuzioe di carica
+dell'altra). I due potenziali allora valgono:
+\[
+    \begin{split}
+        & V_1=\frac{1}{4\pi\epsilon_0}\frac{Q_1}{R_1}\\
+        & V_2=\frac{1}{4\pi\epsilon_0}\frac{Q_2}{R_2}\\
+    \end{split}
+\]
+Se ora queste due sfere sono collegate da un filo in modo che costituiscano un unico condutore, si deve avere $V_1=V_2$, ovvero
+\[
+    \frac{Q_1}{Q_2}=\frac{R_1}{R_2}
+\]
+La carica si distribuscie sulle due sfere in maniera proporzionale ai raggi.
+Considerando ora invece la distribuzione superficiale di carica
+\[
+    \sigma=\frac{Q}{4\pi R^2}
+\]
+Si ottiene
+\[
+    \frac{\sigma_1}{\sigma_2}=\frac{Q_1}{R_1^2}\frac{R_2^2}{Q_2}=\frac{R_2}{R_1}
+\]
+Ovvero la distribuzione di carica è inversamente proporzionale ai raggi e quindi per il teorema di Coulomb il campo
+elettrico è più intenso in prossimità della sfera più piccola. Generalizzando si può affermare che \textit{in vicinanza
+di un conduttore il campo elettrico è tanto più intenso tanto più è piccolo il raggio di curvatura}.

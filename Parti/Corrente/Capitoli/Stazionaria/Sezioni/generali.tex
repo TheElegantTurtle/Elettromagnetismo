@@ -1,0 +1,32 @@
+\begin{defn}[Corrente stazionaria]
+    Si dice che un conduttore è in regime di corrente stazionaria quando la corrente è costante nel tempo.
+\end{defn}
+
+Il passaggio di corrente elettrica implica uno spostamento delle cariche ad opera del campo elettrico che compie quindi un lavoro.
+\begin{thm}
+    La potenza sviluppata da un campo elettrico che induce una corrente stazionaria $I$ in un tratto di conduttore compreso fra due punti $A$ e $B$ è
+    \begin{equation}
+        \label{eqn:potenza_stazionaria}
+        W=I(V_A-V_B)
+    \end{equation}
+\end{thm}
+\begin{proof}
+    (???????)
+    Si supponga un volume di conduttore cilindrico con basi poste nei punti $A$ e $B$
+    soggetto ad un potenziale costante nel tempo. Nell'intervallo di tempo $\dd{t}$ le cariche
+    si spostano di un tratto $\dd{l}$ in modo tale che le cariche che inizialmente occupavano lo spazio $AB$ ora occupano
+    lo spazio $A'B'$ ottenuto traslando $AB$ di $\dd{l}$. Dalla definizione di corrente si ha che questo equivale a spostare
+    la carica $\dd{q}=I\dd{t}$ dal punto a potenziale $V_A$ al punto a potenziale $V_B$. Nel fare questo il campo compie un lavoro
+    \[
+        \dd{L}=\dd{q}(V_A-V_B)=I\dd{t}(V_A-V_B)
+    \]
+    Da cui si ha immediatamente la tesi.
+\end{proof}
+
+\begin{thm}
+    Nel caso stazionario, data una qualunque superficie chiusa $S$, il campo $\vb{J}$ è solenoidale su tale superficie.
+\end{thm}
+\begin{proof}
+    La dimotrazione segue immediatamente dall'equazione \eqref{eqn:continuità}
+    osservando che per definizione di stazionarietà $\rho$ non può variare nel tempo.
+\end{proof}

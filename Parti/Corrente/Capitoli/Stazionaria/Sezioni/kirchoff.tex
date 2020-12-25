@@ -1,0 +1,34 @@
+\begin{defn}[Nodo]
+    Si chiama nodo una zona in cui confluiscono vari conduttori sottili percorsi da corrente.
+\end{defn}
+
+\begin{defn}[Ramo]
+    Si chiama ramo una connessione diretta fra due nodi
+\end{defn}
+
+\begin{defn}[Maglia]
+    Si chiama maglia un insieme di rami che formano una linea chiusa.
+\end{defn}
+
+\begin{thm}[Prima legge di Kirchoff]
+    In condizioni stazionarie, la somma algebrica delle correnti uscenti da un nodo è nulla.
+\end{thm}
+\begin{proof}
+    Si consideri un tratto di tubo di flusso compreso fra due sezioni $S_1$ ed $S_2$.
+    Sia $S_3$ la porzione laterale di tale tratto. Siccome la densità di corrente è solenoidale,
+    per il teorema della divergenza il flusso attraverso $S_1 \cup S_2 \cup S_3$ è nullo.
+    Per definizione di tubo di flusso, $\vb{v}_d$ e di conseguenza $\vb{J}$ sono tangenti alle generatrici di $S_3$,
+    per cui il flusso attraverso questa superficie è nullo. In conclusione si ha
+    \[
+        0=\Phi_{S_1}(\vb{J})+\Phi_{S_2}(\vb{J})=I_1+I_2=0
+    \]
+    Il ragionamento può essere generaizzato al caso in cui più fili conduttori convergano ad uno stesso nodo ottenendo la tesi.
+\end{proof}
+
+\begin{thm}[Seconda legge di Kirchoff]
+    In condizioni stazionarie, la somma algebrica delle differenze di potenziale agli estremi dei rami di una maglia è nulla.
+\end{thm}
+\begin{proof}
+    La dimostrazione è banale e deriva dal fatto che $\dd{V}$ è una forma differenziale esatta:
+    la somma delle differenze di potenziale su tutti i rami della maglia è l'integrale di $\dd{V}$ su un percorso chiuso, che quindi è nullo.
+\end{proof}

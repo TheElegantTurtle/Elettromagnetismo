@@ -1,0 +1,134 @@
+Un sistema di cariche che interagiscono reciprocamente possiede una certa \textit{energia elettrostatica di interazione}
+dovuta al lavoro necessario per portare le cariche nella configurazione
+desiderata partendo da una condizione di assenza di interazione fra le cariche.\\
+\begin{thm}[Energia elettrostatica per un sistema discreto di cariche puntiformi]
+    L'energia elettrostatica di interazione per un sistema discreto di $N$ cariche puntiformi vale
+    \begin{equation}
+        \label{eqn:UE_puntiformi}
+        U=\rec{2}\sum_{j\neq i}^N\frac{q_iq_j}{4\pi\epsilon_0 r_{ij}}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Immaginiamo che inizialmente tutte le cariche siano all'infinito, in modo che non sentano
+    l'interazione reciproca. Il posizionamento nello spazio della prima carica viene effettuato compiendo lavoro nullo,
+    perchè inizialmente non è presente nessun campo elettrico.
+    Ora è presente nello spazio il campo $\vb{E_1}$ prodotto dalla prima carica $q_1$.
+    Per portare quindi la seconda carica $q_2$ dall'infinito fino ad una distanza $r_{12}$ dalla prima carica, è necessario compiere in lavoro
+    \[
+        L_2=\int_{-\infty}^{r_{12}}-q_2\vb{E_1}\vdot d\vb{l}=-\frac{q_1q_2}{4\pi\epsilon_0}\int_{-\infty}^{r_{12}}\frac{dr}{r^2}
+        =\frac{q_1q_2}{4\pi\epsilon_0}\rec{r_{12}}
+    \]
+    Dove il segno meno deriva dal fatto che il lavoro è quello associato alla forza esterna che
+    sposta la carica opponendosi alla forza di coulomb.
+    Il lavoro necessario per spostare la terza carica $q_3$ ad una distanza $r_{13}$ da $q_1$
+    e ad una distanza $r_{23}$ da $q_2$,  per il principio di sovrapposizione è uguale al lavoro necessario
+    a spostare $q_3$ nel campo generato dalla prima carica e nel campo generato dalla seconda. Si ha quindi
+    \[
+        L_3=\frac{q_1q_3}{4\pi\epsilon_0}\rec{r_{13}}+\frac{q_2q_3}{4\pi\epsilon_0}\rec{r_{23}}
+    \]
+    L'energia posseduta dal sistema di tre cariche è quindi
+    \[
+        U=L_1+L_2+L_3=0+\frac{q_1q_2}{4\pi\epsilon_0}\rec{r_{12}}+\Biggl(\frac{q_1q_3}{4\pi\epsilon_0}\rec{r_{13}}
+        +\frac{q_2q_3}{4\pi\epsilon_0}\rec{r_{23}}\Biggr)=\rec{2}\sum_{j\neq i}^3\frac{q_iq_j}{4\pi\epsilon_0 r_{ij}}
+    \]
+    dove il termine $1/2$ è necessario in quanto la sommatoria comprende sia l'interazione di $q_i$ con $q_j$
+    che l'interazione di $q_j$ con $q_i$. Proseguendo col ragionamento, si ottiene la formula per $N$ cariche.
+\end{proof}
+Una comoda riscrittura della formula appena dimostrata si ottiene considerando
+\[
+    U=\rec{2}\sum_{i=1}^Nq_i\sum_{i\neq j}^N\frac{q_j}{4\pi\epsilon_0}\rec{r_{ij}}
+\]
+E osservando che la seconda sommatoria corrisponde al potenziale $V_i$ sentito dalla carica
+i-esima dovuto a tutte le altre $N-1$ cariche e quindi si ottiene
+\begin{equation}
+    U=\rec{2}\sum_{i=1}^N q_i V_i
+\end{equation}
+L'utilità di questa riscrittura è dovuta al fatto che consente di generalizzare quanto visto
+al caso di una distribuzione continua di carica contenuta in un insieme $A$
+\begin{equation}
+    \label{eqn:energia_distribuzione}
+    U=\rec{2}\int_{A} \omega V \dd{\mu}
+\end{equation}
+Le equazioni trovate esprimono l'energia potenziale elettrica in termini di posizione reciproca delle cariche, mettendo
+in evidenza quindi l'interazione fra queste mediante forza di Coulomb. Un altro approccio consiste invece nell'
+enfatizzare il ruolo del campo elettrico interpretando l'energia potenziale elettrica come quell'energia
+"immagazzinata" dal campo elettrico -che è un modo altisonante per dire: l'energia necessaria a generare
+il campo. Per farlo, si sfrutta la prima equazione di Maxwell.
+\begin{thm}
+    Data una distribuzione di carica $\rho$ l'energia elettrostatica vale
+    \begin{equation}
+        \label{eqn:UE}
+        U=\frac{\epsilon_0}{2}\int_S V\vb{E}\vdot d\vb{S} + \frac{\epsilon_0}{2}\int_V E^2 d\tau
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Tenuto conto della prima equazione di Maxwell \eqref{eqn:prima_maxwell} e della \eqref{eqn:energia_distribuzione} si ha che
+    \[
+        U=\rec{2}\int_{V} \rho V d\tau=\frac{\epsilon_0}{2}\int_V \div{\vb{E}} V d\tau
+    \]
+    Applicando la \eqref{app:eqn:div_scalare_vettore}
+    ricordando che il gradiente del potenziale è il campo elettrico cambiato di segno, si ottiene
+    \[
+        U=\frac{\epsilon_0}{2}\int_V \div{(V\vb{E})}d\tau + \frac{\epsilon_0}{2}\int_V E^2 d\tau
+    \]
+    Per il teorema della divergenza infine si ha
+    \[
+        \int_V \div{(V\vb{E})}d\tau=\int_S V\vb{E}\vdot d\vb{S}
+    \]
+    ottenendo la tesi.
+\end{proof}
+
+\begin{cor}
+    Se si prende in considerazione tutto lo spazio, allora l'energia vale
+    \[
+        U=\int ud\tau \quad\quad\quad \text{ con } u=\frac{\epsilon_0 E^2}{2}
+    \]
+\end{cor}
+\begin{proof}
+    Si considerino i risultati del teorema precedente: fissata la distribuzione di carica in una regione finita di spazio,
+    all'allargarsi del volume di integrazione l'integrale di volume aumenta e di paripasso l'intergale di superficie
+    diventa trascurabile. Si ha quindi la tesi.
+\end{proof}
+La $u$ che compare nel risultato del corollario prende il nome di \textit{densità di energia del campo elettrostatico}.\\
+Il risultato a cui si giunge sembra in apparenza contraddittorio: $u$ è chiaramente positiva e di conseguenza lo è il
+suo integrale, mentre non è difficile immaginare un caso in cui \eqref{eqn:UE_puntiformi} sia negativa -basta
+prendere un sistema costituito da due cariche di segno opposto. La differenza risiede nel fatto che la
+\eqref{eqn:energia_distribuzione} e tutte le equazioni che ne conseguono contengono un termine di auto-energia,
+ovvero l'energia necessaria alla costruzione della distribuzione di carica. Si consideri infatti
+il sistema già citato costituito da due cariche puntiformi elementari. L'energia fornita da \eqref{eqn:UE_puntiformi}
+è
+\[
+    U=\rec{4\pi\epsilon_0} \frac{q_1 q_2}{r_{12}}
+\]
+Si vuole ora calcolare l'energia passando per la densità di energia.
+\[
+    u=\rec{32\pi^2\epsilon_0}\Biggl[\frac{q_1^2}{\abs{\vb{r}-\vb{r}_1}} + \frac{q_2^2}{\abs{\vb{r}-\vb{r}_2}}+
+    2q_1 q_2 \frac{(\vb{r}-\vb{r}_1)\vdot(\vb{r}-\vb{r}_2)}{\abs{\vb{r}-\vb{r}_1}^3\abs{\vb{r}-\vb{r}_2}^3} \Biggr]
+\]
+Si integri quanto ottenuto. In particolare, ci si focalizzi sul terzo termine e si introduca il cambiamento di variabile
+$\vb*{\rho}=(\vb{r}-\vb{r}_1)/\abs{\vb{r}_1-\vb{r}_2}$, $\dd{\vb{\tau}}=\abs{\vb{r}-\vb{r}_1}^3\dd{\vb*{\rho}}$. Chiamando
+$\vu{r}=(\vb{r}_1-\vb{r}_2)/\abs{\vb{r}_1-\vb{r}_2}$ si ottiene
+\[
+    \frac{ q_1 q_2}{16\pi^2\epsilon_0}
+    \int\frac{(\vb{r}-\vb{r}_1)\vdot(\vb{r}-\vb{r}_2)}{\abs{\vb{r}-\vb{r}_1}^3\abs{\vb{r}-\vb{r}_2}^3}\dd{\tau}=
+    \frac{ q_1 q_2}{16\pi^2\epsilon_0}
+    \int\rec{\abs{\vb{r}_1-\vb{r}_2}^3}\frac{\vb*{\rho}\vdot(\vb*{\rho}+\vu{r})}{\rho^3\abs{\vb*{\rho}+\vu{r}}^3}\dd{\vb*{\rho}}
+\]
+Usando la \eqref{app:eqn:grad_r} e di seguito la \eqref{app:eqn:div_scalare_vettore} l'integrale assume la forma
+\[
+    \frac{ q_1 q_2}{16\pi^2\epsilon_0}\rec{\abs{\vb{r}_1-\vb{r}_2}^3}
+    \Biggl[-\int\div{\frac{\vb*{\rho}}{\rho^3\abs{\vb*{\rho}+\vu{r}}^3}\dd{\vb*{\rho}}}
+    -\int\rec{\abs{\vb*{\rho}+\vu{r}}^3}{\div{\frac{\vb*{\rho}}{\rho^3}}\dd{\vb*{\rho}}}\Biggr]
+\]
+Per il teorema della divergenza, il primo è un integrale sulla frontiera del volume. Siccome il volume di integrazione
+è tutto lo spazio, l'integrale sulla superficie va a $0$. Per quanto concerne il secondo integrale, usando nuovamente
+la \eqref{app:eqn:grad_r}
+\[
+    \int\rec{\abs{\vb*{\rho}+\vu{r}}^3}\laplacian{\rec{\rho}}\dd{\vb*{\rho}}=
+    \int\rec{\abs{\vb*{\rho}+\vu{r}}^3}4\pi\delta(\vb*{\rho})\dd{\vb*{\rho}}=
+    \frac{4\pi}{\abs{\vu{r}}^3}=4\pi
+\]
+dove è stato fatto uso anche della \eqref{app:eqn:laplacian_r}. In conclusione, mettendo tutto insieme si ottiene che
+questo terzo termine rappresenta l'energia di interazione mentre gli altri due termini rappresentano l'auto-energia.
+Per quanto visto, siccome l'energia di interazione può essere sia positiva che negativa e l'energia
+totale è positiva, l'auto-energia deve essere necessariamente positiva.

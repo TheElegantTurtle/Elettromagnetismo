@@ -1,0 +1,31 @@
+Si considerino due circuiti $C_1$ e $C_2$ in condizioni quasi-stazionarie, immersi in un mezzo
+omogeneo e isotropo,
+e si supponga che $C_1$ sia percorso all'istante $t$ da una corrente $I_1(t)$.
+Il circuito $C_1$ è quindi sorgente di un campo $\vb{B}_1(t)$ che per la \eqref{eqn:induttanza}
+è proporzionale a $I_1(t)$. Allora anche il flusso di $\vb{B}_1$ concatenato a $C_2$
+è proporzionale a $I_1$, ovvero $\Phi_2(\vb{B}_1)=M_{12}I_1$.
+\begin{defn}[Induttanza mutua]
+    Si definisce induttanza mutua il coefficente di proporzionalità nell'equazione precedente
+\end{defn}
+Ovviamente, mediante un ragionamento analogo si può definire il coefficente $M_{21}$.
+Il seguente teorema garantisce la non ambiguità della definizione.
+\begin{thm}
+    \[
+        M_{12}=M_{21}
+    \]
+\end{thm}
+\begin{proof}
+    Ricordando l'equazione definitoria del potenziale vettore \eqref{eqn:def_potenziale_vettore} si può scrivere
+    \[
+        \Phi_2(\vb{B}_1)=\int_{S_2}\vb{B_1}\vdot\dd{\vb{S}_2}=\int_{S_2}\curl{\vb{A}_1}\vdot\dd{\vb{S}_1}=\oint_{l_2}\vb{A}_1(\vb{r}_2)\vdot\dd{\vb{l}_2}
+    \]
+    Sostituendo la \eqref{eqn:potenziale_vettore_circuito_lineare}
+    \[
+        \Phi_2(\vb{B}_1)=I_1\frac{\mu}{4\pi}\oint_{l_2}\oint_{l_1}\frac{\dd{\vb{l}_1}\vdot\dd{\vb{l}_2}}{\abs{\vb{r}_2-\vb{r}_1}}
+    \]
+    Confrontando ora quanto ottenuto con la definizione di induzione mutua si ha
+    \[
+        M_{12}=\frac{\mu}{4\pi}\oint_{l_2}\oint_{l_1}\frac{\dd{\vb{l}_1}\vdot\dd{\vb{l}_2}}{\abs{\vb{r}_2-\vb{r}_1}}
+    \]
+    L'espressione è indipendente dall'ordine degli indici, si ha quindi la tesi.
+\end{proof}

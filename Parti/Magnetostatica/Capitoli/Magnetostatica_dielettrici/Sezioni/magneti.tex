@@ -1,0 +1,135 @@
+Si vuole ora cercare di capire quale sia la relazione fra $\vb{B}$ e $\vb{H}$ in un materiale.
+Nel vuoto evidentemente, essendo $\vb{M}=0$ si ha
+\[
+    \vb{H}=\rec{\mu_0}\vb{B}
+\]
+
+È allora sensato, considerando la linearità della teoria finora sviluppata pensare di scrivere
+\[
+    \vb{B}=\norm{\mu}\vb{H}
+\]
+dove $\norm{\mu}$ è un tensore.
+\begin{obses}
+    Nei mezzi materiali isotropi e omogenei $\vb{B}$ e $\vb{H}$ risultano sperimentalmente paralleli fra loro.
+\end{obses}
+Questo significa in particolare che $\vb{M}$ risulta essere parallelo o antiparallelo a $\vb{B}$ e che quindi
+si può scrivere
+\begin{equation}
+    \vb{H}=\rec{\mu_0\mu_r}\vb{B}=\rec{\mu}\vb{B}
+    \label{eqn:H_B}
+\end{equation}
+dove $\mu$ e $\mu_r$ sono delle costanti dette rispettivamente \textit{permeabilità megnetica} e
+\textit{permeabilità megnetica relativa} del materiale in esame. Ovvero, nei materiali omogenei e isotropi
+il tensore si riduce ad una costante.
+\begin{thm}[Legge di rifrazione delle linee di forza]
+    Presa la superficie di separazione fra due materiali ($1$ e $2$) isotropi e omogenei
+    con permeabilità magnetica $\mu_1$ e $\mu_2$, detti $\vb{H}_1$ il campo nel materiale $1$ e
+    $\vb{H}_2$ il campo nel materiale $2$ (analogamente per $\vb{B}$), detti $\theta_1$ e $\theta_2$ gli angoli che una
+    linea di forza del campo forma con la normale alla superficie nei due materiali, si ha
+    \[
+        \frac{H_{t1}/{H_{n1}}}{H_{t2}/{H_{n2}}}=\frac{B_{t1}/{B_{n1}}}{B_{t2}/{B_{n2}}}=\frac{\tan{\theta_1}}{\tan{\theta_2}}=\frac{\mu_1}{\mu_2}
+    \]
+\end{thm}
+\begin{proof}
+    Riscrivendo la \eqref{eqn:H_B} per le componenti normali, ricordando i risultati del
+    teorema \ref{teo:condizioni_raccordo_campomagnetico}, si ha
+    \[
+        \begin{cases}
+            & H_{t1}=H_{t_2} \\
+            & \mu_1 H_{n1}=\mu_2 H_{n2} \\
+        \end{cases}
+    \]
+    \[
+        \begin{cases}
+            & B_{n1}=B_{n_2} \\
+            & \mu_1 B_{t1}=\mu_2 B_{t2} \\
+        \end{cases}
+    \]
+    Facendo i rapporti membro a membro si ottiene la tesi.
+\end{proof}
+
+Sono le caratteristiche di $\mu_r$ che permettono una classificazione dei materiali in:
+diamagneti, paramagneti e ferromagneti.
+Prima di addentrarsi nella descrizione di questi materiali è necessario introdurre la seguente quantità
+\begin{defn}[Suscettività magnetica]
+    Si definisce suscettività magnetica di un materiale
+    \[
+        \chi_m=\mu_r-1
+    \]
+\end{defn}
+Per comprendere l'utilità di questa definizione bisogna osservare che, dalla definizione di campo magnetico,
+per i materiali isotropi
+\begin{equation}
+    \vb{M}=\chi_m\vb{H}
+    \label{eqn:M_H}
+\end{equation}
+Ovvero la suscettibilità magnetica rappresenta il fattore di proporzionalità fra il campo magnetico e
+il vettore polarizzazione magnetica.
+
+
+\subsubsection{Diamagneti}
+Nelle sostanze diamagnetiche la permeabilità magnetica relativa è costante ed è prossima a $1$ in maniera tale che
+$\chi_m<0$: il momento magnetico indotto nel materiale è di verso opposto rispetto al campo che lo induce. Generalmente
+per queste sostanze si ha $\chi_m \in [-10^{-6},-10^{-9}]$.Per questi materiali
+la suscettività magnetica è indipendente dalla temperatura. Inoltre, queste sostanze non presentano alcun tipo di
+saturazione: le relazioni \eqref{eqn:H_B} e \eqref{eqn:M_H} valgono a prescindere dai valori assunti dai campi in esame.
+Per quanto detto, riscrivendo la \eqref{eqn:H_B} come $\vb{B}=\mu_0(1+\chi_m)\vb{H}$, è chiaro come la perturbazione
+causata dalla presenza di materiali diamagnetici sia di norma trascurabile.
+
+\subsubsection{Paramagneti}
+Anche nelle sostanze paramagnetiche la permebalitià magnetica relativa è costante e prossima a $1$, ma in questo caso
+si ha $\chi_m>0$, ovvero il momento magnetico indotto nel materiale ha lo stessso verso del campo che lo induce.
+Di norma per queste sostanze si ha $\chi_m \in [10^{-6},10^{-2}]$. La suscettività magnetica varia in funzione della
+temperatura secondo la legge di curie
+\begin{equation}
+    \chi_m=C\frac{\rho}{T}
+\end{equation}
+dove $\rho$ è la densità del materiale e $C$ è una costante scritta in funzione delle grandezze atomiche.
+All'avvicinarsi della temperatura allo 0 assoluto i campi in questi materiali sono molto diversi a quelli che
+si hanno nel vuoto, ma in condizioni standard anche in questo caso la perturbazione è trascurabile.
+
+\subsubsection{Ferromagneti}
+Il comportamento dei ferromagneti è il più complesso: le relazioni fra campi e momenti di magentizzazione
+non sono nè lineari nè univoche. Inoltre, le proprietà di questi materiali sono fortemente dipendenti dalle
+loro caratteristiche chimico-fisiche.
+Effettuando misure su un materiale isotropo si osserva che $\vb{B}(\vb{H})$ e $\vb{M}(\vb{H})$ assumono
+sempre lo stesso verso di $\vb{H}$, per cui ci si può limitare a considerarle come relazioni scalari.
+In particolare è istruttivo descrivere l'andamento di $B$ in funzione di $H$.
+
+Partendo da $(H,B)=(0,0)$ all'aumentare di $H$ aumenta $B$ seguendo una curva $I$ detta
+\textit{curva di prima magnetizzazione}. Raggiunto un valore $H_m\simeq 10^5 As/m$, da lì in poi $B$ aumenta
+solo proporzionalmente ad $H$: dalla definizione di campo magnetico questo significa che $M$
+ha raggiunto il valore di saturazione, oltre al quale non aumenta più.
+Facendo diminuire $H$ a partire dal valore $H_m$ si ha che per un primo tratto $B$ segue la curva $I$, ma una
+volta superato un valore $H_s$ si ha che $B$ scende mantenendosi sempre sopra alla curva $I$. In questo modo,
+per $H=0$ si ha $B>0$ e il valore di $M=B/\mu_0$ corrispondente si chiama \textit{magnetizzazione residua}.
+Cambiando ora il segno di $H$ e facendo crescere il suo valore assoluto, $B$ decresce ed esiste quindi sicuramente
+un valore $H_c$ detto \textit{campo magnetico di coercizione} per cui $B=0$. In corrispondenza di questo valore
+$M=H_c>0$. Superato questo punto $B$ diventa negativo e continua a decrescere fino al valore $-H_m$.
+La curva completa si assesta su una curva ciclica simmetrica rispetto all'origine
+detta \textit{curva di isteresi}. Se si restringe l'intervallo
+all'interno del quale si fa variare $H$ si ottengono dei cicli sempre più piccoli sempre simmetrici rispetto all'origine
+e prossimi alla curva di prima magnetizzazione. Eseguendo dei cicli in cui gradualmente si riduce l'ampiezza
+dell'intervallo $B$ converge verso l'origine ed è possibile in questo modo smagnetizzare un materiale ferromagnetico.
+Si può dimostrare che per produrre una variazione $\dd{H}$ del campo magnetico è necessario compiere
+un lavoro $\dd{L}=B\dd{H}$, così che il lavoro complessivo dissipato dal ciclo di isteresi è
+uguale all'area della superficie contenuta dalla curva.
+
+È anche possibile relizzare dei cicli non simmetrici rispetto all'origine portando il sistema in una
+posizione $(\bar{H},\bar{B})$ e spostandosi da questa di una piccola quantità $\Delta H$. Se questa variazione
+è molto piccola il ciclo si riduce ad un segmento, in cui il lavoro dissipato è praticamente nullo: si parla di
+\textit{ciclo elementare reversibile}.
+
+Risulta quindi chiaro che fissato un valore di $H$ non è possibile ricavare un valore di $B$ senza conoscere il
+resto della curva. In particolare perde di senso il parametro $\mu$ e bisogna quindi cercare dei parametri
+alternativi adatti alla descrizione del fenomeno. Quando il ciclo è molto stretto una buona scelta è
+la \textit{permeabilità magnetica differenziale assoluta}
+\[
+    \mu_d=\dv{B}{H}
+\]
+
+Un utile risultato riguarda il fatto che, superata una certa temperatura $T_c$ il materiale si comporta come
+un materiale paramagnetico con suscettività magnetica
+\[
+    \chi_m=C\frac{\rho}{T-T_c}
+\]

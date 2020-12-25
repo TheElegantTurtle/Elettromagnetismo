@@ -1,0 +1,101 @@
+Per semplicità verranno considerati solo dielettrici perfetti e isotropi.
+Dalla prima delle equazioni di Maxwell in presenza di dielettrici si evince che
+\[
+    \Phi_S{\vb{D}}=\int_S\vb{D}\vdot\dd{\vb{S}}=Q_i
+\]
+ovvero l'equivalente del teorema di Gauss, dove $Q_i$ sono le cariche interne ad $S$ esclue quelle di polarizzazione che,
+di fatto, non compaiono dell'equazione di Maxwell. In maniera analoga il teorema di Coulomb può  essere riformulato come
+\[
+    \vb{D}=\sigma\vu{n}
+\]
+
+Fatte queste premesse, si giunge al seguente importante risultato
+\begin{thm}
+    Nel caso in cui il dielettrico riempia interamente lo spazio, il problema dell'elettrostatica nei dielettrici è analogo a quello nel vuoto con
+    \[
+        \begin{split}
+            &\vb{D}=\vb{D_0} \\
+            &\vb{E}=\frac{\vb{E_0}}{\epsilon_r} \\
+            &V=\frac{V_0}{\epsilon_r} \\
+        \end{split}
+    \]
+    \label{thm:problema-elettrostatica-dielettrici}
+\end{thm}
+\begin{proof}
+    Nell'ipotesi in cui il dielettrico riempia tutto lo spazio si ha che la \eqref{eqn:rel_D_E}.
+    Moltiplicando allora la terza delle equazioni di Maxwell nei dielettrici per $\epsilon$ si ottiene:
+    \[
+        \curl{\vb{D}}=0
+    \]
+    Analogamente, dividendo la prima per $\epsilon$ si ottiene:
+    \[
+        \div{\vb{E}}=\frac{\rho}{\epsilon}
+    \]
+    Da cui si deduce che il vettore spostamento elettrico è anch'esso conservativo e che, nel caso dei dielettrici,
+    il campo elettrico viene scalato semplicemente di un fattore $\epsilon_r$.
+\end{proof}
+Questo risultato giustifica finalmente l'uguaglianza simbolica $\chi=\epsilon_r-1$: a partire da questa si è dimostrato infatti
+che il potenziale in un dielettrico è scalato di un fattore $\epsilon_r$ rispetto al caso nel vuoto e in particolare
+questo è vero per un condensatore, come era stato dedotto in conclusione al paragrafo \ref{par:costante_dielettrica}.
+
+Si immagini ora che il dielettrico non occupi tutto lo spazio: il caso più generale
+è quello in cui tanti dielettrici diversi occupino diverse porzioni di spazio.
+Localmente, ovvero su ciascun dielettrico, i risultati ottenuti col precedente teorema continuano a valere.
+Sulle superfici di separazione i campi subiscono una discontinuità e quindi le derivate non sono più definite:
+non valgono quindi più le equazioni di Maxwell. Fortunatamente, continua a valere il loro corrispettivo integrale.
+Ne consegue che all'interno di ciascun dielettrico continua a valere l'equazione di Poisson
+ma per risolvere il problema dell'elettrostatica è necessario determinare preliminarmente le condizioni di raccordo del campo elettrico
+sulle superfici di separazione dei vari dielettrici.
+
+\begin{thm}
+    Attraversando l'interfaccia fra due dielettrici diversi le componenti tangenti di $\vb{E}$ e $\vb{D}$ sono legate dalla relazione
+    \begin{equation}
+        \label{eqn:Dn}
+        D_{n1}=D_{n2}
+    \end{equation}
+    \begin{equation}
+        \frac{E_{n1}}{E_{n2}}=\frac{\epsilon_2}{\epsilon_1}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Si consideri una superficie di separazione fra due dielettrici $\Sigma$ priva di cariche localizzate e un cilindretto con basi parallele a $\Sigma$ e altezza $\dd{h}$. Il flusso atraverso le superfici laterali può essere trascurato nel limite $\dd{h}\to0$. In assenza di cariche localizzate il teorema di Gauss assume la forma
+    \[
+        0=\Phi(\vb{D})=\dd{S}\vu{n}_1\vdot\vb{D}_1+\dd{S}\vu{n}_2\vdot\vb{D}_2
+    \]
+    Tenendo conto che le basi del cilindro sono parallele, per cui $\vu{n}_1=-\vu{n}_2$, e indicando con $D_{ni}$ [$i=1,2$] le proiezioni di $\vb{D}$ sulle normali, si ha:
+    \[
+        \dd{S}(D_{n1}-D_{n2})=0
+    \]
+    ovvero
+    \[
+        D_{n1}=D_{n2}
+    \]
+    Dalla \eqref{eqn:rel_D_E} si ottiene la tesi.
+\end{proof}
+Del seguente teorema si omette la dimostrazione in quanto analoga a quella del lemma \ref{lemma:discontinuità_E}.
+
+\begin{thm}
+    Attraversando l'interfaccia fra due dielettrici diversi le componenti tangenti di $\vb{E}$ e $\vb{D}$ sono legate dalla relazione
+    \begin{equation}
+        \label{eqn:Et}
+        E_{t1}=E_{t2}
+    \end{equation}
+    \begin{equation}
+        \frac{D_{t1}}{D_{t2}}=\frac{\epsilon_1}{\epsilon_2}
+    \end{equation}
+\end{thm}
+Queste relazioni forniscono anche un metodo per la misurazione dei campo all'interno dei materiali:
+è infatti sufficiente praticare nel dielettrico un sottile taglio parallelo (ortogonale) alle linee di
+campo del campo elettrico (vettore spostamento elettrico) ed effettuare la misura all'interno della
+cavità -il campo misurato sarà uguale al campo macroscopico presente all'interno del materiale.
+
+\begin{thm}[legge di rifrazione delle linee di forza del campo elettrico]
+    Chiamato $\theta_i$ l'angolo che $E_{ti}$ forma con la superficie di separazione (con $i=1,2$) si ha
+    \[
+        \frac{\tan\theta_1}{\tan\theta_2}=\frac{\epsilon_1}{\epsilon_2}
+    \]
+\end{thm}
+\begin{proof}
+    La dimostrazione è banale e si ottiene facendo il rapporto fra la \eqref{eqn:Et} e la \eqref{eqn:Dn}
+\end{proof}
+Una legge analoga vale per $\vb{D}$, considerando che è parallelo ad $\vb{E}$.

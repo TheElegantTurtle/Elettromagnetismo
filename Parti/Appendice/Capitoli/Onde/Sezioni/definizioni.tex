@@ -1,0 +1,58 @@
+\begin{defn}[Onda]
+    Si definisce onda una perturbazione che nasce da una sorgente e si propaga nel tempo e
+    nello spazio.
+\end{defn}
+
+\begin{obs}
+    Un'onda di ampiezza costante è descritta da una funzione che goda della proprietà
+    \[
+        f(x,t)=f(\xi(x,t))\equiv f(\xi)
+    \]
+    con $\xi(x,t)=x\mp vt$, $v$ costante positiva.
+\end{obs}
+\begin{proof}
+    Se si considera la funzione $f(\xi)$ questa ha un ben definito profilo che rappresenta la perturbazione
+    generata dalla sorgente. Questo profilo corrisponde al profilo di $f(x)$, con $t$ fissato.
+    Si consideri un certo valore $\xi_0=x_0\mp v t_0$. Ci si chiede per quale valore $x_0+\Delta x$
+    all'istante $t_0+\Delta t$ si abbia ancora il valore $\xi_0$. Si deve quindi risolvere l'equazione
+    $x_0 \mp v t_0 = (x_0+\Delta x) \mp v(t_0+\Delta t)$ che porta alla condizione $\Delta x \mp \Delta t=0$
+    ovvero $\Delta x / \Delta t = \mp v$: $f(\xi(x,t))$ rappresenta dunque una perturbazione che viaggia nello
+    spazio con velocità $v$.
+\end{proof}
+$\xi$ viene detto fase dell'onda, $v$ è la velocità con cui si muove la fase dell'onda: l'onda resta costante nel tempo
+se la si osserva da un sistema di riferimento con velocità $v$. Per questo motivo $v$ è detta velocità di fase.
+L'onda si dice positiva o regressiva
+a seconda del segno che compare nell'espressione di $\xi$.
+
+\begin{defn}[Fronte d'onda]
+    Si definisce fronte d'onda il luogo dei punti in cui $\xi$ assume lo stesso valore.
+\end{defn}
+Si parla di  onde piane, sferiche etc... in base alla forma dei fronti d'onda.
+
+\begin{defn}[Onde periodiche]
+    Si parla di onda periodica quando si ha a che fare con un'onda descritta da una
+    funzione periodica in $\xi$.
+\end{defn}
+Una classe particolarmente importante di onde periodiche sono le onde sinusoidali.
+\begin{defn}[Onde sinusoidali]
+    Si definiscono onde sinusoidali le onde periodiche in cui $f(\xi)$ assume una delle seguenti
+    espressioni fra loro equivalenti
+    \[
+        \begin{split}
+            & A\sin\Biggl[\frac{2\pi}{\lambda}(x-vt)+\phi\Biggr]\\
+            & A\sin\Biggl[\frac{2\pi}{T}\Biggl(\frac{x}{v}-t\Biggr)+\phi\Biggr]\\
+            & A\sin\Biggl[2\pi\Biggl(\frac{x}{\lambda}-\frac{t}{T}\Biggr)+\phi\Biggr]\\
+            & A\sin(kx-\omega t + \phi)\\
+        \end{split}
+    \]
+    dove:
+    \begin{itemize}
+            \item $A$: ampiezza
+            \item $\phi$: fase iniziale
+            \item $\lambda$: lunghezza d'onda, distanza fra due picchi
+            \item T: periodo, tempo necessario affinchè nel punto $x$ fissato l'onda assuma nuovamente lo stesso valore
+            \item $\omega$: pulsazione, $\omega=2\pi/T$
+            \item $k$: numero d'onda, $\k=2\pi/\lambda$
+            \item $v=\lambda/T=\omega/k$
+    \end{itemize}
+\end{defn}

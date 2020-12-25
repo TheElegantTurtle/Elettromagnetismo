@@ -1,0 +1,53 @@
+Quanto visto evidenzia come in condizioni non stazionarie non sia garantita la conservatività del campo elettrico.
+Si consideri infatti il caso in cui le sorgenti di $\vb{B}$ non siano stazionarie ma $\vb{v}_T=0$: $\vb{E}_i=\vb{E}$
+e quindi $\oint \vb{E}_i=f_i=-dv{\Phi}{t}\neq 0$. Si rende perciò necessaria una generalizzazione della
+terza equazione di Maxwell alla quale si perviene nel tenteativo di trovare una forma locale della legge di Faraday-Neumann.
+\begin{thm}
+    \begin{equation}
+        \curl{\vb{E}}=-\pdv{\vb{B}}{t}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    %    La dimostrazione viene presentata prima nel caso di circuito rigido in quiete e poi generalizzata.
+    %    Si cosideri quindi un circuito fermo, la cui forma non cambia nel tempo.
+    %    La variazione del flusso di $\vb{B}$ è quindi dovta alla variazione del campo stesso.
+    %    La derivata temporale nella legge di Faraday-Newmann può quindi essere portata sotto
+    %    al segno di intergale diventando derivata parziale. Per il teorema del rotore si ha quindi che
+    %    \[
+    %        -\int_S \pdv{\vb{B}}{t}\vdot\vu{n}\dd{S}=\oint_l \vb{E}_i\vdot\dd{\vb{l}}=\int_S(\curl{\vb{E}})\vdot\vu{n}\dd{S}
+    %    \]
+    %    dove nel secondo passaggio si è fatto uso, oltre al teorema del rotore, del fatto che per la $\eqref{eqn:fi}$ $\vb{E}_i=\vb{E}$
+    %    essendo $\vb{v}_T=0$.
+    %    Dato che la catena di uguaglianze vale qualsiasi sia la forma del circuito e qualsiasi sia la superficie di integrazione, si ha la tesi.
+
+    Sia il circuito in moto e non rigido. Esplicitando la derivata e sviluppando al primo ordine $\vb{B}$ nella legge di Faraday-Newmann 
+    si ottiene
+    \[
+        \begin{split}
+            \oint_l \vb{E}_i\vdot\dd{\vb{l}}
+            =&-\rec{\dd{t}}\Biggl[\int_{S(t+\dd{t})}\vb{B}(t+\dd{t})\vdot\dd{\vb{S}}-\int_{S(t)}\vb{B}(t)\vdot\dd{\vb{S}} \Biggr] \\
+            =&-\rec{\dd{t}}\Biggl[\int_{S(t+\dd{t})}\vb{B}(t)\vdot\dd{\vb{S}}
+            +\int_{S(t+\dd{t})}\pdv{\vb{B}(t)}{t}\dd{t}\vdot\dd{\vb{S}} -\int_{S(t)}\vb{B}(t)\vdot\dd{\vb{S}} \Biggr] \\
+            =&-\rec{\dd{t}}\Biggl[\int_{S(t+\dd{t})}\vb{B}(t)\vdot\dd{\vb{S}}
+            -\int_{S(t)}\vb{B}(t)\vdot\dd{\vb{S}} \Biggr] - \int_{S(t+\dd{t})}\pdv{\vb{B}(t)}{t}\vdot\dd{\vb{S}}\\
+            =&\oint_l(\vb{v}\cp\vb{B})\vdot\dd{\vb{l}} - \int_{S(t+\dd{t})}\pdv{\vb{B}(t)}{t}\vdot\dd{\vb{S}}\\
+        \end{split}
+    \]
+    dove nell'utlimo passaggio si è usato il fatto che il termine fra parentesi rappresenta la variazione di flusso
+    relativa esclusivamente al moto del circuito ed è quindi possibile sfruttare i risultati ottenuti
+    nel paragrafo sul flusso tagliato. Nel limite $\dd{t}\to 0$ si ha infine
+    \[
+        \oint_l \vb{E}_i\vdot\dd{\vb{l}}=\oint_l(\vb{v}\cp\vb{B})\vdot\dd{\vb{l}} - \int_{S(t)}\pdv{\vb{B}(t)}{t}\vdot\dd{\vb{S}}\\
+    \]
+    Il secondo termine rappresenta la variazione di flusso dovuta esclusivamente alla variazione
+    nel tempo del campo di induzione magnetica. Per la linearità dell'intergale
+    \[
+        \oint_l (\vb{E}_i-\vb{v}\cp\vb{B})\vdot\dd{\vb{l}}= - \int_{S(t)}\pdv{\vb{B}(t)}{t}\vdot\dd{\vb{S}}\\
+    \]
+    Per la \eqref{eqn:fi} l'integrando a primo membro è proprio $\vb{E}$. 
+    Per il teorema del rotore l'integrando a primo membro è uguale a $\int_{S(t)}\vb{E}\vdot\dd{\vb{S}}$.
+    Siccome la procedura fin qui segutia vale qualunque sia il dominio di integrazione, l'uguaglianza ottenuta implica
+    l'uguaglianza delle integrande, ovvero la tesi.
+\end{proof}
+Il risultato ottenuto si estende anche al caso in cui non siano presenti circuiti: nel vuoto, nei dielettrici o nei
+conduttori, se il campo magnetico cambia nel tempo allora è presente un campo elettrico non conservativo.

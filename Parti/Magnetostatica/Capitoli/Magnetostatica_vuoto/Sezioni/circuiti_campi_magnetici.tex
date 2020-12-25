@@ -1,0 +1,124 @@
+Lo studio delle interazioni fra circuiti e campi magnetici è diviso in due categorie di fenomeni:
+interazione fra un circuito percorso da corrente stazinaria con un campo magnetico esterno e
+intrazione fra un circuito percorso da corrente stazionaria con un altro circuito percorso da corrente stazionaria.
+
+\subsubsection{Interazione circuito-campo magnetico}
+L'ipotesi fondamentale per lo studio di questi fenomeni è che il circuito in esame sia dotato di un generatore
+di forza elettromotrice che mantenga costante nel tempo la corrente che attraversa il circuito.
+
+Si vuole ora studiare il calcolo delle sollecitazioni meccaniche su una spira rigida percorsa da corrente $I$.
+Si consideri quindi una spira $l$ percorsa da una corrente $I$ e immersa in un campo magnetico $\vb{B}$.
+Si supponga che ogni tratto infinitesimo della spira $\dd{\vb{l}}$ compia uno spostamento infinitesimo
+$\dd{\vb{s}}=\dd{\vb{s}}(\dd{\vb{l}})$, tale da portare la spira della configurazione $l'$.
+Per far compiere alla spira questo spostamento senza che la sua energia cinetica vari è necessario applicare dall'esterno una forza
+\[
+    \dd{f}=-\dd{F}=-I\dd{\vb{l}}\cp\vb{B}
+\]
+Ovvero, è necessario compiere un lavoro, che risulta quindi in una variazione di energia potenziale
+\[
+    \dd{U}=\dd{L}=\oint\dd{\vb{f}}\vdot\dd{\vb{s}}=-\oint I\dd{\vb{l}}\cp\vb{B}\vdot\dd{\vb{s}}=
+    -\oint I\dd{\vb{s}}\cp\dd{\vb{l}}\vdot\vb{B}=I\oint(\dd{\vb{l}}\cp\dd{\vb{s}})\vdot\vb{B}
+\]
+dove è stata usata la proprietà \eqref{app:eqn:vdot_cp}.
+Il termine fra parentesi nell'ultimo membro della catena di uguaglianze rappresenta l'elemento di superficie $\dd{\vb{S}}$
+della superficie laterale $\dd{\Sigma}$ di un solido le cui basi hanno spigoli $l$ ed $l'$.
+L'integrale ottenuto è allora il flusso di $\vb{B}$ attraverso questa superficie laterale.
+\[
+    \dd{U}=\Phi_{\dd{\Sigma}}(\vb{B})
+\]
+Chiamando $\Sigma$ la base con spigolo $l$ e $\Sigma'$ la base con spigolo $l'$, siccome per il corollario \ref{cor:flusso_B}
+il flusso di $\vb{B}$ attraverso una superficie chiusa deve essere nullo si ha
+\[
+    \Phi_{\dd{\Sigma}}=\Phi_\Sigma-\Phi_{\Sigma'}=-\dd{\Phi}
+\]
+Dove $\Phi_{\dd{\Sigma}}$ è il flusso entrante da $\Sigma$, mentre gli altri sono flussi uscenti dalle rispettive superfici.
+Si ha quindi che a meno di una costante additiva arbitraria
+\[
+    U=-I\Phi(\vb{B})
+\]
+Dove il flusso è riferito alla superficie di una spira con contorno $l$ considerata positiva quando vede la corrente ruotare in sesno antiorario.
+Ponendosi abbastanza lontano dalla spira in modo da poter considerare piccola la sua superficie
+si può approssimare $\Phi(\vb{B})=\vb{B}\vdot\vb{S}$. In questo modo la relazione appena trovata diventa
+\[
+    U=-I\vb{S}\vdot\vb{B}=-\vb{m}\vdot\vb{B}
+\]
+Ma questa è un'espressione esattamente analoga a quanto trovato nel paragrafo sul dipolo elettrico \eqref{eqn:U_dipolo}.
+Con passaggi identici si arriva allora a dimostrare
+\begin{thm}
+    Per una spira in un campo di induzione magnetica si ha che
+    \begin{equation}
+        \vb{F}=(\vb{m}\vdot\grad)\vb{B}
+    \end{equation}
+    \begin{equation}
+        \vb{M}=\vb{m}\cp\vb{B}
+    \end{equation}
+\end{thm}
+Si osservi quindi che esiste una completa analogia fra il dipolo in elettrostatica e la spira percorsa da
+corrente in magnetostatica: sia la forma delle sollecitazioni meccaniche che quella del potenziale
+(e di conseguenza del campo) prodotto
+sono formalmente identiche a patto di usare $\vb{p}$ o $\vb{m}$ a seconda del contesto. Questo
+risultato è detto \textit{teorema di equivalenza di Ampère} e sancisce la completa analogia
+fra una spira da percorsa da corrente ed un "dipolo magnetico".\
+
+Il calcolo del momento torcente può essere svolto in maniera immediata, e molto istruittiva, nel caso di una spira rettangolare
+immersa in un campo magnetico costante.
+\begin{example}
+    Si supponga che il campo di induzione magnetica esterno $\vb{B}$ sia costante e che la spira sia rettangolare
+    (con i lati 1 e 3 di lunghezza $b$ ed i lati 2 e 4 di lunghezza $a$), orientata in modo che i lati 2 e 4
+    siano ortogonali a $\vb{B}$. I lati 1 e 3 sono soggetti ad una coppia di forze uguale ed opposta con braccio nullo;
+    anche i lati 2 e 4 sono soggetti ad una coppia di forze uguale ed opposta,
+    il braccio però vale $b\sin\theta$ con $\theta$ l'angolo fra $\vb{B}$ e la normale alla superficie $\vb{S}=ab\vu{n}$ della spira.
+    Per la seconda legge di Laplace si ha $\vb{F}_2=\vb{F}_4=IaB$ per cui il momento meccanico sulla spira vale in modulo
+    \[
+        M=\frac{b}{2}F_2\sin\theta+\frac{b}{2}F_4\sin\theta=bIaB\sin\theta=ISB\sin\theta
+    \]
+    dove $\theta$ è l'angolo fra la forza ed il raggio-vettore che congiunge il punto di applicazione della forza al centro
+    di massa.
+    La relazione vettoriale è quindi
+    \[
+        \vb{M}=IS\vu{n}\cp\vb{B}=\vb{m}\cp\vb{B}
+    \]
+\end{example}
+
+
+
+\subsubsection{Interazione circuito-circuito}
+Dati due circuiti $l_1$ ed $l_2$ questi esercitano l'uno sull'altro delle azioni meccaniche in quanto
+sorgenti di campi magnetici. La forza che $l_1$ esercita sull'elemento di filo $\dd{l_2}$ di
+$l_2$ è\footnote{La distanza fra due punti presenti rispettivamente sul primo e sul secondo circuito
+è stata indicata con $r_{12}$ anzichè con $\Delta r$}
+\[
+    \dd{\vb{F}_{12}}=I_2\dd{\vb{l}_2}\cp\vb{B}_1=I_2\dd{\vb{l}_2}\cp\oint_{l_1}\frac{\mu_0I_1}{4\pi}\frac{\dd{\vb{l}_1}\cp\vb{r}_{12}}{r^3_{12}}
+\]
+dove $\vb{r}_{12}$ è la distanza fra un punto di $l_1$ e l'elemento di filo $\dd{l_2}$.
+Nel caso in cui i due circuiti siano rigidi si ha
+\[
+    \vb{F}_{12}=\oint_{l_2}I_2\dd{\vb{l}_2}\cp\oint_{l_1}\frac{\mu_0I_1}{4\pi}\frac{\dd{\vb{l}_1}\cp\vb{r}_{12}}{r^3_{12}}=
+    \frac{\mu_0}{4\pi}I_1 I_2 \oint_{l_2}\oint_{l_1}\frac{\dd{\vb{l}_2}\cp\dd{\vb{l}_1}\cp\vb{r}_{12}}{r^3_{12}}
+\]
+Usando l'identità vettoriale  $\vb{a}\cp\vb{b}\cp\vb{c}=(\vb{a}\vdot\vb{c})\vb{b}-(\vb{b}\vdot\vb{a})\vb{c}$, si ottiene
+\[
+    \vb{F}_{12}=\frac{\mu_0}{4\pi}I_1 I_2 \Biggl[\oint_{l_2}\oint_{l_1}\frac{(\dd{\vb{l}_2}\vdot\vb{r}_{12})\dd{\vb{l}_1}}{r^3_{12}}-
+    \oint_{l_2}\oint_{l_1}\frac{(\dd{\vb{l}_1}\vdot\dd{\vb{l}_2})\vb{r}_{12}}{r^3_{12}}\Biggr]
+\]
+Il primo di questi due integrali è nullo in quanto
+\[
+    \oint_{l_2}\oint_{l_1}\frac{(\dd{\vb{l}_2}\vdot\vb{r}_{12})\vb{l}_1}{r^3_{12}}=
+    \oint_{l_1}\dd{\vb{l}_1}\oint_{l_2}\frac{(\dd{\vb{l}_2}\vdot\vb{r}_{12})}{r^3_{12}}=
+    \oint_{l_1}\dd{\vb{l}_1}\oint_{l_2}\dd{\vb{l}_2}\vdot\grad(\rec{r_{12}})
+\]
+Ma la circuitazione di un campo conservativo è nulla.
+Si ha allora
+\begin{equation}
+    \vb{F}_{12}=\frac{\mu_0}{4\pi}I_1 I_2 \oint_{l_2}\oint_{l_1}\frac{(\dd{\vb{l}_1}\vdot\dd{\vb{l}_2})\vb{r}_{12}}{r^3_{12}}
+\end{equation}
+L'equazione qui sopra mostra che scambiando gli indici si ottiene un cambio di segno, in accordo col terzo principio della dinamica.
+
+Considerando due fili rettilinei infinitamente lunghi e paralleli, posti a distanza $\vb{r}_{12}$, si trova che
+\[
+    \dd{\vb{F}_{12}}=\frac{\mu_0}{2\pi r_{12}}I_1 I_2\vb{r}_{12} sgn(\dd{l_1}\vdot\dd{l_2})
+\]
+ovvero la forza è attrattiva o repulsiva in base al fatto che il verso delle correnti sia concorde o discorde.
+Inoltre questa relazione fornisce una definizione operativa dell'ampère: si dice che due fili lunghi e sottili
+sono attraversati da una corrente di $1A$ quando, posti ad un metro di distanza, risentono reciprocamente di
+una forza pari a $\mu_0/2\pi$ per metro di filo.

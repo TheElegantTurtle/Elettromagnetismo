@@ -1,0 +1,46 @@
+\begin{defn}[Spostamento elettrico]
+    Si definisce vettore di spostamento elettrico
+    \[
+        \vb{D}=\epsilon_0\vb{E}+\vb{P}
+    \]
+\end{defn}
+
+\begin{obs}
+    In dielettrici perfetti e isotropi, il vettore di spostamento elettrico ed il campo elettrico sono legati dalla relazione
+    \begin{equation}
+        \vb{D}=\epsilon\vb{E}
+        \label{eqn:rel_D_E}
+    \end{equation}
+\end{obs}
+\begin{proof}
+    Nel caso di dielettrici perfetti isotropi dalla definizione si suscettibilità elettrica,
+    coerentemente con l'uguaglianza simbolica introdotta prima
+    $\vb{D}=\epsilon_0\vb{E}+\vb{P}=(\epsilon_0+\epsilon_0\chi)\vb{E}=\epsilon_0(1+\chi)\vb{E}=\epsilon_0\epsilon_r\vb{E=\epsilon\vb{E}}$.
+\end{proof}
+
+\begin{thm}
+    In presenza di dielettrici la prima e la terza equazione di Maxwell assumono la seguente forma:
+    \begin{equation}
+        \div{\vb{D}}=\rho
+    \end{equation}
+    \begin{equation}
+        \curl{\vb{E}}=0
+    \end{equation}
+\end{thm}
+\begin{proof}
+    In presenza di dielettrico la struttura del campo elettrico non cambia, per cui la sua circuitazione
+    deve continuare ed essere nulla. Per quanto riguarda la prima equazione di Maxwell,
+    introducendo la densità delle cariche di polarizzazione $\rho_p$, questa diventa
+    \[
+        \div{\vb{E}}=\frac{\rho+\rho_p}{\epsilon_0}
+    \]
+    Siccome la densità di carica di polarizzazione non è nota a priori, dalla \eqref{eqn:relazione_rhop_P},
+    tenuto conto che $\epsilon_0$ è costante, si ottiene
+    \[
+        \begin{split}
+            & \div{\epsilon_0 \vb{E}}=\rho-\div{\vb{P}}\\
+            & \div{\epsilon_0 \vb{E}+\vb{P}=\rho}
+        \end{split}
+    \]
+    Dalla definizione di vettore di spostamento elettrico, la tesi.
+\end{proof}

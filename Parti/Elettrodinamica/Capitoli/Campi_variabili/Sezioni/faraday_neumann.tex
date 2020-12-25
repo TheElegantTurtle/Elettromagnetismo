@@ -1,0 +1,49 @@
+Per tenere conto delle osservazioni sperimentali, si introduce la seguente legge.
+\begin{obses} [Legge di Faraday-Neumann]
+    Dato un circuito immerso in un campo di induzione magnetica $\vb{B}$ e detto $\Phi(\vb{B})$
+    il flusso con del campo concatenato al circuito, allora nel circuito si genera una forza elettromotrice indotta
+    \begin{equation}
+        f_i=-\dv{\Phi(\vb{B})}{t}
+    \end{equation}
+\end{obses}
+La derivata totale non può essere portata all'interno dell'intergale che esprime il flusso
+in quanto la forma del circuito, e quindi il cammino di integrazione, dipende dal tempo.
+\begin{obs}
+    La forza elettromotrice indotta implica la presenza di un campo elettromotore indotto $\vb{E}_i$
+    \begin{equation}
+        \label{eqn:fi}
+        \vb{E}_i=\vb{E}+\vb{v}_T\cp\vb{B}
+    \end{equation}
+    Dove $\vb{E}$ e $\vb{B}$ sono i campi elettrico e di induzione magnetica in cui il circuito è immerso
+    e $\vb{v}_T$ è la velocità di trascinamento con cui si muove ciascun elemento infinitesimo di circuito.
+\end{obs}
+\begin{proof}
+    Dalla definizione $f_i=\oint_l \vb{E}_i\vdot\dd{\vb{l}}$, che mostra la presenza del campo elettromotore indotto.
+    Nel fenomeno dell'induzione i portatori di carica $q$ che danno orgine alla corrente nel circuito sono messi in moto
+    da una forza
+    \[
+        \vb{F}=q\vb{E}+q\vb{v}_{tot}\cp\vb{B}
+    \]
+    Il campo elettromotore può quindi essere visto come rapporto fra questa forza e la carica dei portatori, ovvero
+    \[
+        \vb{E}_i=\vb{E}+\vb{v}_{tot}\cp\vb{B}=\vb{E}+(\vb{v}_T+\vb{v}_d)\cp\vb{B}
+    \]
+    dove $\vb{v}_T$ è la velocità di trascinamento e $\vb{v}_d$ la velocità di deriva delle cariche.
+    Si ha quindi, considerando che la velocità di deriva è parallela punto per punto all'elemento $\dd{\vb{l}}$
+    di volta in volta considerato
+    \[
+        f_i=\oint_l \vb{E}_i\vdot\dd{\vb{l}}=\oint_l(\vb{E}+\vb{v}_T\cp\vb{B})\vdot\dd{\vb{l}}
+    \]
+    Siccome la forza elettromotrice indotta è l'unica osservabile attraverso la quale sia possibile individuare
+    il campo elettromotore indotto, allora si può tranqullamente identificare quest'ultimo con il secondo integrando.
+\end{proof}
+
+
+La corrente che circola nel circuito a sua volta genera un campo magnetico indotto $\vb{B}_i$.
+\begin{cor}[Legge di Lenz]
+    Il campo magnetico indotto $\vb{B}_i$ è tale che il suo verso si opponga
+    a quello del campo magnetico che genera la forza elettromotrice indotta.
+\end{cor}
+\begin{proof}
+    La dimostrazione è immediata, per il fatto che nella legge di Faraday-Neumann compare il segno meno
+\end{proof}

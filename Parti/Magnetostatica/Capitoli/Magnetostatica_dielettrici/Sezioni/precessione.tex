@@ -1,0 +1,55 @@
+Per concludere si vuole tornare all'aspetto atomico della magnetizzazione
+per descrivere un fenomeno che prende il nome di \textit{precessione di Larmor}.
+Si consideri un elettrone orbitante attorno ad un nucleo con momento angolare
+$\vb{L}$ e momento magnetico $\vb{m}_0=(-e/2m_e)\vb{L}$. Si supponga inoltre
+che sull'elettrone agisca un campo magentico locale $\vb{B}_l=\mu_0\vb{H}_l$.
+Nell'ipotesi che il campo magnetico perturbi di poco il moto dell'elettrone
+allora, il momento angolare compie un moto di precessione attorno alla direzione
+del campo. Si ha infatti, indicando con $\vb{M}$ il momento meccanico
+\[
+\dv{\vb{L}}{t}=\vb{M}=\vb{m}_0\cp\vb{B}_l=-\frac{e}{2m_e}\vb{L}\cp\vb{B}_l
+\]
+Chiaramente quindi la derivata di $\vb{L}$ è ortogonale a $\vb{L}$ e a $\vb{B}_l$.
+Da questo segue che nel tempo cambia la direzione di $\vb{L}$ ma non il suo modulo
+e che inoltre la componente $L_z$ di $\vb{L}$ parallela a $\vb{B}$ non cambia.
+Perciò si ha effettivamente un moto di precessione che disegna un cono il cui asse
+coincide con $\vb{B}$.
+
+Resta da determinare la velocità di precessione, detta
+\textit{velocità angolare di Larmor}. Dal corso di meccanica\footnote{Da leggersi
+"non mi ricordo dell'esistenza di questa cosa, prendiamola per vera".} si ha
+\[
+\dv{\vb{L}}{t}=\vb{\omega}_L\cp\vb{L}
+\]
+Per cui si ha
+\[
+\vb{\omega}_L\cp\vb{L}=-\frac{e}{2m_e}\vb{L}\cp\vb{B}_l
+\]
+Ovvero per confronto
+\[
+\vb{\omega}_L=\frac{e}{2m_e}\vb{B}_l
+\]
+La velocità angolare ha lo stesso verso del campo di induzione magnetica, per cui la precessione
+avviene in senso antiorario.
+
+Questo moto comporta una \textit{corrente di Larmor}
+\[
+I_L=\frac{e}{T_L}=\frac{e\omega_L}{2\pi}=\frac{e^2B_L}{4\pi m_e}
+\]
+a cui, indicando con $S_z$ la proiezione della superficie dell'orbita sul piano $xy$, corrisponde
+un momento magnetico diretto in verso opposto rispetto a $\vb{B}_L$ e in modulo
+\[
+m_L=I_L S_z=\frac{e^2B_L}{4\pi m_e} S_z
+\]
+$S_z$ è ottimamente approssimabile con $\pi(x^2+y^2)$, dove $x^2$ e $y^2$ rappresentano il valore
+quadratico medio assunto dalle coordinate dell'elettrone mentre questo percorre l'orbita. Se
+l'atomo è isotropicamente distribuito nello spazio si ha $x^2=y^2=z^2=r/3$ con $r$ il raggio
+dell'orbita. Si può quindi riscrivere il momento magnetico di Larmor, tenendo conto di direzione e verso,
+come
+\[
+\vb{m}_L=-\frac{e^2r^2}{6m_e} \vb{B}_L
+\]
+Se l'atomo ha $Z$ elettroni con raggio orbitale $r_i$, allora
+\[
+\vb{m}_L=-\frac{e^2r^2}{6m_e}\sum_{i=1}^Z r_i^2 \vb{B}_L
+\]

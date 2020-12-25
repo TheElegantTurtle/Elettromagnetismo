@@ -1,0 +1,212 @@
+La forma più semplice della soluzione all'equazione delle onde è quella di onda piana, che corrisponde ad una configurazione piana
+delle condizioni al contorno,
+ovvero quella in cui $\vb{E}$ e $\vb{B}$ assumono lo stesso valore per tutti i punti di ogni piano ortogonale alla
+direzione di propagazione\footnote{Fisicamente questa condizione non si verifica mai, tuttavia è un limite per molti
+casi di interesse pratico come ad esempio lo studio di una piccola porzione di spazio molto lontana dalla sorgente
+(approssimazione di sorgente puntiforme).}
+che può essere presa, senza perdita di generalità, parallela all'asse $x$ - o,
+in altri termini, ogni componente dei campi è indipendente da $y$ e $z$. In questo caso ciascuna delle
+sei componenti del campo elettromagntico soddisfa un'equazione di D'Alembert, ovvero un'equazione nella forma
+\[
+    \pdv[2]{f}{x}-\epsilon\mu\pdv[2]{f}{t}=0
+\]
+La cui soluzione generale è quindi del tipo
+\begin{equation}
+    \psi(x,t)=f_1(x-vt)+f_2(x+vt)
+\end{equation}
+
+\begin{thm}
+    I campi elettrico e magnetico di un'onda elettromagnetica piana che si propaga in un dielettrico illimitato, isotropo, omogeneo,
+    perfetto e neutro sono legati dalla seguente relazione
+    \[
+        \vb{E}=\vb{B}\cp\vb{v}\quad\quad \frac{E}{B}=v
+    \]
+\end{thm}
+Il teorema si dimostra banalmente grazie ai tre lemmi di seguito esposti, i quali derivano dal fatto che
+per un dielettrico illimitato, omogeneo, isotropo, perfetto e neutro
+le equazioni di Maxwell in forma scalare sono
+
+\begin{minipage}[t]{0.5\textwidth}
+    \[
+        \begin{split}
+            &\,\,\begin{cases}
+                &\pdv{E_x}{x}=0 \\
+            \end{cases} \\
+            & \begin{cases}
+                & \pdv{B_x}{t}=0 \\
+                & \pdv{E_z}{x}=\pdv{B_y}{t} \\
+                & \pdv{E_y}{x}=-\pdv{B_z}{t} \\
+            \end{cases} \\
+        \end{split}
+    \]
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+    \[
+        \begin{split}
+            &\,\,\begin{cases}
+                &\pdv{B_x}{x}=0 \\
+            \end{cases} \\
+            & \begin{cases}
+                & \pdv{E_x}{t}=0 \\
+                & \pdv{B_z}{x}=- \mu\epsilon \pdv{E_y}{t} \\
+                & \pdv{B_y}{x}=\mu\epsilon \pdv{E_z}{t} \\
+            \end{cases} \\
+        \end{split}
+    \]
+\end{minipage}
+
+
+\begin{lemma}
+    In un dielettrico isotropo, illimitato, omogeneo e perfetto, le componenti dei campi parallele alla direzione di
+    propagazione non contribuiscono alla propagazione del campo.
+\end{lemma}
+\begin{proof}
+    Data l'equazione di D'Alembert, si vuole dimostrare che $E_x$, $B_x$ sono costanti nel tempo e uniformi nello spazio.
+    Questo può essere visto facilmente osservando che nell'ipotesi di onda piana (campi indipendenti da $y$ e $z$) e di dielettrico neutro e perfetto
+    le quattro equazioni di Maxwell danno, per la componente $x$ dei campi:
+    \[
+        \begin{split}
+            I   &  \Longrightarrow \pdv{E_x}{x}=0 \\
+            II  &  \Longrightarrow \pdv{B_x}{x}=0 \\
+            III &  \Longrightarrow \pdv{B_x}{t}=\pdv{E_z}{y}-\pdv{E_y}{z}=0 \\
+            IV  &  \Longrightarrow \epsilon\mu \pdv{E_x}{t}=\pdv{B_z}{y}-\pdv{B_y}{z}=0
+        \end{split}
+    \]
+    Dato che non contribuiscono, le componenti dei campi in direzione $x$ possono essere considerate nulle.
+\end{proof}
+    Le onde elettromagnetiche sono fenomeni puramente trasversali.
+
+\begin{lemma}
+    In un'onda elettromagnetica piana campo elettrico e campo magnetico sono fra loro ortogonali.
+\end{lemma}
+
+\begin{proof}
+    Dalle equazioni di Maxwell
+    \[
+        \begin{split}
+            III & \Longrightarrow \pdv{E_z}{x}=\pdv{B_y}{t} \\
+            III & \Longrightarrow \pdv{E_y}{x}=-\pdv{B_z}{t} \\
+             IV & \Longrightarrow \pdv{B_z}{x}=- \mu\epsilon \pdv{E_y}{t} \\
+             IV & \Longrightarrow \pdv{B_y}{x}=\mu\epsilon \pdv{E_z}{t} \\
+        \end{split}
+    \]
+    Si osservi come se il campo elettromagnetico ha una componente $E_z$ deve avere anche una componente $B_y$
+    e viceversa. Per il principio di sovrapposizione si può ottenere una soluzione generale
+    sommando due soluzioni linearmente indipendenti, una con $\vb{E}$ diretto solo lungo $y$ e una con
+    $\vb{E}$ diretto solo lungo $z$, opportunamente pesate.
+    Si può allora portare avanti la discussione considerando il campo elettrico diretto solo in direzione
+    una direzione, ad esempio $y$, ed il campo magnetico diretto di conseguenza solo in direzione $z$.
+    \[
+        E_z=0 \Longrightarrow \pdv{B_y}{x}=0,\pdv{B_y}{t}=0
+    \]
+    Ovvero, all'onda elettromagnetica non dà alcun contributo la componente del campo magnetico diretta lungo la direzione $y$
+    e può quindi essere considerata nulla. Ma allora dato che per quanto dimostrato precedentemente era nulla la componente $x$
+    dei campi, si ha che $\vb{E}=E_y$ e quindi $\vb{B}=B_z$. Siccome non si ha perdita di generalità nell'aver scelto una direzione
+    fissa per i campi, si ha l'ortogonalità.
+\end{proof}
+Un'onda in cui i campi sono orientati in direzione fissa si dice avere polarizzazione lineare.
+
+\begin{lemma}
+    In un'onda elettromagntica piana si ha
+    \[
+        \frac{E_y}{B_z}=\frac{E}{B}=\pm v
+    \]
+\end{lemma}
+\begin{proof}
+    Per la dimostrazione di questo teorema sfrutta l'equazione di Maxwell
+    \[
+        III    \Longrightarrow \pdv{B_z}{x}= -\epsilon\mu \pdv{E_y}{t}
+    \]
+    Per il lemma precendente il campo elettrico è diretto solo in direzione $y$ mentre il campo magnetico è diretto solo in direzione $z$.
+    L'equazione delle onde diventa perciò, per i due campi
+    \[
+        \begin{split}
+            &\vb{E}(x\mp vt)=E_y(x\mp vt)=E_y(\xi)\\
+            &\vb{B}(x\mp vt)=B_z(x\mp vt)=B_z(\xi)
+        \end{split}
+    \]
+    Si osservi quindi come
+    \[
+        \pdv{E_y}{x}=\dv{E_y}{\xi}\quad \pdv{B_z}{t}=\dv{B_z}{\xi}\mp v
+    \]
+    L'equazione di Maxwell può essere scritta come
+    \[
+        \dv{E_y}{\xi}=\pm v \dv{B_z}{\xi}
+    \]
+    Che integrata, ponendo ragionevolmente a 0 la costante arbitraria dà $E_y=\pm v B_z$.
+\end{proof}
+Sostituendo $B=\mu H$ si ha che $E/H=\sqrt{\mu/\epsilon}=Z$. $Z$ ha le dimensioni di una resistenza e viene chiamata
+\textit{impedenza caratteristica} del materiale. $Z_0=\sqrt{\mu_0/\epsilon_0}=377\Omega$.
+Si osservi come la relazione che esprime il rapporto fra moduli del campo elettrico e del campo magnetico non costituisca una relazione
+di confronto fisicamente significativa in quanto lega fra loro grandezze di dimensioni diverse.
+Il seguente risultato, corollario del teorema appena dimostrato, fornisce un risultato relativo a questo confronto.
+\begin{cor}
+    In un'onda elettromagnetica piana, per ogni tempo e per ogni punto, le densità di energia associate a campo elettrico e
+    campo magnetico sono uguali.
+\end{cor}
+\begin{proof}
+    La dimostrazione è quasi immediata, grazie al teorema si ha infatti
+    \[
+        u_B=\rec{2}\frac{B^2}{\mu}=\rec{2}\frac{E^2}{v^2\mu}=\rec{2}\epsilon E^2=u_E
+    \]
+\end{proof}
+Il teorema porta come conseguenza il fatto che campo elettrico e magnetico siano in fase.
+Alla luce di questo risultato il vettore di Poynting può essere scritto come
+\[
+    \vb{I}=\rec{\mu} (\vb{B}\cp\vb{v})\cp\vb{B}=\frac{B^2}{\mu}\vb{v}=2u_M\vb{v}=(u_M+u_M)\vb{v}=(u_E+u_M)\vb{v}=u\vb{v}
+\]
+avendo indicato $u_E+u_M=u$: siccome $u$ è un'energia su un volume, questa è l'energia contenuta in un cilidro di
+sezione unitaria perpendicolare alla direzione di propagazione dell'onda e con altezza pari alla velocità dell'onda,
+il che conferma l'interpretazione fisica del vettore di Poynting fornita nel capitolo precedente:
+il flusso del vettore di Poynting che come detto è l'energia del campo elettromagnetico che sfugge attraverso
+una superficie $S$, è  di fatto l'energia che un'onda elettromagnetica trasporta nell'unità di tempo attraverso $S$.
+
+%Un'altra forma significativa del vettore di Poynting è
+%\[
+%    \vb{I}=\epsilon E^2 \vb{v}=\epsilon E^2 \frac{\vu{v}}{\sqrt{\mu\epsilon}}=\frac{E^2}{Z}\vu{v}
+%\]
+%Da questa si ricava immediatamente il modulo
+%\[
+%    I(\vb{r},t)=E^2/Z=H^2Z
+%\]
+Si definisce \textit{intensità istantanea dell'onda} l'energia per unità di tempo e di superficie che fluisce
+attraverso una superficie ortogonale alla direzione di propagazione della perturbazione.
+\[
+    \pdv{U}{t}=\pdv{u}{t}\dd{\tau}=\pdv{u}{t}\dd{l}\dd{S}=uv\dd{S}=I\dd{S}
+\]
+Ovvero, il modulo del vettore di Poynting è l'intensità istantanea.
+Tipicamente, per la luce visibile si ha una frequenza di $10^{15}$Hz, cui corrisponde una lunghezza
+d'onda di $10^3$[angstrom]: la maggioranza degli strumenti di misura (non ultimi i nostri occhi)
+non hanno una risposta per tempi così piccoli. Di conseguenza è spesso più utile
+parlare di intensità media $[I]\int_0^TI\dd{t}$.
+
+
+
+
+Può essere utile descivere l'onda in un sistema di riferimento $sr$ in cui l'onda si propaga
+in una direzione $\vu{n}$ qualunque, parallela a nessuno dei
+vettori coordinati. Sia quindi $sr'$ un sistema di riferimento la cui origine coincide con l'origine di
+$sr$ i cui assi sono però inclinati rispetto a quelli di $sr$ affinchè $\vu{n}$
+sia parallelo ad $x'$ ($\vu{n}\equiv\vu{i}'$). La trasformazione fra i due sistemi di riferimento è data da una matrice di rotazione
+\[
+    \vb{r}'=\left(\begin{matrix}
+                 \vu{i}'\vdot\vu{i} & \vu{i}'\vdot\vu{j} & \vu{i}'\vdot\vu{k} \\
+                 \vu{j}'\vdot\vu{i} & \vu{j}'\vdot\vu{j} & \vu{j}'\vdot\vu{k} \\
+                 \vu{k}'\vdot\vu{i} & \vu{k}'\vdot\vu{j} & \vu{k}'\vdot\vu{k} \\
+            \end{matrix}\right)\vb{v}=
+            R\vb{r}
+\]
+In $sr'$ l'onda piana ha forma $f(x'-vt)$. Esprimendo $x'$ in $sr$ si ha
+\[f\bigl((\vu{i}'\vdot\vu{i})x + (\vu{i}'\vdot\vu{j})y + (\vu{i}'\vdot\vu{k})z \mp vt\bigr)=f(\vu{n}\vdot\vb{r}\mp vt)\]
+
+
+
+Per quanto visto in appendice un'onda elettromagentica monocromatica che propaga in una direzione generica
+è scritta nella forma
+\[
+    \begin{cases}
+        & \vb{E}(\vb{r},t)=\vb{E}_0\cos(\vb{k}\vdot\vb{r}-\omega t)=\vb{E}_0e^{j(\vb{k}\vdot\vb{r}-\omega t)}\\
+        & \vb{B}(\vb{r},t)=\vb{B}_0\cos(\vb{k}\vdot\vb{r}-\omega t)=\vb{B}_0e^{j(\vb{k}\vdot\vb{r}-\omega t)}
+    \end{cases}
+\]
+ con $\omega=2\pi\nu$ e $\vb{k}=\vu{n}\omega/v$.

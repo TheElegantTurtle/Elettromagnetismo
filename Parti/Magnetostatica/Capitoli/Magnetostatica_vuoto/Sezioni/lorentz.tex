@@ -1,0 +1,49 @@
+I risultati sperimentali esposti nell'introduzione al capitolo si spiegano ipotizzando che il 
+campo di induzione magnetica determini una forza nella forma:
+\begin{equation}
+    \dd{\vb{F}}=I\dd{\vb{l}}\cp\vb{B}
+\end{equation}
+Questa equazione è detta \textit{seconda legge di Laplace} e consente di misurare $\vb{B}$ (ne costituisce quindi
+la definizione operativa).
+
+Si dimostra il seguente risultato
+\begin{thm}[Forza di Lorentz]
+    Data una carica puntifome $q$ che si muove con velocità $\vb{v}$ in un campo di induzione magnetica, questa carica risente di una forza
+    \begin{equation}
+        \label{eqn:f_lorentz}
+        \vb{F}=q\vb{v}\cp\vb{B}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Si consideri un tratto di circuito di lunghezza $\dd{l}$, sezione $\dd{S}$ e -quindi- volume  
+    $\dd{\tau}=\dd{l}\dd{S}$. Per il teorema \ref{thm:I_flusso_J}, la seconda legge di Laplace può essere riscritta come
+    \[
+        \dd{\vb{F}}=\vb{J}\dd{S}\dd{l}\cp\vb{B}=\vb{J}\dd{\tau}\cp\vb{B}
+    \]
+    Inoltre per la definizione di $\vb{J}$ si ha
+    \[
+        \vb{J}\dd{\tau}=nq\vb{v}_d\dd{\tau}=\dd{N}q\vb{v}_d
+    \]
+    dove $\dd{N}=n\dd{S}\dd{l}$ rappresenta il numero di portatori di carica nel tratto $\dd{l}$ del circuito. 
+    Si ha quindi $\dd{\vb{F}}=\dd{N}q\vb{v}_d\cp\vb{B}$. Se si prende in esame una singola carica, 
+    la velocità di deriva coincide con la velocità della carica. 
+    Intregrando per ottenere la forza totale  e considerando che il numero totale di cariche è appunto $1$ si ottiene la tesi.
+\end{proof}
+La relazione di Lorentz è in realtà più generale rispetto alla seconda legge di Laplace: quest'ultima infatti vale
+solo qualora $\vb{B}$ non vari significativamente nel tratto $\dd{l}$, mentre la legge di Lorentz è locale. Il prezzo
+da pagare è una maggiore difficoltà nella misurazione del campo di induzione magnetica in quanto nel primo caso viene
+usato come sonda un circuito percorso da corrente, nel secondo invece una carica in movimento.
+\begin{cor}
+    La forza di Lorentz non compie alcun lavoro.
+\end{cor}
+\begin{proof}
+    Quando la carica è ferma, non risente della forza di Lorentz. Quando è in movimento, la forza di Lorentz è ortogonale alla velocità.
+\end{proof}
+Questa forza quindi cambia la direzione della carica in movimento ma non ne modifica la velocità (in modulo).
+
+Grazie a quanto visto ora si può determinare l'unità di misura del campo di induzione magnetica, chiamata \textit{tesla}.
+\[
+    [B]=N\rec{Cm/s}=\frac{m}{m}N\rec{Cm/s}=\frac{Vs}{m^2}=T
+\]
+Il prodotto $Vs$ prende il nome di \textit{weber (Wb)}. 
+Frequentemente, per il campo di induzione elettromagnetica si usa il \textit{gauss} $1T=10^4G$.

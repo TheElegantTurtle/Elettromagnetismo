@@ -1,0 +1,95 @@
+\begin{obses}[Prima legge di Ohm]
+    Per determinati materiali e per un ampio intervallo di valori di $\Delta V$\footnote{Ovvero,
+    finchè la differenza di potenziale non è tale da generare scariche che danneggiano il materiale}
+    sussiste una relazione di proporzionalità diretta fra la differenza di potenziale e la corrente
+    che fluisce fra due punti $A$ e $B$ di un conduttore
+    \begin{equation}
+        V_A-V_B=\Delta V=RI
+    \end{equation}
+\end{obses}
+La costante di proporzionalità si chiama \textit{resistenza}. L'unità di misura della resistenza è l'\textit{ohm} $\Omega=V/A$
+Un materiale che rispetta la legge di ohm è detto \textit{ohmico}. Tutti i conduttori ohmici sono omogenei ed isotropi.
+È evidente come la caratteristica, ovvero la curva $I(\Delta V)$ di un conduttore ohmico sia una retta con pendenza $1/R=G$, detta \textit{conduttanza}.
+La resistenza dipende sia dalle condizioni fisiche in cui è posto un materiale che dalla sua geometria.
+
+Si riportano i due seguenti risultati che permettono di trattare resistenze in serie e in parallelo,
+di cui viene omessa la dimostrazione perchè analoga a quella riportata per i condensatori.
+\begin{thm}[Resistenze in serie]
+    Dati $n$ conduttori collegati in serie la resistenza del sistema è equivalente a quella di un unico conduttore con resistenza
+    \[
+        R=\sum_{i=1}^n R_i
+    \]
+\end{thm}
+\begin{thm}[Resistenze in parallelo]
+    Dati $n$ conduttori collegati in parallelo la resistenza del sistema è equivalente a quella di un unico conduttore con resistenza
+    \[
+        \frac{1}{R}=\sum_{i=1}^n\frac{1}{R_i}
+    \]
+\end{thm}
+
+
+\begin{obses}[Seconda legge di Ohm]
+    Per un tratto di conduttore di lunghezza $l$, omogeneo e a sezione $S$ costante vale la relazione
+    \begin{equation}
+        R=\rho\frac{l}{S}=\rec{\sigma}\frac{l}{S}
+    \end{equation}
+\end{obses}
+Dove $\rho$ è detto \textit{resistività elettrica} $\sigma$ è detto \textit{conducibilità elettrica} e non vanno confusi
+con le densità di carica.
+
+Con quanto appena introdotto si può dimostrare il seguente risultato.
+\begin{thm}[Legge di Ohm locale]
+    In un conduttore lineare ed isotropo sussiste la seguente relazione
+    \begin{equation}
+        \vb{J}=\sigma\vb{E}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Si consideri all'interno di un conduttore un cilindretto di lunghezza $\dd{l}$ e superficie $\dd{S}$,
+    dove le quantità possono essere studiate in forma scalare per via dell'ipotesi di isotropia.
+    Per la prima e la seconda legge di Ohm si ha che
+    \[
+        \dd{V}=E\dd{l}=R\dd{I}=\rec{\sigma}\frac{\dd{l}}{\dd{S}}J\dd{S}
+    \]
+    Da cui si ricava che
+    \[
+        E\dd{l}=\rec{\sigma}\dd{l}J
+    \]
+    da cui si ottiene la tesi in forma scalare. La forma vettoriale è ottenibile banalmente.
+\end{proof}
+Quanto ottenuto è di fatto un caso particolare della relazione \eqref{eqn:rel_J_E}, che mostra come
+i conduttori ohmici siano isotropi. La legge di
+Ohm locale è più generale della legge di Ohm che invece è riferita a porzioni estese di conduttore e può
+essere sfruttata per calcolare la resistenza di conduttori ohmici con geometrie complesse.
+Inoltre, può essere usata per studiare dielettrici non perfetti, grazie al seguente risultato.
+\begin{cor}
+    Dato un condensatore, le cui maglie siano conduttori ohmici, riempito con un dielettrico
+    non perfettamente isolante di resistività $\rho$ e costante dielettrica $\epsilon$,
+    capacità e resistenza del condensatore sono legate dalla relazione
+    \[
+        CR=\rho\epsilon
+    \]
+\end{cor}
+\begin{proof}
+    Si considerino due conduttori ohmici, $1$ e $2$, rispettivamente a potenziale $V_1$ e $V_2$.
+    La configurazione del campo elettrico è univocamente determinata grazie al teorema di unicità.
+    Sia $S$ una superficie chiusa che intercetti tutte le linee di forza del campo elettrico. Si vuole
+    calcolare il flusso del campo nel caso in cui: lo spazio fra le maglie del condensatore sia interamente
+    riempito con un conduttore omogeneo; lo spazio sia riempito con un dielettrico omogeneo.
+    Nel primo caso, per la legge di Ohm locale $\Phi_S(\vb{E})=\rho\Phi_S(\vb{J})=\rho I=\rho\Delta V/R$,
+    dove si è tenuto conto della definizione di $I$ e della prima legge di Ohm.
+    Nel secondo caso invece per il teorema di Gauss e la definizione di capacità
+    $\Phi_S(\vb{E})=Q/\epsilon=C\Delta V/\epsilon$. Uguagliando le due equazioni si ottiene la relazione
+    fra la capacità del condensatore riempito col dielettrico e la resistenza che si presenta fra le due
+    armature qualora il condensatore fosse riempito con un conduttore. Dato che un dielettrico non perfettamente
+    isolante può essere visto come un conduttore, segue la tesi.
+\end{proof}
+
+La resistenza di un conduttore dipende dalla geometria del materiale ma anche dalle condizioni fisiche e
+in particolare dalla temperatura. Questa dipendenza intorno alla temperatura ambiente può essere
+espressa sviluppando al primo ordinte l'andamento di $\rho$:
+\[
+    \rho(t)=\rho_0(1+\alpha t)
+\]
+con $t$ la temperatura in gradi celsius e $\alpha$ un coefficiente detto \textit{coefficiente di temperatura}, che assume
+valori positivi per i metalli e negativi per gli elettroliti e alcuni materiali non metallici come il carbonio.

@@ -1,0 +1,137 @@
+\begin{defn}[dipolo elettrico]
+    Si definisce dipolo elettrico un sistema costituito da due cariche q uguali ed opposte poste
+    ad una distanza $\delta$ fissa. Il vettore che collega le due cariche è chiamato $\vb*{\delta}$,
+    ha intensità $\abs{\vb*{\delta}}=\delta$ ed è orientato dalla carica negativa alla positiva.
+\end{defn}
+
+Il dipolo è caratterizzato dal \textit{momento di dipolo}
+\begin{equation}
+    \label{eqn:momento_di_dipolo}
+    \vb{p}=q\vb*{\delta}
+\end{equation}
+Nel caso di distribuzioni di carica, la definizione può essre estesa
+\begin{equation}
+    \label{defn:p_rho}
+    \vb{p}=\int_\tau \rho\vb{r'} \dd{\tau}
+\end{equation}
+
+\begin{thm}
+    A distanze molto maggiori delle dimensioni lineari del dipolo ($r>>\delta$) il potenziale generato dal dipolo vale
+    \begin{equation}
+        \label{eqn:V_dipolo}
+        V(\vb{r})=\frac{1}{4\pi\epsilon_0}\frac{\vb{p}\vdot\vb{r}}{r^3}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Definiti:\\
+    $r^+$ la distanza della carica positiva dall'osservatore; \\
+    $r^-$ la distanza della carica negativa dall'osservatore\\
+    Si ha che
+    \[
+        V(\vb{r})=\frac{q}{4\pi\epsilon_0}\Bigl(\frac{1}{r^+}-\frac{1}{r^-}\Bigr)=\frac{q}{4\pi\epsilon_0}\frac{r^--r^+}{r^+\,r^-}
+    \]
+    Nell'ipotesi in cui $\delta<<r$ valgono le segueti approssimazioni:
+    \[
+        \begin{split}
+            & r^+\,r^- \cong r^2\\
+            & r^+-r^- \cong \delta\cos\alpha
+        \end{split}
+    \]
+    con $\alpha$ l'angolo che il raggio vettore $\vb{r}$ forma con $\vb{p}$.
+    Segue che il potenziale può essere scritto come
+    \[
+        V(\vb{r})=\frac{q\delta\cos\alpha}{4\pi\epsilon_0\, r^2}=\frac{p\cos\alpha}{4\pi\epsilon_0\, r^2}=
+        \frac{p\,r\,\cos\alpha}{4\pi\epsilon_0\, r^3}=\frac{\vb{p}\vdot \vb{r}}{4\pi\epsilon_0\, r^3}
+    \]
+\end{proof}
+Si osservi come il potenziale del dipolo decresca come $1/r^2$
+\begin{cor}
+    Il campo elettrico generato dal dipolo giace esclusivamente nel piano pr ed è dotato di una componente radiale
+    \[
+        E_r=\frac{1}{4\pi\epsilon_0}\frac{2p\cos\theta}{r^3}
+    \]
+    e di una componente angolare
+    \[
+        E_\theta=\frac{1}{4\pi\epsilon_0}\frac{p\sin\theta}{r^3}
+    \]
+\end{cor}
+\begin{proof}
+    Noto il potenziale è possibile ricavare il campo elettrico semplicemente facendone il gradiente.
+    In questo caso la soluzione più immediata consiste nell'applicare il gradiente in coordinate polari.
+    Si sceglie l'asse $z$ coincidente con la direzione di $\vb{p}$ e l'angolo $\theta$ coincidente con l'angolo $\alpha$ definito sopra.
+    In questo modo il potenziale può essere scritto come
+    \[
+        V(r,\theta,\phi)=\frac{1}{4\pi\epsilon_0}\frac{p\cos\theta}{r^2}
+    \]
+    Applicando il gradiente in coordinate polari, si ottiene la tesi.
+\end{proof}
+Le linee di forza partono dalla carica positiva e si chiudono sulla carica negativa.
+
+Ci si pone ora come obiettivo quello di descrivere la dinamica di un dipolo immerso in un campo elettrico.
+Le forze in gioco sono conservative, quindi possono essere dedotte da una funzione potenziale $U$.
+Il problema di descrivere la dinamica del dipolo si traduce nel problema di determinare il potenziale delle forze.
+\begin{lemma}
+    Si consideri un dipolo con momento $\vb{p}$ immerso in un campo $\vb{E}$ uniforme, l'energia potenziale del dipolo vale
+    \begin{equation}
+        \label{eqn:U_dipolo}
+        U=-\vb{E}\vdot\vb{p}
+    \end{equation}
+\end{lemma}
+\begin{proof}
+    Chiamando $U_+$ l'energia potenziale dovuta alla carica positiva del dipolo
+    e $U_-$ l'energia potenziale dovuta alla carica negativa si ottiene
+    \[
+        U=U_++U_-=qV(\vb{r}+\vb{\delta})-qV(\vb{r})
+    \]
+    Ponendo ora $V(\vb{r}+\vb{\delta})=V(\vb{r})+\dd{V}$ si ottiene
+
+    \[
+        U=qV(\vb{r})+q\dd{V}-qV(\vb{r})=q\dd{V}
+    \]
+    Il differenziale del potenziale può essere scritto, in quanto forma differenziale,
+    come $\grad{V}\vdot\dd{\vb{l}}$ e da ciò segue, osservando che $\dd{\vb{l}}=\vb*{\delta}$
+    \[
+        U=q\grad{V}\vdot\vb*{\delta}=\grad{V}\vdot q\vb*{\delta}
+    \]
+    ottenendo la tesi.
+\end{proof}
+
+\begin{thm}
+    Per un dipolo si ha che
+    \begin{equation}
+        \vb{F}=-(\vb{p}\vdot\grad)\vb{E}
+    \end{equation}
+    \begin{equation}
+        \vb{M}=\vb{p}\cp\vb{E}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Dalla dinamica si ha che il lavoro elementare vale
+    \[
+        \dd{L}=\vb{F}\vdot\dd{\vb{l}}+\vb{M}\vdot\dd{\vb*{\theta}}
+    \]
+    dove $\dd{\vb*{\theta}}=\vu{n}\dd{\theta}$, con $\vu{n}$ il versore dell'asse di rotazione.
+    D'altra parte è vero che
+    \[
+        -\dd{L}=\dd{U}=\pdv{U}{l}\dd{l}+\pdv{U}{\theta}\dd{\theta}
+    \]
+    Per confronto si ha quindi che
+    \[
+        \begin{cases}
+            & \vb{F}\vdot\dd{\vb{l}}=-\pdv{U}{l}\dd{l} \\
+            & \vb{M}\vdot\dd{\vb*{\theta}}=-\pdv{U}{\theta}\dd{\theta}
+        \end{cases}
+    \]
+    Per il lemma $U=-\vb{E}\vdot\vb{p}=-Ep\cos\theta$, dove la dipendenza dalla posizione la si ha
+    solo in $E$ mentre la dipendenza dall'angolo la si ha solo nel coseno.
+    Si ha quindi che, ricordando che $\vb{p}$ non dipende dalla posizione
+    \[
+        \begin{cases}
+            & \vb{F}\vdot\dd{\vb{l}}=-\pdv{U}{l}\dd{l}=\dd{U}|_{\theta=cost}=\grad{U}\vdot\dd{\vb{l}}=
+            \grad{(\vb{E}\vdot\vb{p})}\vdot\dd{\vb{l}}=(\vb{p}\vdot\grad)\vb{E}\vdot \dd{\vb{l}}\\
+            & \vb{M}\dd{\vb{\theta}}=-\pdv{U}{\theta}\dd{\theta}=-Ep\sin\theta\dd{\theta}=
+            -(\vb{E}\cp\vb{p})\dd{\vb{\theta}}=(\vb{p}\cp\vb{E})\dd{\vb{\theta}}
+        \end{cases}
+    \]
+    Per confronto si ottiene la tesi.
+\end{proof}

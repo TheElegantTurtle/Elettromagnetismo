@@ -1,0 +1,47 @@
+Con gli strumenti fin qui presentati è possibile studiare la configurazione delle cariche
+in un conduttore percorso da corrente stazionaria.
+
+La differenza principale fra un conduttore nel caso statico ed un conduttore percorso da
+corrente è la migrazione sistematica delle cariche microscopiche con una velocità media
+diversa da $0$. Di conseguenza all'interno del conduttore si ha un campo elettrico non nullo
+e dunque un potenziale non uniforme: la superficie del conduttore non è equipotenziale
+e dunque il campo elettrico non è ortogonale alla superficie.
+
+\begin{thm}
+Nel caso stazionario, in un conduttore ohmico omogeneo le cariche si dispongono solo sulla
+superficie, ovvero la densità di carica volumica $\rho_c$ è $0$.
+\end{thm}
+\begin{proof}
+    Inserendo l'equazione \eqref{eqn:rel_J_E} nella prima equazione di Maxwell\footnote{l'uso
+    di $\epsilon$ al posto di $\epsilon_0$ è giustificato dal fatto che, sebbene nei metalli
+    la polarizzazione sia $0$, neiconduttori non metallici questo può non essere vero} si ottiene
+    $\rho_c=\epsilon\div{\vb{E}}=\epsilon\rho\div{\vb{J}}$, dove è stato possibile portare
+    la resistività fuori dalla divergenza proprio per l'ipotesi di conduttore ohmico omogeneo (in
+    questo caso infatti $\rho$ si riduce ad una costante).  $\div{\vb{J}}=0$ per
+    l'equazione di continuità nel casos stazionario, dimostrando la tesi.
+\end{proof}
+L'ipotesi che il conduttore sia omogeneo è fondamentale, infatti qualora il conduttore presenti
+ad esempio una giunzione fra materiali diversi, su quest'ultima su possono avere degli addensamenti
+di carica. Inoltre, il fatto che la densità di carica di volume sia nulla non implica che la
+corrente si localizzi sulla superficie: all'interno del conduttore si ha una corrente dovuta
+al moto di deriva dei portatori e nonostante questo il bilancio netto fra cariche positive e
+negative è nullo.
+
+La densità di carica superficiale $\sigma_c$ è legata al campo elettrico interno al conduttore in
+maniera complessa. Per vederlo si consideri un conduttore ohmico omogenero filiforme, non necessariamente
+rettilineo nè di sezione costante. Si consideri anche un cilindretto a cavallo fra interno ed esterno del
+conduttore, con le basi ortogonali alla superficie del conduttore e altezza infinitesima. Siccome
+$\div{\vb{J}}=0$ il flusso di $\vb{J}$ attraverso il cilindretto deve essere nullo. Mandando a $0$ l'altezza
+del cilindro, questo implica che la componente normale $J_n$ della densità di corrente si conserva, passando
+dall'interno all'esterno del conduttore. È naturale ipotizzare che esternamente al conduttore non ci sia corrente
+e da questo segue che anche internamente al conduttore $J_n=0$, ovvero $\vb{J}=J\vu{t}$.
+Siccome il conduttore è ohmico, per la prima legge di Ohm la corrente è la stessa lungo tutto il filo e quindi
+anche $\vb{J}$ non varia: $I=\Phi_S(\vb{J})=JS$ da cui segue $J=I/S$.
+È possibile a questo punto per la \eqref{eqn:rel_J_E} calcolare il campo elettrico interno al conduttore
+$\vb{E}=\rho I/S \vu{t}$. In assenza del conduttore il campo sarebbe determianto esclusivamente dalla
+differenza di potenziale; introducendo il conduttore invece, il campo diventa tangente al filo e ne
+segue quindi il percorso. Questa differenza di comportamento non può che essere dovuta alla
+densità di carica superficiale, che somma il suo effetto a quello degli elettrodi che generano la ddp.
+Il calcolo effettivo di $\sigma_c$ è complesso. Qualitativamente, se la forma del circuito è regolare,
+si ha un addensamento di cariche positive vicino all'elettrodo positivo e di cariche negative vicino
+all'elettrodo negativo.

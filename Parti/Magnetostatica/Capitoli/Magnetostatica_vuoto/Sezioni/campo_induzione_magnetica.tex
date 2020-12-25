@@ -1,0 +1,42 @@
+Tutta una serie di esperimenti porta a concludere che esista un campo, detto campo di induzione magnetica:
+\begin{defn}[Campo di induzione magnetica]
+    Si definisce campo di induzione magnetica $\vb{B}$ il responsabile delle forze sentite
+    dal tratto di filo $\dd{\vb{l}}$. Questo campo è dipendente dalla posizione ed è
+    generato da circuiti nei quali circoli corrente stazionaria.
+\end{defn}
+\begin{obses}
+    Dato un circuito filiforme $l'$, detto $\dd{\vb{l'}}$ una porzione infinitesima di questo circuito
+    in posizione $\vb{r'}$
+    e posto l'osservatore in posizione $\vb{r}$, si ha che il campo $\vb{B}$ generato da questo circuito vale
+    \begin{equation}
+        \label{eqn:B}
+        \vb{B}=\frac{\mu_0}{4\pi}\oint_{l'}\frac{I\dd{\vb{l'}}\cp(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}
+    \end{equation}
+    con $\Delta \vb{r}=\vb{r}-\vb{r'}$.
+\end{obses}
+
+Il seguente corollario rappresenta un'estrapolazione teorica della situazione sperimentale appena descritta.
+\begin{cor}[Legge di Biot Savart / prima legge di Laplace]
+    Il campo di induzione magnetica può essere calcolato come somma di contributi elementari prodotti
+    dai singoli elementi $\dd{l'}$ del circuito:
+    \begin{equation}
+        \label{eqn:dB}
+        \dd{\vb{B}}=\frac{\mu_0}{4\pi}\frac{I\dd{\vb{l'}}\cp(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}
+    \end{equation}
+\end{cor}
+
+\begin{cor}
+    Facendo cadere l'ipotesi di circuito filiforme si ottiene
+    \begin{equation}
+        \label{eqn:prima_laplace_non_filiforme}
+        \vb{B}(\vb{r})=\frac{\mu_0}{4\pi}\int_{\tau}\frac{\vb{J}(\vb{r'})\cp(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}\dd{\tau}
+    \end{equation}
+\end{cor}
+\begin{proof}
+    Ponendo $I=\int_{S'}\vb{J}(\vb{r'})\vdot\dd{\vb{S'}}$ nella \eqref{eqn:B} si ottiene:
+    \[
+        \vb{B}(\vb{r})=\frac{\mu_0}{4\pi}\int_{l'}\Biggl[\int_S (\vb{J}(\vb{r'})\vdot\dd{\vb{S'}}) \frac{\dd{\vb{l'}}\cp(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}\Biggr]=
+        \frac{\mu_0}{4\pi}\int_{\tau'}\frac{\vb{J}(\vb{r'})\cp(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}\dd{\tau'}
+    \]
+\end{proof}
+È importante osservare come la sorgente di questo campo siano le cariche in movimento.

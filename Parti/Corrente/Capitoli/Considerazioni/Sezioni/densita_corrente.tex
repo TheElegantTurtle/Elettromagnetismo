@@ -1,0 +1,68 @@
+\begin{defn}[densità di corrente]
+Si definisce densità di corrente, detto $n$ il numero di portatori di carica $q$ per unità di volume, il vettore
+\[
+\vb{J}=nq\vb{v}_d
+\]
+\end{defn}
+Si ha che
+\[
+[J]=\rec{m^3}C\frac{m}{s}=\frac{C}{s}\rec{m^2}=\frac{A}{m^2}
+\]
+È importante osservare come la densità di corrente risulti sempre parallela al campo elettrico, infatti
+le velcità di deriva costituiscono un campo vettoriale parallelo o antiparallelo ad $\vb{E}$ a seconda che
+la carica sia positiva o negativa e di conseguenza il prodotto $q\vb{v}_d$ è sempre parallelo ad $\vb{E}$.
+In via del tutto generale fra il campo elettrico e la densità di corrente sussiste una relazione del tipo $\vb{J}=\vb{F}(\vb{E})$.
+Nel caso particolare dei conduttori detti \textit{lineari} questa relazione diventa
+\begin{equation}
+    \label{eqn:rel_J_E}
+    \vb{J}=\norm{\sigma}\vb{E}
+\end{equation}
+dove $\norm{\sigma}$ è una matrice detta \textit{tensore di conducibilità} i cui elementi dipendono in linea generale
+non dall'intensità del campo elettrico ma dalla sua direzione. I materiali per cui vale esplicitamente questa relazione
+sono detti \textit{anisotropi}. Si dicono invece \textit{isotropi}
+i materiali per cui questa relazione non dipende dalla direzione del campo elettrico.
+
+L'introduzione del vettore polarizzazione è giustificata dal seguente risultato
+\begin{thm}
+    \label{thm:I_flusso_J}
+    Data una sezione $S$ del conduttore attraversata da corrente si ha che
+    \[
+        I=\int_S\vb{J}\vdot \dd{\vb{S}}=\Phi_S(\vb{J})
+    \]
+\end{thm}
+\begin{proof}
+    Dato un conduttore di sezione $S$ al cui interno sia presente un campo elettrico, le velocità di deriva delle cariche libere $\vb{v}_d$
+    costituiscono un campo vettoriale. Si consideri un tubo di flusso elementare di questo campo con sezione $\dd{\vb{S}}$.
+    Allora nel tempo $\dd{t}$ si ha che la carica che attraversa il tubo di flusso è
+    \[
+        \dd{q}=nq\vb{v}_d\vdot\dd{\vb{S}}\dd{t}=\vb{J}\vdot\dd{\vb{S}}\dd{t}
+    \]
+    Dalla definizione si ha che la corrente elettrica in questa porzione infinitesima di conduttore vale
+    \[
+        \dd{I}=\dv{q}{t}=\vb{J}\vdot\dd{\vb{S}}
+    \]
+    Integrando entrabi i membri dell'equazione si ha la tesi.
+\end{proof}
+
+\begin{cor}[Equazione di continuità della corrente]
+    \begin{equation}
+        \label{eqn:continuità}
+        \div{\vb{J}}+\pdv{\rho}{t}=0
+    \end{equation}
+    Che dal punto di vista fisico significa che se in un conduttore si ha una variazione di carica nel tempo,
+    questa deve essere dovuta alla carica che fluisce attraverso la superficie che racchiude il volume.
+\end{cor}
+\begin{proof}
+    Si consideri una superficie chiusa $S$ in un conduttore in cui all'istante $t$ sia racchiusa la carica $Q(t)$.
+    Se dopo un certo tempo la superficie racchiude una carica $Q(t)-\dd{Q}$ per la conservazione della carica,
+    questa deve essere fluita fuori dalla superficie. Quindi, per il teorema appena dimostrato e per il teorema della divergenza
+    \[
+        -\dv{Q}{t}=\int_S\vb{J}\vdot\dd{\vb{S}}=\int_V\div{\vb{J}}\dd{\tau}
+    \]
+    D'altra parte $Q(t)=\int_V \rho(x,y,z,t)\dd{\tau}$. È possibile passare con la derivata sotto al segno di integrale, ottenendo
+    \[
+        \dv{Q}{t}=\int_V\pdv{\rho}{t}\dd{\tau}
+    \]
+    Uguagliando le espressioni ottenute e ricordando che il ragionamento fatto vale indipendentemente dalla scelta del volume $V$,
+    si ha l'uguaglianza degli integrandi, ovvero la tesi.
+\end{proof}

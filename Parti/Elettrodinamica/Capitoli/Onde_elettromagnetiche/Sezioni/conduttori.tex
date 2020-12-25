@@ -1,0 +1,175 @@
+Si consideri un'onda elettromagnetica che incide su un conduttore. Gli elettroni liberi, sotto
+l'effetto del campo elettromagnetico variabile
+iniziano a muoversi con moto oscillatorio forzato, dissipando energia.
+Ci si aspetta quindi che un'onda elettromagnetica in un conduttore si attenui e scaldi il conduttore.
+
+Si consideri un conduttore ohmico. Nel caso stazionario si ha $\vb{J}=\sigma \vb{E}$ con $\sigma$ la
+conducibilità elettrica. Siccome questa è una legge locale, ci si aspetta valga anche nel caso non
+stazionario come effettivamente conferma l'esperienza (la conducibilità può però essere una funzione
+della frequenza ed essere complessa).
+La presenza di cariche in moto nel conduttore non permette di prendere $\vb{J}=0$
+nella quarta equazione di Maxwell: questo è il motivo per cui le equazioni delle onde
+nel conduttore assumono una forma diversa rispetto a quelle nel vuoto.
+\begin{thm}
+    In un conduttore ohmico, omogeneo e isotropo
+    \[
+        \begin{split}
+            & \laplacian{\vb{H}}-\sigma\mu\pdv{\vb{H}}{t}-\epsilon\mu\pdv[2]{\vb{H}}{t}=0\\
+            & \laplacian{\vb{E}}-\sigma\mu\pdv{\vb{E}}{t}-\epsilon\mu\pdv[2]{\vb{E}}{t}=0
+        \end{split}
+    \]
+\end{thm}
+\begin{proof}
+    Tenuto conto della relazione fra $\vb{E}$ e $\vb{J}$ la quarta equazione di Maxwell assume la forma
+    \[
+        \curl{\vb{H}}=\sigma \vb{E} +\epsilon \pdv{\vb{E}}{t}
+    \]
+    Applicando l'operatore rotore ad ambo i membri
+    \[
+        -\laplacian{\vb{H}} +\grad(\div{\vb{H}})=\sigma(\curl{\vb{E}}) + \epsilon \pdv{t}(\curl{\vb{E}})
+    \]
+    Per l'ipotesi di omogeneità e isotropia $\vb{H}=\vb{B}/\mu$\footnote{Nel caso dei ferromagneti, questo
+    è vero solo localmente.} e quindi per la seconda equazione di Maxwell
+    $\div{\vb{H}}=\div{\vb{B}}/\mu=0$. Inoltre per la terza equazione di Maxwell
+    $\curl{\vb{E}}=-\pdv*{\vb{B}}{t}=-\mu\pdv*{\vb{H}}{t}$. Sostituendo nella quarta equazione di Maxwell
+    si ottiene
+    \[
+        \laplacian{\vb{H}}=\sigma\mu\pdv{\vb{H}}{t}+\epsilon\mu\pdv[2]{\vb{H}}{t}
+    \]
+    Applicando l'operatore rotore alla terza equazione di Maxwell e confrontandola con la quarta
+    si ottiene un risultato analogo per il campo elettrico.
+\end{proof}
+La soluzione a queste equazioni viene proposta nel caso di un'onda piana che si propaga lungo l'asse $x$.
+Le equazioni per il campo elettrico e magnetico assumono la forma
+    \[
+        \dv[2]{\phi}{x} - \sigma\mu\pdv{\phi}{t} - \epsilon\mu\pdv[2]{\phi}{t} =0
+    \]
+La derivata prima rappresenta il termine di smorzamento. Si noti come questo termine scompaia
+quando $\sigma=0$, ovvero nel caso di un dielettrico perfetto.
+\begin{thm}
+L'onda piana che si propaga lungo l'asse $x$ in un conduttore omogeneo e isotropo ha forma
+    \[
+        \phi(x,t)=A e^{\gamma x} e^{j(\beta x + \omega t)}
+    \]
+    con
+    \[
+        \begin{split}
+            &\beta=\omega\sqrt{\frac{\epsilon\mu}{2}\bigl[1\pm \sqrt{1+(\sigma/\omega\epsilon)^2}\bigr]}\\
+            &\gamma= \frac{\omega\sigma\mu}{2\beta}
+        \end{split}
+    \]
+\end{thm}
+\begin{proof}
+    Si pongano i campi nella forma
+    \[
+        \phi(x,t)=\phi{x}e^{-j\omega t}
+    \]
+    L'esponenziale complesso viene introdotto per comodità di calcolo. Siccome l'equazione differenziale
+    è a coefficienti reali, il campo fisicamente significativo è costituito solo dalla parte reale
+    della soluzione.
+    Sostituendo nell'equazione delle onde si trova un'equazione differenziale per $\phi(x)$
+    \[
+        \dv[2]{\phi}{x}-j\omega\sigma\phi + \omega^2\epsilon\mu\phi=0
+    \]
+    È lecito prendere $\phi(x)$ nella forma $\phi(x)=A e^{j\alpha x}$ siccome l'equazione è lineare, ma siccome i coefficienti
+    in questo caso sono complessi non si può più affermare che la parte fisicamente significativa sia solo
+    quella reale. Sostituendo nell'equazione differneziale si trova un'equazione algebrica per $\alpha$:
+    \[
+        \alpha^2=\epsilon\mu\omega^2 + i\mu\sigma\omega
+    \]
+    $\alpha^2$ è un numero complesso e di conseguenza anche $\alpha$ è complesso che può essere preso
+    nella forma $\alpha=\beta-j\gamma$. Inserendo nell'equazione precedente e uguagliando i vari termini
+    si trova la tesi.
+ \end{proof}
+L'onda progressiva si ha scegliendo $\beta<0$ e di conseguenza
+$\gamma<0$: $\abs{\gamma}$ svolge il ruolo di coefficiente di attenuazione.
+Spesso $\sigma>>\epsilon\omega$\footnote{Ad esempio nel caso del rame $\sigma\simeq6\vdot10^7 \Omega^{-1}m^{-1}$.
+Nel visibile $\omega\simeq10^{15}Hz$ e dunque $\epsilon\omega\simeq10^4<<10^7$.}
+e i coefficienti $\beta$ e $\gamma$ assumono la semplice forma
+\[
+    \begin{split}
+        &\beta=\sqrt{\frac{\omega\sigma\mu}{2}}\\
+        &\gamma=-\sqrt{\frac{\omega\sigma\mu}{2}}\\
+    \end{split}
+\]
+
+Il risultato appena trovato fornisce una giustificazione all'\textit{effetto pelle}: quando un conduttore è percorso
+da una corrente alternata ad alta frequenza (e quindi $\omega$ grande) la corrente tende ad addensarsi sullo strato
+superficiale del conduttore, riducendone la sezione utile ed aumentandone la resistenza.
+Per valutare qualitativamente il fenomeno e capire quali entità fisiche entrano in gioco,
+si consideri quindi un conduttore collegato ad un generatore di corrente alternata, ovvero un generatore nel quale gli
+accumuli di carica sui morsetti varino nel tempo. Di conseguenza il campo elettrico prodotto varia nel tempo,
+quindi varia la corrente circolante nel conduttore e anche il campo di induzione magnetica generato dal conduttore.
+Si ha il fenomeno dell'autoinduzione, per cui si sviluppa un campo elettrico indotto $\vb{E}_i$ che si oppone alla variazione
+temporale del campo elettrico che lo ha generato.
+Concretamente, si prenda un conduttore cilindrico percorso da corrente variabile - ad esempio, crescente.
+Per simmetria il campo $\vb{B}$ è costituito da cerchi centrati nell'asse del cilindo e cresce nel tempo
+come la corrente dando luogo ad un campo indotto $\vb{E}_i$ orientato parallelamente all'asse del conduttore
+con verso opposto a quello di $\vb{J}$. Si consideri ora una linea chiusa rettangolare $l$ di lati $h$ e $\dd{r}$,
+che giaccia su un piano contenente l'asse del cilindro. Si prenda come verso positivo quello antiorario, in modo
+che la normale alla superficie sia concorde in verso con $\vb{B}$ e che quindi il flusso sia positivo e crescente.
+Per la legge di Faraday-Neumann
+\[
+    -\dv{t}\Phi_S(\vb{B}) =\oint_l \vb{E}_i\vdot\dd{\vb{l}}\simeq E_i(r+\dd{r})h - E_i(r)h
+\]
+Ma per come è stato impostato il problema $\vb{B}$ è crescente nel tempo, perciò la sua derivata è positiva.
+Quindi $E_i(r)>E_i(r+\dd{r})$: $E_i$ aumenta all'aumentare della profondità del conduttore
+e quindi ostacola maggiormente il passaggio di corrente negli strati profondi che negli strati superficiali.
+
+%Una valutazione quantitativa del fenomeno può essere effettuata in modo semplice nel caso di un conduttore
+%ohimico omogeneo infinito, delimitato da una superficie piana e immerso in un campo $\vb{E}(t)=\vb{E}_0e^{j\omega t}$.
+%Si ponga il conduttore in un sistema di riferimento cartesiano in modo che occupi lo spazio $z<0$ e che il campo
+%elettrico abbia solo la componente $y$ diversa da 0. La quarta equazione di Maxwell si scrive
+%\[
+%    \curl{\vb{H}}=\sigma\vb{E}_0e^{j\omega t} + \epsilon\pdv{\vb{E}_0e^{j\omega t}}{t}=
+%    (\sigma+j\omega\epsilon)\vb{E}
+%\]
+%Applicando l'operatore divergenza ad entrambi i membri, nell'ipotesi che il conduttore sia omogeneo
+%\[
+%    0=\div(\curl{\vb{H}})=(\sigma+j\omega\epsilon)\div{\vb{E}}
+%\]
+%Questo implica che $\div{\vb{E}}=0$ e quindi, per la prima equazione di Maxwell nell'ipotesi di isotropia $\rho=0$.
+%La densità di volume di cariche localizzate è quindi nulla.
+%Il rapporto tra i moduli delle densità di corrente di spostamento e di conduzione vale
+%\[
+%    \frac{\epsilon\pdv{E}{t}}{J}=\frac{\abs{j\omega\epsilon E}}{\abs{\sigma e}}=\frac{\omega\epsilon}{\sigma}
+%\]
+%Sperimentalmente nei buoni conduttori $\omega\epsilon<<\sigma$ e quindi la corrente di spostamento può essere
+%trascurata. Alla luce di quanto detto le equazioni di Maxwell utili al fine di caratterizzare il campo nel
+%conduttore sono la terza e la quarta, che assumono la forma
+%\[
+%    \begin{split}
+%        & \curl{\vb{E}}=-\pdv{\vb{B}}{t} \\
+%        & \curl{\vb{B}}=-\mu\sigma \vb{E} \\
+%    \end{split}
+%\]
+%Applicando il rotore alla prima di queste si ottiene: per il primo membro
+%$\curl{\curl{\vb{E}}}=-\laplacian{\vb{E}}+\grad(\div{\vb{E}})=-\laplacian{\vb{E}}+\grad(\div{\vb{J}})/\sigma=-\laplacian{\vb{E}}$
+%dove si è fatto uso del fatto che, essendo
+%$\rho=0$, per l'equazione di continutità $\div{\vb{J}}=0$; per il secondo membro, usando la quarta equazione di Maxwell
+%$-\pdv*{\curl{\vb{B}}}{t}=-\pdv*{\mu\sigma\vb{E}}{t}$.
+%L'equazione per il campo elettrico diventa pertanto, ricordando che il campo elettrico ha solo componente $y$ dipendente da $z$(PERCHÈ??)
+%\[
+%    \begin{split}
+%        & \pdv[2]{E_{0y}(z)e^{j\omega t}}{z}=\mu\sigma\pdv{E_{0y}(z)e^{j\omega t}}{t}\\
+%        & \dv{E_{0y}(z)}{z}=j\omega\mu\sigma E_{0y}(z)\\
+%    \end{split}
+%\]
+%che ha come soluzione
+%\[
+%    E_{0y}=Ae^{\alpha_1 z}+Be^{\alpha_2 z}
+%\]
+%con $\alpha_{1,2}$ soluzioni dell'equazione $\alpha^2-j\omega\mu\sigma=0$, ovvero $\alpha_{1,2}=\pm \beta(1+j)$
+%(con $\beta=\sqrt{\omega\sigma\mu/s}$).
+%La soluzione assume quindi la forma
+%\[
+%    E_{0y}=Ae^{\beta z}e^{j\beta z}+Be^{\beta z}e^{-j\beta z}
+%\]
+%Si osservi come per $z\to -\infty$ il secondo addendo diverga, portando ad una soluzione fisicamente inaccettabile:
+%bisogna quindi imporre $B=0$.
+%In conclusione si ottiene
+%\[
+%    E_y(z,t)=Ae^{\beta z}e^{j(\beta z +\omega t)}
+%\]
+%ovvero il campo elettrico (e quindi la densità di corrente, per la legge di Ohm locale) decresce esponenzialmente con
+%la profondità ($-z$). La profondità caratteristica di penetrazione vale $1/\beta$.

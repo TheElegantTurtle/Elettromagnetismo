@@ -1,0 +1,36 @@
+Si consideri una distribuzione di carica in una regione limitata di spazio complessivamente neutra, ovvero tale che
+\[
+    q=\int\rho\,d\tau=0
+\]
+Considerata una superficie chiusa che racchiude la distribuzione di carica, per il teorema di Gauss il flusso del campo elettrico
+uscente è nullo. In particolare, se la distribuzione ha simmetria sferica, il campo elettrico esterno alla distribuzione di carica
+è ovunque nullo. Se la simmetria non è sferica invece non è detto che il campo su una superficie chiusa $S$ che racchiude la
+distribuzione sia nullo, come in effetti dimostra l 'esempio del dipolo.
+Risulta conveniente caratterizzare la distribuzione di carica con alcune proprietà globali che consentano di calcolare le caratteristiche
+del campo generato. Per farlo si parte dal potenziale definito in \ref{eqn:V_rho}. Essendo la distribuzione concentrata in una
+regione limitata di spazio si può scegliere il potenziale nullo all'infinito ($r_0\rightarrow +\infty$). Il termine al denominatore
+in coordinate cartesiane è
+$f(x',y',z')=\bigl[(x-x')^2+(y-y')^2+(z-z')^2\bigr]^{\frac{1}{2}}$. Si vuole sviluppare la funzione al primo ordine
+\[
+    f(x',y',z')=f(0)+\pdv{f}{x'}(0)+\pdv{f}{y'}(0)+\pdv{f}{z'}(0)
+\]
+e tenuto conto della definizione di $f$ si ha che
+\[
+    \begin{split}
+        & f(0)=\bigl[(x)^2+(y)^2+(z)^2\bigr]^{-\frac{1}{2}} \\
+        & \pdv{f}{x'}(0)=\eval{(x-x')\bigl[(x-x')^2+(y-y')^2+(z-z')^2\bigr]^{-\frac{3}{2}}}_{x',y',z'=0}=\frac{x}{r^3} \\
+        & \pdv{f}{y'}(0)=\eval{(y-y')\bigl[(x-x')^2+(y-y')^2+(z-z')^2\bigr]^{-\frac{3}{2}}}_{x',y',z'=0}=\frac{y}{r^3} \\
+        & \pdv{f}{z'}(0)=\eval{(z-z')\bigl[(x-x')^2+(y-y')^2+(z-z')^2\bigr]^{-\frac{3}{2}}}_{x',y',z'=0}=\frac{z}{r^3}
+    \end{split}
+\]
+Sostituendo quindi si ottene
+\[
+    f(x',y',z')=\frac{1}{r}+\frac{1}{r^3}(xx'+yy'+zz')=\frac{1}{r}+\frac{\vb{r}\vdot\vb{r'}}{r^3}
+\]
+Da cui, ricordando che il potenziale all'infinito è nullo e la definizione \ref{defn:p_rho}, si ottiene
+\begin{equation}
+    V(\vb{r})=\rec{4\pi\epsilon_0}\int_{V}f\rho \dd{\tau'} =\frac{1}{4\pi\epsilon_0}\frac{q}{r}+\frac{1}{4\pi\epsilon_0}\frac{\vb{p}\vdot\vb{r}}{r^3}
+\end{equation}
+Si parla di \textit{primo e secondo termine di dipolo}. Il secondo termine di dipolo decresce più rapidamente del primo,
+rappresentando una correzione spesso trascurabile. Quando però il sistema è elettricamente neutro, il secondo termine diventa quello
+dominante.

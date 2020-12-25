@@ -1,0 +1,153 @@
+Per quanto visto nella sezione precedente, il passaggio di corrente in un conduttore implica un trasferimento di energia.
+È necessario allora, affichè la corrente sia stazionaria, che sia presente un generatore per fornire con continuità l'energia persa.
+\begin{obs}
+    Il campo totale $\vb{E}$ presente in un circuito dotato di generatore non è conservativo.
+\end{obs}
+\begin{proof}
+    Per la prima legge di Kirchoff in tutto il circuito compreso di generatore il flusso di cariche è costante.
+    Ogni punto della linea chiusa che costituisce il circuito può infatti essere assimilato ad un nodo raggiunto da due soli rami.
+    Siccome nel circuito avvengono fenomeni come l'effetto Joule che riducono l'energia delle cariche in moto,
+    è allora necessario che il lavoro che viene trasferito dall'esterno sui portatori di carica non sia nullo.
+    Dividendo il lavoro per la carica totale:
+    \[
+        \oint \vb{E}\vdot\dd{\vb{l}}\neq 0
+    \]
+\end{proof}
+Siccome il campo elettrico che mette in moto le cariche è conservativo,
+è necessario che vi siano delle azioni
+i cui effetti siano assimilabili a quelli di un campo elettrico non conservativo.
+Si può pensare inizialmente che tali azioni siano localizzate all'interno del generatore.
+Si indicherà con $\vb{E}_s$ il campo che mette in moto i portatori di carica, presente sia all'esterno che
+all'interno del generatore,
+e con $\vb{E}_e$ il campo non conservativo interno al generatore -quest'ultimo viene chiamato \textit{campo elettromotore}.
+Si può immaginare il generatore come una zona ben definita e localizzata del circuito che a livello pratico,
+è caratterizzato da due morsetti su cui si accumulano le cariche che generano il campo elettrico $\vb{E}_s$:
+l'anodo, caricato positivamente, ed il catodo, caricato negativamente.
+Compito del generatore è ripristinare continuamente gli accumuli di carica sui morsetti in modo da
+mantenere un flusso di cariche nel circuito costante nel tempo.
+In questo caso quindi il campo $\vb{E}_e$ spinge le cariche negative verso il catodo e le cariche positive verso l'anodo.
+Si ha quindi che i versi di $\vb{E}_s$ ed $\vb{E}_e$ sono opposti.
+
+\begin{defn}[Forza elettromotrice\footnote{È importante sottolineare come,
+    nonstante il nome, la forza elettromotrice abbia le dimensioni di un potenziale} con generatore localizzato]
+    Si definisce forza elettromotrice
+    il lavoro che il campo $\vb{E}_e$ compie per postare la carica positiva unitaria dal catodo all'anodo.
+    \[
+        fem=\int_B^A \vb{E}_e \vdot \dd{\vb{l}}
+    \]
+\end{defn}
+
+\begin{thm}
+    La forza elettromotrice coincide con la differenza di potenziale presente fra anodo e catodo a circuito aperto.
+\end{thm}
+\begin{proof}
+    Si consideri un generatore collegato ad un circuito aperto. In tale situazione $\vb{E}_e$
+    accumula cariche positive e negative su anodo e catodo, le quali generano il campo $\vb{E}_s$ contrario al primo
+    via via crescente finchè non si raggiunge la situazione di equilibrio $\vb{E}_e=-\vb{E}_s$.
+    Si ha quindi, indicando con $A$ la posizione dell'anodo e con $B$ la posizione del catodo:
+    \[
+        fem=\int_B^A\vb{E}_e\vdot \dd{\vb{l}}=\int_B^A-\vb{E}_s\vdot \dd{\vb{l}}=\int_A^B\vb{E}_s\vdot \dd{\vb{l}}
+    \]
+    Siccome il campo $\vb{E}_s$ è conservativo, l'ultimo termine corrisponde per definizione alla differenza di potenziale fra $A$ e $B$
+\end{proof}
+Questo risultato permette agevolmente di generalizzare la definizione di forza elettromotrice al caso in cui il
+campo elettromotore non sia localizzato.
+\begin{defn}[forza elettromotrice con generatore non localizzato]
+    Indicato con $\vb{E}$ il campo totale, somma di $\vb{E}_e$ ed $\vb{E}_s$
+    \[
+        fem=\oint \vb{E} \vdot \dd{\vb{l}}
+    \]
+\end{defn}
+Il fatto che questa definizione sia una generalizzazione della precedente è evidente.
+Infatti, il campo $\vb{E}_s$ è conservativo e quindi il suo integrale su tutto il circuito è nullo;
+inoltre il campo $\vb{E}_e$ è nullo su tutto il circuito ad eccezione della zona in cui è presente il generatore.
+
+Ci si chiede ora come vari la differenza di potenziale ai capi del generatore nel momento
+in cui si chiude il circuito ed iniza a circolare corrente. Di fatto, questa cambia e le cause sono due:
+\begin{enumerate}
+    \item La connessione elettrica interna al generatore ha resistenza non nulla e questo, per la prima legge di Ohm, implica una riduzione del potenziale;
+    \item Il campo elettromotore varia con la corrente circolante nel generatore.
+\end{enumerate}
+Questi due effetti vengono studiati mediante la \textit{curva caratteristica del generatore},
+ovvero il grafico della differenza di potenziale interna al generatore in funzione della corrente circolante.
+Per $I=0$ si ha ovviamente $\Delta V=fem$, segue poi un tratto approssimativamente lineare
+e infine la differenza di potenziale decresce più velocemente di un polinomio del primo ordine.
+Per le applicazioni pratiche ci si limita spesso al tratto lineare dove vale un'equazione del tipo
+\begin{equation}
+    \label{eqn:curva_caratteristica}
+    \Delta V=fem - rI
+\end{equation}
+$r$ ha le dimensioni di una resistenza.
+Si chiama \textit{generatore ideale} un generatore la cui differenza di potenziale sia sempre uguale a $fem$,
+anche quando il circuito viene chiuso.
+\begin{obs}
+    Nella zona lineare della curva caratteristica, il circuito è equivalente ad un circuito con un generatore ideale messo in serie ad una resistenza $R=r$
+\end{obs}
+\begin{proof}
+    Si consideri un circuito dotato di generatore a cui sia collegata una resistenza $R'$.
+    Per la prima legge di Ohm e per la \eqref{eqn:curva_caratteristica} si ha
+    \[
+        \Delta V=fem-Ir=R'I
+    \]
+    da cui segue che
+    \[
+        fem=(r+R')I
+    \]
+    Ovvero, il circuito si comporta come un circuito in cui la differenza di poteziale del generatore sia pari alla $fem$,
+    nel quale però oltre alla resistenza $R'$ sia presente in serie anche una resistenza $r$.
+\end{proof}
+
+\begin{thm}
+    La potenza erogata dal generatore vale
+    \begin{equation}
+        W_g=Ifem= I\Delta V+W^{(d)}
+    \end{equation}
+    dove $W^{(d)}$ è la potenza dissipata all'interno del generatore
+\end{thm}
+\begin{proof}
+    Per la definizione di forza elettromotrice il lavoro elementare fatto dal generatore quando è attraversato da carica $\dd{q}=I\dd{t}$ è
+    \[
+        \dd{L_g}=fem\,\dd{q}=fem\,I\dd{t}
+    \]
+    e quindi la potenza vale
+    \[
+        W_g=\dv{L_g}{t}=fem\,I
+    \]
+    Inoltre per la conservazione dell'energia questa potenza deve essere pari alla potenza trasferita dal generatore
+    alla corrente più la potenza dissipata dal generatore. Facendo riferimento alla \eqref{eqn:potenza_stazionaria} si ha la tesi.
+\end{proof}
+\begin{cor}
+    La differenza di poteziale ai capi di un generatore reale vale
+    \begin{equation}
+        \Delta V=fem-\frac{W^{(d)}}{I}
+    \end{equation}
+\end{cor}
+\begin{proof}
+    La dimostrazione è immediata: basta dividere per I il risultato precedente.
+\end{proof}
+L'importanza di questo corollario è mostrare di quanto effettivamente venga ridotta la differenza
+di potenziale ai capi del generatore una volta chiuso il circuito. A circuito aperto, con $I=0$,
+si deve riottenere $\Delta V=fem$: questo implica che la potenza dissipata tende a 0 col tendere a 0
+della corrente più velocemente di quanto non faccia la corrente stessa.
+Quanto visto finora ci permette di affermare che per qualificare completamente il comportamento di un generatore
+è sufficiente la conoscenza di $fem$ ed $r$, entrambe determinabili facendo misure all'esterno del generatore:
+la $fem$ come differenza di potenziale a circuito aperto; la $r$,
+una volta nota $fem$ si ottiene misurando la corrente che passa nel circuito con una resistenza nota $R'$.
+
+
+Nel caso di carichi sul circuito di natura non ohmica, la conversione dell'energia elettrica
+avviene in favore di forme di energia diverse dal calore. Qualsiasi sia la forma di energia,
+questa azione realizza sempre una sottrazione di energia alla corrente circolante, che è schematizzabile con dei campi elettrici
+in verso opposto a quello della corrente. Questi campi elettrici, solitamente localizzati nei carichi,
+vengono detti \textit{campi controelettromotori} $\vb{E}_{ce}$.
+\begin{defn}[Forza controelettromotrice]
+    Si definisce forza controelettromotrice
+    \[
+        f_c=\int_D^C \vb{E}_{ce}\vdot\dd{\vb{l}}
+    \]
+    dove $C$ e $D$ sono i terminali del carico non ohmico.
+\end{defn}
+\begin{obs}
+    L'energia elettrica totale fornita al carico è uguale all'energia trasformata dalla forza controelettromotrice
+    aumentata dell'energia dissipata sottoforma di calore dal carico stesso.
+\end{obs}

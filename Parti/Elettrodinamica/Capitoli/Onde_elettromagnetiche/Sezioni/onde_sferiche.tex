@@ -1,0 +1,42 @@
+Questo paragrafo è dedicato a descrivere la forma di un'onda elettromagnetica con simmetria
+sferica. Verrà usata $F(\vb{r},t)$ per indicare in modo generico il campo elettrico o il campo
+magnetico.
+
+Se l'onda è sferica $F(\vb{r},t)=F(r,t)$ e quindi le \ref{eqn:diff_onde} in coordinate polari
+si riducono a
+\[
+    \rec{r} \pdv[2]{r}(rF)-\epsilon\mu\pdv[2]{F}{t}=0
+\]
+Moltiplicando e dividendo per $r$ il secondo membro, siccome $r$ non dipende esplicitamente dal tempo,
+\[
+    \rec{r} \pdv[2]{r}(rF)-\epsilon\mu\rec{r}\pdv[2]{rF}{t}=0
+\]
+Chiamando $u=rF$ si ottiene
+\[
+    \pdv[2]{r}(u)-\epsilon\mu\pdv[2]{u}{t}=0
+\]
+ovvero, $u$ soddisfa l'equazione di D'alembert. In conclusione
+\begin{equation}
+    F(r,t)=\rec{r}[f_1(x-vt)+f_2(x+vt)]
+\end{equation}
+Le onde sferiche hanno quindi un'ampiezza che si attenua come $1/r$.
+La singolarità in $r=0$ non costituisce un problema in quanto in $r=0$ si trova
+la sorgente, che non è descritta dalle equazioni di Maxwell per le onde.
+Si osservi come $f_1$ ed $f_2$ siano dimensionalmente dei potenziali.
+Nel limite di considerare
+una porzione di spazio molto piccola e lontana dalla sorgente, le onde sferiche possono essere
+approssimate con onde piane.
+
+Per un'onda sferica monocromatica l'intensità istantanea vale
+\[
+    I(\vb{r},t)=\frac{E_0^2}{Zr^2}\cos[2](kr-\omega t)
+\]
+per cui l'intensità è
+\[
+    \bar{I}=\frac{E_0^2}{2Z}\rec{r^2}
+\]
+L'intesità decresce come $1/r^2$ è questo è concorde col principio di conservazione dell'energia:
+siccome si sta considerando il caso di assenza di dissipazione, il flusso di energia attraverso una
+qualunque superficie sferica  centrata nella sorgente (che cresce proporzionalmente ad $r^2$)
+deve essere lo stesso (ovvero deve essere indipendente
+da $r$) e questo può avvenire se e solo se l'intensità si attenua come $r^{-2}$.

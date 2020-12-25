@@ -1,0 +1,134 @@
+Nei dielettrici $v=(\mu\epsilon)^{-\rec{2}}=(\mu_0\epsilon_0)^{-\rec{2}}(\mu_r\epsilon_r)^{-\rec{2}}=c\,(\mu_r\epsilon_r)^{-\rec{2}}$.
+\begin{defn}[Indice di rifrazione]
+    Si definisce indice di rifrazione $n$
+    \[
+        n=\frac{c}{v}=\sqrt{\epsilon_r\mu_r}\simeq \sqrt{\epsilon_r}
+    \]
+\end{defn}
+I discorsi fatti sulle onde piane si appoggiavano all'ipotesi che la velocità dell'onda fosse indipendente dalla
+frequenza. Se per $\mu$ l'approssimazione può essere buona, $\epsilon$ dipende dalla frequenza in maniera spesso marcata.
+Quando si trattano onde non monocromatiche, condizione necessaria affinchè questa approssimazione sia buona è che
+lo spettro delle frequenze nello sviluppo di Fourier dell'onda occupi un'intervallo ristretto. In questo
+paragrafo verrà mostrato come questa condizione non sia suffuciente a causa del fenomeno della \textit{dispersione anomala}:
+attorno a particolari frequenze, a piccole variazioni della frequenza corrispondono brusche variazioni dell'indice di rifrazione.
+
+
+Si vuole quindi discutere la dipendenza di $\epsilon$ da $\nu$. Il punto di partenza per il calolcolo di $\epsilon_r$
+in elettrostatica sono state le considerazioni sulla polarizzabilità $\alpha$:
+quando sono sottoposti ad un campo elettrico, il nucleo e
+il baricentro della nube elettronica degli atomi che costituiscono il dielettrico si allontanano e iniziano
+a risentire di una forza attrattiva che può essere schematizzata con una forza elastica\footnote{Per piccole lunghezze d'onda
+la polarizzazione per orientamento delle molecole non risente delle oscillazioni del campo. Alla fine del paragrafo
+verrà discussa brevemente l'eventualità che anche le mmolecole possano oscillare.}.
+Usando gli stessi simboli introdotti nel capitolo sui dielettrici all'equilibrio $-k\vb{r}+Ze\vb{E}_l=0$,
+e quindi il momento di dipolo $\vb{p}=(Ze)\vb{r}=(Ze)^2/k\,\vb{E}_l$ da cui segue che la polarizzabilità $\alpha$,
+ovvero il termine di proporzionalità fra $\vb{p}$ ed $\vb{E}_l$ è costante. Si noti come questo risultato
+dipenda direttamente dal fatto che la deformazione sulla nube elettronica sia di tipo statico.
+Se però il campo elettrico è oscillante ($\vb{E}(t)=\vb{E}_{0l}e^{j\omega t}$), $\vb{r}$
+soddisfa l'equazione dell'oscillatore armonico forzato
+\[
+    m\ddot{\vb{r}} + m\gamma\dot{\vb{r}} + k\vb{r}=Ze\vb{E}_{0l}e^{j\omega t}
+\]
+dove  $m=Zm_e$ è la massa della nube elettronica e il termine $b\dot{\vb{r}}=m\gamma\dot{\vb{r}}$ tiene conto
+dell'interazione della nube elettronica con gli atomi circostanti e dell'energia dissipata per irraggiamento
+dalla carica oscillante: un campo elettrico oscillante comporta la presenza nel dielettrico di
+dipoli oscillanti che, come si è visto, emettono energia.
+\begin{obs}
+    \[
+        \vb{r}(t)=\frac{Ze\vb{E}_l(t)}{m(\omega_0^2 - \omega^2 + j\omega\gamma)} \quad\quad \omega_0^2=\frac{k}{m}
+    \]
+    \label{obs:r_dielettrici}
+\end{obs}
+\begin{proof}
+    La soluzione all'equazione dell'oscillatore armonico è $\vb{r}(t)=\vb{R}_0e^{j\omega t}$.
+    Sostituendo nell'equazione differenziale si trova
+    \[
+        \vb{R}_0=\frac{Ze\vb{E}_{0l}}{m(\omega_0^2 - \omega^2 + j\omega\gamma)}
+    \]
+    Ma $\vb{E}_{0l}e^{j\omega t}=\vb{E}_l$, da cui la tesi.
+\end{proof}
+\begin{cor}
+    Nell'ipotesi che a livello macroscopico il materiale sia schematizzabile come un insieme di
+    oscillatori armonici tutti fra loro identici (stesso $\omega_0$ e stesso $\gamma$)
+    \[
+        \alpha=\frac{(Ze)^2}{m}\rec{\omega_0^2 - \omega^2 + j\omega\gamma}
+    \]
+    o analogamente, $\alpha=\abs{\alpha}e^{j\delta}$ con
+    \[
+        \abs{\alpha}=\frac{(Ze)^2}{m\sqrt{(\omega_0^2-\omega^2)^2+\gamma^2\omega^2}} \quad\quad
+        \tan{\delta}=\frac{\gamma\omega}{\omega_0^2-\omega^2}
+    \]
+\end{cor}
+\begin{proof}
+$\alpha=p/E_l=(Ze)^2r/E_l$. Per l'osservazione precedente, si ha la tesi.
+\end{proof}
+L'ipotesi è molto forte: si sta richiedendo che il dielettrico sia costituito da atomi fra loro tutti uguali e
+indipendenti e che le nuvole elettroniche si comportino come sistemi rigidi.
+Si noti come sia il modulo di $\alpha$ che la sua fase dipendano dalla pulsazione $\omega$ del campo elettrico locale.
+Il fatto che la polarizzabilità sia complessa implica che $\vb{r}$ e quindi $\vb{p}$ hanno la stessa direzione e la stessa
+pulsazione del campo elettrico locale, ma diversa fase.
+\begin{obs}
+Il momento di dipolo è sfasato di $\delta$ rispetto al campo elettrico locale.
+\end{obs}
+\begin{proof}
+    La dimostrazione si ottiene considerando che la quantità fisicamente significativa è la parte reale di $\vb{p}$.
+    Si ha quindi $\Re(\vb{p})=\Re(\alpha \vb{E}_l(t))=\Re(\abs{\alpha}e^{j\delta} E_{0l}e^{j\omega t})=\abs{\alpha}E_{0l}\cos(\omega t+\delta)$
+\end{proof}
+
+Si vogliono ora studiare le conseguenze di quanto detto su $\epsilon_r$ e $n$. Indicando con $N$ il numero di atomi per unità di
+volume, esprimendo $\epsilon_r$ in funzione della suscettività elettrica e ricordando la relazione di Clausius-Mossotti, si ha
+\[
+    \epsilon_r=\chi+1=\frac{N\alpha}{\epsilon_0-N\alpha/3}+1=\frac{1+\frac{2N\alpha}{3\epsilon_0}}{1-\frac{N\alpha}{3\epsilon_0}}
+\]
+Quindi, anche $\epsilon_r$ e di conseguenza $n=\sqrt{\epsilon_r}$ sono numeri complessi.
+Si può quindi porre $n=n_1-jn_2$\footnote{Si è scelto di usare il segno meno perchè, come si mostrerà più avanti,
+la parte immaginaria di $n$ è negativa e in questo modo $n_2$>0.}.
+Il significato della parte reale e della parte immaginaria dell'indice di rifrazione
+appaiono evidenti qualora si consideri un'onda elettromagnetica che si propaga nel dielettrico. Per semplicità, si fa
+riferimento alle onde piane
+\[
+    \vb{E}=\vb{E}_0e^{j\omega(t-\frac{x}{v})}=\vb{E}_0e^{j\omega(t-x\frac{n_1-jn_2}{c})}=
+    \vb{E}_0e^{-\frac{\omega n_2 x}{c}}e^{j\omega(t-n_1\frac{x}{c})}=
+    \vb{E}_0e^{-\beta x}e^{j\omega(t-n_1\frac{x}{c})}
+\]
+Si ha quindi un'onda che si propaga con velocità $v=c/n_1$ e la cui ampiezza si attenua secondo la legge
+esponenziale $\vb{E}_0 e^{-\frac{\omega n_2 x}{c}}$. La quantità $\beta=\omega n_2/c$ è detta
+\textit{coefficiente di assorbimento} del materiale; il suo inverso è detto \textit{cammino di attenuazione},
+ha le dimensioni di una lunghezza e rappresenta la distanza che l'onda deve percorrere all'interno del
+materiale prima che la sua ampiezza risulti ridotta di un fattore $e^{-1}$.
+
+Per comprendere l'andamento di $n_1$ ed $n_2$ in funzione di $\omega$ si sviluppi $n=\sqrt{\epsilon_r}$ al primo
+ordine in $\omega$ (nell'ipotesi che $N\abs{\alpha}/\epsilon_0<<1$). Si ottiene $n=1+N\alpha/2\epsilon_0$ che
+quindi fornisce, sostituendo l'espressione esplicita di $\alpha$
+\[
+    \begin{split}
+        & n_1=\Re(n)=1+\frac{N(Ze)^2}{2\epsilon_0 m} \frac{\omega_0^2 -\omega^2}{(\omega_0^2 -\omega^2)^2+\gamma^2\omega^2}\\
+        & n_2=-\Im(n)=\frac{N(Ze)^2}{2\epsilon_0 m} \frac{\gamma \omega}{(\omega_0^2 -\omega^2)^2+\gamma^2\omega^2}
+    \end{split}
+\]
+Per $\omega=0$ si torna nel caso del campo elettrostatico, dove non c'è fenomeno di attenuazione.
+All'avvicinarsi di $\omega$ ad $\omega_0$, detta \textit{frequenza di risonanza}, $n_1$ passa dall'essere
+maggiore di $1$ all'essere minore di $1$. Questo fatto, si vedrà, non è in contraddizione con il
+principio di velocità limite. La zona in cui $\dd{n_1}/\dd{\omega}$ è positiva è detta
+\textit{zona di dispersione normale}, quella in cui è negativa è detta \textit{zona di dispersione anomala}.
+$n_2$ ha l'andamento di una lorenziana, con picco centrato sulla zona di dispersione anomala.
+Al di fuori della zona immediatamente circostante al picco
+l'attenuazione è trascurabile e il dielettrico è trasparente alla radiazione. Nelle zone di trasparenza, $n_1$
+è crescente.
+
+Facendo cadere l'ipotesi che il materiale sia costituito da oscillatori armonici identici, la polarizzabilità assume
+la forma
+\[
+    \alpha=\sum_k\frac{q_k^2}{m_k(\omega_{0k}^2-\omega^2+j\gamma_k\omega)}
+\]
+dove $q_k$ ed $m_k$ sono la carica e la massa efficaci di ciascun oscillatore. In corrispondenza di ogni $\omega_{0k}$ si verifica
+un fenomeno di risonanza che va sommato all'andamento non risonante degli altri oscillatori. L'andamento di $n_1$ è caratterizzato
+dall'alternarsi di zone di dispersione anomala, in corrispondenza delle risonanze, e zone di dispersione normale.
+È comune esprimere $n_1(\lambda)$: siccome $\lambda=2\pi c\omega$, nelle zone di dispersione normale $n_1(\lambda)$
+ha un andamento decrescente, mentre ha un andamento crescente in corrispondenza delle zone di dispersione anomala.
+In corrispondenza di ogni frequenza di risonanza $n_2$ ha un picco che corrisponde ad un aumento pronunciato del
+coefficiente di assorbimento $\beta$. Questo spiega le righe di assorbimento che si osservano in spettroscopia.
+Anche un modello più sofisticato prevede che $n_1$ possa essere minore di 1, specie per piccole lunghezze d'onda.
+Questo effetto è in effetti osservato sperimentalmente. Per $\lambda$
+elevati, nell'ordine dei micrometri, anche le molecole iniziano ad oscillare e comprtano la comparsa di righe di assorbimento che
+possono diventare molto larghe, a costituire delle bande di assorbimento.

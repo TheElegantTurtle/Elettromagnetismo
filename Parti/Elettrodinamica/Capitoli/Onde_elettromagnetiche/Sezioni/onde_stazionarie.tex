@@ -1,0 +1,48 @@
+Quanto visto porta ad un fenomeno analogo a quello delle onde stazionarie meccaniche.
+Si consideri un'onda piana che si propaga con verso positivo rispetto all'asse $z$ e incide su un
+conduttore perfetto (ovvero con conducibilità infinita) posto in $z=0$.
+Verranno ora trattati campo elettrico e magnetico separatamente, cominciando col campo elettrico.
+L'onda è polarizzata linearmente e
+il campo elettrico può essere immaginato lungo la direzione $x$. Per l'ipotesi di conducibilità
+infinita è trascurabile la parte di campo che penetra nel conduttore, ma siccome il campo elettrico
+è tangente alla superficie di separazione per la condizione di continuità della componente tangente
+$E=0$ immediatamente fuori dal conduttore. Nel semispazio vuoto sono presenti
+sia presente l'onda incidente\footnote{Siccome il campo è diretto solo lungo la direzione $x$ l'equazione
+può essere posta in forma scalare.} $E_i=E_{(+)}e^{i(kz-\omega t)}$
+che l'onda riflessa $E_r=E_{(-)}e^{i(kz+\omega t)}$ che si sovrappongono.
+Dato che il conduttore è perfetto le due onde hanno uguale ampiezza ma segno opposto.
+Il campo elettrico nello spazio vuoto vale:
+\[
+    \begin{split}
+        E_x=&\Re\bigl(E_i+E_r\bigr)=\Re\bigl(E_{(+)}e^{jkz}(e^{-j\omega t}-e^{j\omega t})\bigr)=\\
+        =&\Re\bigl(-2jE_{(+)}\sin(\omega t)e^{jkz}\bigr)=2E_{(+)}\sin(kz)\sin(\omega t)
+    \end{split}
+\]
+Questa non è un'onda perchè non ha $kz\pm\omega t$ come argomento: è un'oscillazione armonica di pulsazione
+$\omega$ con ampiezza $2E_{(+)}\sin(kz)$
+che presenta dei nodi fissi per i valori di $z$ tali da annullare il seno. La distanza fra due
+nodi adiacenti vale
+\[
+    \Delta z=\frac{\pi}{k}=\frac{\pi}{2\pi}\lambda=\frac{\lambda}{2}
+\]
+
+Per quanto concerne il campo magnetico invece, per le condizioni di ortogonalità questo ha solo componente $y$.
+Siccome $E/H=\pm Z$, dove si ha segno positivo per onde progressive e segno negativo per onde regressive,
+\[
+    \begin{split}
+        H=&\Re(\frac{E_{+}}{Z}e^{i(kz-\omega t)}+\frac{-E_{(+)}}{-Z}e^{i(kz+\omega t)})=\Re(2\frac{E_{(+)}}{Z}e^{jkz}\cos(\omega t))\\
+        =&2\frac{E_{(+)}}{Z}\cos(kz)\cos(\omega t)
+    \end{split}
+\]
+Il campo magnetico è perciò sfasato di $\pi/2$ rispetto al campo elettrico. Inoltre, quando uno dei due campi è
+nullo l'altro è massimo e vale il doppio del campo elettromagnetico totale. Questo risultato non è in contraddizione
+col fatto che in un'onda elettromagnetica $E$ ed $H$ sono in fase, perchè un'onda stazionaria è il risultato
+della sovrapposizione di due onde che viaggiano in versi opposti.
+
+Sulla base di quanto detto si può capire cosa succede qualora venga lanciata un'onda elettromagnetica
+fra due piani conduttori paralleli posti a distanza $L$, in modo tale che incida ortogonalmente sui due piani.
+Siccome il campo elettrico si deve annullare sui due piani, ovvero deve avere dei nodi sui due piani, la
+lunghezza $L$ deve contenere un numero intero di lunghezze d'onda
+\[
+    L=\frac{\lambda}{2}n
+\]

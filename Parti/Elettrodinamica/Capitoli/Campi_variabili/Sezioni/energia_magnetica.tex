@@ -1,0 +1,281 @@
+Nel caso statico non si è affrontato il discorso relativo all'energia magnetica. Questo perchè la creazione
+di una configurazione stazionaria di correnti (e campi magnetici associati) richiede che esista
+un periodo iniziale di transizione in cui le correnti si vanno da $0$ al loro valore finale. Per quanto
+visto in questo capitolo, in questa fase sul sistema vengono indotte delle forze elettromotrici.
+Siccome l'energia posseduta dal campo magnetico è l'energia che è stata necessaria alla sua produzione
+questo contributo non può essere tralasciato.
+
+L'oggetto attraverso il quale si passa per studiare l'energia magnetica è l'induttanza.
+Si consideri quindi un circuito $RL$, descritto dall'equazione \eqref{eqn:RL}. Moltiplicando per la quantità $\dd{Q}=I\dd{t}$ si ottiene
+\[
+    f\dd{Q}=RI^2\dd{t}+LI\dd{I}
+\]
+Dalla definizione di forza elettromotrice emerge che il primo membro dell'equazione è l'energia erogata dal
+generatore nell'intervallo di tempo $\dd{t}$. Per la legge sull'effetto Joule
+\eqref{eqn:effetto_joule} il primo termine del secondo membro rappresenta l'energia dissipata nella resistenza.
+Il secondo termine al secondo membro è quello invece che non ci sarebbe se non ci fosse induttanza:
+lo si può quindi interpretare come l'energia da fornire all'induttanza affinchè la corrente circolante
+in essa si porti nel tempo $\dd{t}$ dal valore $I$ al valore $I+\dd{I}$.
+L'energia necessaria allora affinchè la corrente circolante nell'induttanza si porti da $0$ ad $I$ è
+\begin{equation}
+    U_L=\int_0^I LI\dd{I}=\rec{2}LI^2
+    \label{eqn:U_induttore}
+\end{equation}
+Questa interpretazione è confermata dal seguente calcolo
+\begin{obs}
+    L'energia $U_L$ è proprio l'energia posseduta da un'induttanza $L$ percorsa da corrente $I$
+\end{obs}
+\begin{proof}
+    Si consideri un circuito percorso da una corrente $I_m=f/R$. All'instante iniziale,
+    il generatore viene staccato dal circuito il quale, viene chiuso in corto circuito. L'equazione del circuito è
+    diventa quindi
+    \[
+        RI=-L\dv{I}{t}, \quad\quad I(0)=I_m
+    \]
+    la cui soluzione è
+    \[
+        I=I_me^{t/\tau}
+    \]
+    con $\tau=L/R$. La potenza dissipata per effetto Joule è $RI^2$ e quindi l'energia totale dissipata dalla resistenza è
+    \[
+        U_R=\int_0^\infty RI^2\dd{t}=\int_0^\infty \frac{f^2}{R}e^{-2t/\tau}\dd{t}=\frac{f^2}{2R^2}L=\rec{2}LI_m^2
+    \]
+    Per conservazione dell'energia, questa non può che essere l'energia posseduta dall'induttanza prima di chiudere il circuito.
+\end{proof}
+$U_L$ rappresenta l'energia potenziale immagazzinata nel dispositivo -ovvero il singolo circuito.
+Si consideri ora un solenoide percorso da corrente costante all'interno del quale sia parzialmente inserito un nucleo di ferro.
+Si verifica sperimentalmente che il nucleo viene risucchiato all'interno del solenoide. Questi fenomeno è in apparenza contraddittorio:
+a nucleo completamente inserito infatti l'induttanza è maggiore\footnote{Si ricordi che l'induttanza di un solenoide è
+$L=\mu_r\mu_0 N^2S/l$ e che per il ferro $\mu_r>0$.} e quindi lo è anche l'energia del solenoide - ovvero, apparentemente
+il sistema si è spostato spontaneamente da una configurazione con energia minore ad una con energia maggiore. La spiegazione
+si basa su un discorso analogo a quello svolto nel paragrafo \ref{par:corrente_correntestazionaria_complementi}
+sulla forza fra le maglie di un condensatore: l'ipotesi che la corrente sia costante richiede implicitamente
+che al circuito sia collegato un generatore in grado di soddisfare questa richiesta.
+
+Si vuole ora calcolare l'energia potenziale $U_M$ immagazzinata in un insieme di più circuiti, soggetti quindi
+a mutua induzione.
+\begin{example}
+    Si consideri una regione di spazio uniformemente riempita con un materiale
+    con $B/H=\mu$ costante
+    in cui sia presente un campo $\vb{B}$.
+    Si consideri un circuito $RL$ costituito da un solenoide con una lughezza molto maggiore del suo diametro in fase di carica,
+    descritto dall'equazione \eqref{eqn:RL}.
+    Il campo interno al solenoide è uniforme e coincide col campo medio. Tenuto conto della \eqref{eqn:induttanza}
+    e della legge di Felici \ref{teo:felici} si ottiene quindi
+    \[
+        L\dv{I}{t}=NS\dv{B}{t}
+    \]
+    Sostituendo quindi nella \eqref{eqn:RL} e moltiplicando per $I\dd{t}$, si ricava
+    \[
+        fI\dd{t}=RI^2\dd{t}+INS\dd{B}
+    \]
+    Per le considerazioni fatte all'inizio del paragrafo, l'energia fornita all'induttanza è, indicando con $n=N/l$
+    \[
+        \dd{U}_L=INS\dd{B}=SlnI\dd{B}=nVI\dd{B}
+    \]
+    dove $V=Sl$è il volume del solenoide. Dividendo per $V$ in modo da ricavare la densità di energia
+    e tenendo presente la \eqref{eqn:H_solenoide}, si ottiene
+    \[
+        \dd{u}_L=\frac{\dd{U}_L}{V}=nI\dd{B}=H\dd{B}
+    \]
+    Fin'ora, non si è fatto uso dell'ipotesi di $\mu$ costante, quindi i risultati ottenuti sono indipendenti dal fatto che il
+    materiale sia paramagnetico, ferromagnetico o diamagnetico\footnote{
+        si noti invece l'ipotesi fortemente restrittiva di avere a che fare con un solenoide, ovvero con un campo uniforme su un volume
+        di geometria semplice}.
+    Considerando anche questa ipotesi
+    \[
+        u_M=u_L(B)=\int_0^B \dd{u}_L=\int_0^B H\dd{B}=\int_0^B \rec{\mu}B\dd{B}=\rec{2\mu}B^2=\rec{2}BH=\rec{2}\mu H^2
+    \]
+
+
+    la densità di energia magnetica vale in conclusione
+    \begin{equation}
+        u_M=\rec{2}\mu H^2
+    \end{equation}
+\end{example}
+
+\begin{thm}
+    L'energia magnetica per un numero $N$ di circuiti è
+    \begin{equation}
+        U_M=\rec{2}\sum_{i,j=1}^N M_{ij}I_iI_j
+    \end{equation}
+    con $M_{ii}=L_i$, o equivalentemente
+    \begin{equation}
+        \label{eqn:UM_flussi}
+        U_M=\rec{2}\sum_{i=1}^N I_i\Phi_i
+    \end{equation}
+    dove $\Phi_i$ è il flusso di tutti i campi di induzione magnetica presenti nel sistema attraverso il circuito i-esimo.
+\end{thm}
+\begin{proof}
+    Si parte dal caso più semplice di due soli circuiti e si arriva ad una generalizzazione ad $N$ circuiti.
+    Il sistema di due circuiti è descritto da
+    \[
+        \begin{cases}
+            &  f_1=L_1\dv{I_1}{t}+M_{12}\dv{I_2}{t}+R_1I_1 \\
+            &  f_2=L_2\dv{I_2}{t}+M_{21}\dv{I_1}{t}+R_2I_2 \\
+        \end{cases}
+    \]
+    Moltiplicando la prima equazione per $\dd{Q_1}=I_1\dd{t}$ e la seconda per $\dd{Q_2}=I_2\dd{t}$,
+    ricordando che $M_{21}=M_{12}$, poi sommando membro a membro si ottiene
+    \[
+        (f_1I_1\dd{t}+f_2I_2\dd{t})=(I_1^2R_1+I_2^2R_2)\dd{t}+[L_1I_1\dd{I_1}+L_2I_2\dd{I_2}+M_{12}(I_1\dd{I_2}+I_2\dd{I_1})]
+    \]
+    Per confronto, il membro fra parentesi quadre rappresenta il differenziale di energia magnetica, ovvero l'energia da fornire
+    per incrementare di $\dd{I}$ le correnti $I_1$ e $I_2$.
+    \[
+        \dd{U_M}=L_1I_1\dd{I_1}+L_2I_2\dd{I_2}+M_{12}(I_1\dd{I_2}+I_2\dd{I_1})=\dd(\rec{2}L_1I_1^2+\rec{2}L_2I_2^2+M_{12}I_1I_2)
+    \]
+    Integrando da $0$ ai valori finali $I_1$, $I_2$
+    \[
+        U_M=\rec{2}L_1I_1^2+\rec{2}L_1I_1^2+M_{12}I_2I_2
+    \]
+    dove i primi due termini rappresentano l'energia dei signoli circuiti, mentre il terzo rappresenta l'energia di mututa induzione.
+    Per l'uguaglianza fra i coefficenti di mutua induzione è possibile scrivere $M_{12}I_1I_2=1/2(M_{12}I_1I_2+M_{21}I_2I_1)$.
+    Chiamando quindi $L_1=M_{11}$ ed $L_2=M_{22}$ la formula ottenuta può essere scritta come
+    \[
+        U_M=\rec{2}(M_{11}I_1^2+M_{12}I_1I_2+M_{21}I_2I_1+M_{22}I_2^2)=\rec{2}\sum_{i,j=1}^2M_{ij}I_iI_j
+    \]
+
+    Raccogliendo $I_1$ per i primi due termini del secondo membro e $I_2$ per gli altri due, si ha,
+    dalle definizioni di induttanza e di coefficente di mutua induttanza:
+    \[
+        U_M=\rec{2}I_1(M_{11}I_1+M_{12}I_2)+\rec{2}I_2(M_{21}I_1+M_{22}I_2)=\rec{2}(I_1\Phi_1+I_2\Phi_2)=\rec{2}\sum_{i=1}^2I_i\Phi_i
+    \]
+
+    Entrambe le espressioni trovate per $U_M$ sono immediatamente generalizzabili al caso di $N$ circuiti.
+\end{proof}
+
+
+\begin{thm}
+    Le forze agenti su un circuito percorso da corrente $I$ immerso in un campo magnetico esterno costante
+    $\vb{B}_{ext}$ sono date dal gradiente (non cambiato di segno) dell'energia potenziale, che può essere scritta
+    nel caso di un singolo circuito come
+    \[
+        U=I\Phi(\vb{B}_{ext})
+    \]
+\end{thm}
+\begin{proof}
+    Il sistema può essere schematizzato come costituio da
+    $N$ circuiti, $N-1$ dei quali sono le sorgenti di $\vb{B}_{ext}$. Sia il circuito k-esimo percoro da corrente $I_k$ e abbia
+    resistenza complessiva $R_k$. Si immagini di applicare una traslazione virtuale a questo circuito
+    mediante una forza esterna $\vb{F}^{(k)}$ che imprima sul circuito una veloctià $\vb{v}^{(k)}$
+    piccola, in modo tale che sia trascurabile l'energia cinetica associata a questo movimento.
+    L'energia del circuito, ovvero l'energia magnetica\footnote{L'energia magnetica è l'energia potenziale totale
+    immagazzinata nel circuito in quanto non sono presenti condensatori.}, varierà come conseguenza di tre contributi:
+    $\vb{F}^{(k)}\vdot\dd{\vb{x}}$ lavoro compiuto
+    dalla forza esterna; $\dd{L}_G$ lavoro compiuto dai generatori nel circuito; $\dd{L}_{R}$ lavoro
+    dissipato (e quindi negativo) per effetto Joule. Per la conservazione dell'energia, rapportando tutto all'unità di tempo
+    \[
+        \dv{U_M}{t}=\vb{F}^{(k)}\vdot\dd{\vb{v}} + \dv{L_G}{t} - \dv{L_R}{t}
+    \]
+    Ricordando che
+    \[
+        \begin{split}
+            &\dv{L_G}{t}=\sum I_j f_j=\sum I_j(I_j R_j + \dv{\Phi_j}{t} ) \\
+            &\dv{L_R}{t}=\sum I^2_j R_j \\
+            &\dv{U_M}{t}=\dv{t} \Biggl(\rec{2} \sum I_j \Phi_j \Biggr)=
+            \rec{2} \sum I_j \dv{\Phi_j}{t}
+        \end{split}
+    \]
+    Si ha
+    \[
+        \vb{F}^{(k)}\vdot\dd{\vb{v}}=-\rec{2}\sum I_j\dv{\Phi_j}{t}=-\dv{U_M}{t}
+    \]
+    Per garantire una traslazione virtuale a velocità trascurabile la forza esterna deve essere
+    uguale in modulo e opposta alla forza $\vb{f}^{(k)}$ che il campo magentico esercita sul
+    circuito k-esimo. Ne segue che $\vb{f}^{(k)}\vdot\dd{\vb{x}}=\dd{U_M}$, ovvero la forza è data
+    dal gradiente di $U_M$.
+
+    Svolgendo esplicitamente il gradiente dell'energia magnetica, se è costante la corrente ed il circuito è
+    indeformabile (in modo che $L$ sia costante), le derivate dell'energia magnetica totale coincidono con le sole derivate dell'
+    energia di accoppiamento, ovvero dell'energia dovuta all'interazione del circuito k-esimo con gli altri $N-1$ circuiti
+    \[
+        U_{acc}=\sum_{j\neq k} I_k \,M_{kj}I_j=I_k\Phi^{(k)}_{acc}(\vb{B})
+    \]
+    dove $\Phi^{(k)}_{acc}(\vb{B})$ è il flusso concatenato col k-esimo circuito, prodotto
+    da tutti gli altri circuiti. Ma questo è proprio il flusso del campo esterno attraverso il
+    circuito k-esimo, ovvero la tesi.
+\end{proof}
+
+Quelle ottenute sono espressioni di tipo integrale. È interessante cercare di trovare delle relazioni locali:
+queste forme si riveleranno utili sia per generalizzare quanto visto fin'ora al caso non stazionario,
+sia per trovare la densità di energia nella forma il più generale possibile.
+\begin{thm}
+    Dato sistema costituito da $N$ circuiti e un volume $\tau$ che racchiuda tutti i circuiti, l'energia magnetica del sistema è:
+    \begin{equation}
+        \label{eqn:UM_J_A}
+        U_M= \rec{2}\int_\tau \Biggl(\vb{J}+\pdv{\vb{D}}{t}\Biggr)\vdot\vb{A}\dd{\tau}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    In un sistema di $N$ circuiti si consideri nel dettaglio il circuito k-esimo.
+    Questo sarà costituito da un conduttore di sezione non nulla $\sigma_k$ chiuso su se stesso
+    e percorso da una corrente $I_k=\int_{\sigma_k}\vb{J}_k\vdot\dd{\vb{\sigma}_k}$.
+    Si consideri la superficie $S_k$ che abbia $l_k$ come contorno. Per la \eqref{eqn:UM_flussi}
+    \[
+        \begin{split}
+            U_M &=\rec{2}\sum_k I_k\Phi_k=\rec{2}\sum_k\Biggl[\int_{\sigma_k}\vb{J}_k\vdot\dd{\vb{\sigma}_k} \int_{S_k}\vb{B}\vdot\dd{\vb{S}_k} \Biggr]\\
+            &=\rec{2}\sum_k\Biggl[\int_{\sigma_k}\vb{J}_k\vdot\dd{\vb{\sigma}_k} \int_{S_k}(\curl{\vb{A}})\vdot\dd{\vb{S}_k} \Biggr]=\\
+            &=\rec{2}\sum_k\Biggl[\int_{\sigma_k}\vb{J}_k\vdot\dd{\vb{\sigma}_k} \oint_{l_k}\vb{A}\vdot\dd{\vb{l}_k} \Biggr]
+        \end{split}
+    \]
+    Siccome $\dd{\vb{l}_k}$, $\vb{J}_k$, $\dd{\vb{\sigma}_k}$ sono paralleli, indicando con $\vu{l}_k$
+    la direzioni di questi vettori, la relazione può essere riscritta come
+    \[
+        \begin{split}
+            U_M&=\rec{2}\sum_k\Biggl[\int_{\sigma_k}J_k\dd{\sigma_k} \oint_{l_k}\vb{A}\vdot\vu{l}_k\dd{l_k} \Biggr]
+            =\rec{2}\sum_k \int_{\sigma_k}\oint_{l_k}J_k\vu{l}_k \vdot \vb{A}\dd{\sigma_k}\dd{l_k} \\
+            &=\rec{2}\sum_k \int_{\tau_k} \vb{J}_k \vdot \vb{A}\dd{\tau_k}
+        \end{split}
+    \]
+    Siccome la densità di corrente è nulla al di fuori dei circuiti, si può elminiare la sommatoria
+    trasformando l'integrale su $\tau_k$ in un integrale su un qualsiasi volume $\tau$ che racchiuda tutti i circuiti,
+    ottenendo la tesi nel caso stazionario.
+
+    Sostituendo la densità di corrente con la densità di corrente
+    generalizzata, si ottiene la tesi nel caso generale.
+\end{proof}
+
+\begin{thm}
+    Data una densità di corrente $J$ l'energia magnetica vale
+    \begin{equation}
+        \label{eqn:UM}
+        U_M=\rec{2} \int_{S} (\vb{H}\cp\vb{A}) \vdot \dd{\vb{S}} +\rec{2} \int_{\tau}\vb{H}\vdot\vb{B}\dd{\tau}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Per la quarta equazione di Maxwell nel caso non stazionario, l'integrando nella \eqref{eqn:UM_J_A} può essere riscritto come
+    \[
+        \Biggl(\vb{J}+\pdv{\vb{D}}{t}\Biggr)\vdot\vb{A}=(\curl{\vb{H}})\vdot\vb{A}
+    \]
+    Tenuto conto dell'identità \eqref{app:eqn:div_cp}
+    \[
+        (\curl{\vb{H}})\vdot\vb{A}=\div(\vb{H}\cp\vb{A})+\vb{H}\vdot(\curl{\vb{A}})
+    \]
+    E indicando con $S$ la superficie che racchiude il volume $\tau$, $U_M$ può essere riscritta come
+    \[
+        \begin{split}
+            U_M&=\rec{2} \int_{\tau} \div(\vb{H}\cp\vb{A})\dd{\tau} +\rec{2} \int_{\tau}\vb{H}\vdot(\curl{\vb{A}})\dd{\tau}\\
+            &=\rec{2} \int_{S} (\vb{H}\cp\vb{A}) \vdot \dd{\vb{S}} +\rec{2} \int_{\tau}\vb{H}\vdot\vb{B}\dd{\tau}
+        \end{split}
+    \]
+\end{proof}
+L'equazione ottenuta è formalmente analoga alla \eqref{eqn:UE}: valgono tutte le considerazioni fatte in quel caso
+e in particolare
+\begin{cor}
+    Se si prende in considerazione tutto lo spazio, allora l'energia vale
+    \begin{equation}
+        \label{eqn:uM_H_B}
+        U_M=\int u\dd{\tau} \quad\quad\quad \text{ con } u=\frac{\vb{H}\vdot\vb{B}}{2}
+    \end{equation}
+\end{cor}
+Un'osservazione su quanto ottenuto. Sia l'integranda della \eqref{eqn:UM_J_A} che la \eqref{eqn:uM_H_B}
+godono della proprietà che il loro integrale esteso a tutto lo spazio sia pari all'energia magnetica.
+Di fatto però, le due funzioni non sono necessariamente uguali punto per punto. Sono allora considerazioni di carattere puramente fisico
+che portano ad interpretare la seconda come l'effettiva densità di energia.
+
+Si conclude la sezione con un confronto fra l'energia magnetica e l'energia elettrostatica.
+La prima analogia è fra le formule per l'energia di un'induttore \eqref{eqn:U_induttore} e quella per un condensatore \eqref{eqn:U_condensatore}.
+In entrambi i casi la struttura della formula è quella di un prodotto fra l'integrale della densità della sorgente del campo
+e la caratteristica del circuito. Inoltre, sia nel calcolo delle forze meccaniche dovute all'energia magnetica che di quelle dovute
+all'energia elettrostatica si prendono le derivate positive dell'energia, contrariamente a quanto si fa nel caso meccanico.

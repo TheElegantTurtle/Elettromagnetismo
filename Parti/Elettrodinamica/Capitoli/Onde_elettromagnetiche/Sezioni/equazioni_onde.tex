@@ -1,0 +1,70 @@
+Una delle soluzioni più importanti delle equazioni di Maxwell è quella delle onde elettromagnetiche.
+\begin{obs}
+    Dato un dielettrico neutro, illimitato, isotropo, omogeneo e perfetto, si hanno le equazioni
+    \begin{equation}
+        \label{eqn:diff_onde}
+        \begin{split}
+            &\laplacian{\vb{E}}-\epsilon\mu \pdv[2]{\vb{E}}{t}=0\\
+            &\laplacian{\vb{B}}-\epsilon\mu \pdv[2]{\vb{B}}{t}=0
+        \end{split}
+    \end{equation}
+\end{obs}
+\begin{proof}
+    L'ipotesi di dielettrico illimitato, isotropo e omogeneo permette di usare le equazioni di Maxwell in forma analoga a quelle
+    nel vuoto previa sostistuzione di $\epsilon_0$ e $\mu_0$ con $\epsilon$ e $\mu$.
+    Per l'ipotesi di dielettrico perfetto si ha l'assenza di correnti macroscopiche e quindi $\vb{J}=0$, mentre per l'ipotesi di
+    neutralità $\rho=0$. Perciò si ha
+\begin{minipage}[t]{0.5\textwidth}
+\[
+    \begin{split}
+        & \div{\vb{E}}=0                    \\
+        & \curl{\vb{E}}=-\pdv{\vb{B}}{t}       \\
+    \end{split}
+\]
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\[
+    \begin{split}
+        & \div{\vb{B}}=0                       \\
+        & \curl{\vb{B}}=\mu\epsilon\pdv{\vb{E}}{t} \\
+    \end{split}
+\]
+\end{minipage}
+    Applicando l'operatore rotore alla terza equazione di Maxwell, per la \eqref{app:eqn:curl_curl} ricordando che per la prima
+    equazione di Maxwell la divergenza del campo elettrico è nulla,
+    \[
+        \curl{\curl{\vb{E}}}=-\laplacian{\vb{E}}=-\curl{\pdv{\vb{B}}{t}}=-\pdv{t}(\curl{\vb{B}})
+    \]
+    Derivando rispetto al tempo la quarta equazione di Maxwell si ottiene
+    \[
+        \pdv{t}(\curl{\vb{B}})=\epsilon\mu\pdv[2]{\vb{E}}{t}
+    \]
+    Per sostituzione si ha l'equazione nella tesi relativa al campo elettrico. Applicando il rotore
+    alla quarta equazione di Maxwell e derivando temporalmente la terza, si ottiene in maniera del tutto analoga l'
+    equazione relativa al campo magnetico.
+\end{proof}
+
+L'aver applicato l'operatore rotore rende le equazioni ottenute non equivalenti alle equazioni di Maxwell. Se un campo
+$\vb{E}$ soddisfa le equazioni di Maxwell infatti, le \eqref{eqn:diff_onde} sono soddisfatte anche da un campo
+$\vb{E}+\vb{E}'$, con $\vb{E}' $ un qualunque campo irrotazionale. Le equazioni ottenute possono così avere per soluzioni anche campi
+a divergenza non nulla a differenza delle equazioni di Maxwell: la solenoidalità delle soluzioni deve essere imposta
+come condizione aggiuntiva.
+Per le proprietà delle onde, il coefficente
+$v=1/\sqrt{\epsilon\mu}$ rappresenta la velocità di propagazione dell'onda. In effetti dimensionalmente questo
+coefficente è proprio una velocità.
+Nel vuoto si
+ha $v=c=1/\sqrt{\epsilon_0\mu_0}$ che risulta essere sperimentalmente uguale alla velocità della luce. Questo dimostra che la
+luce è un'onda elettromagnetica.
+
+-----------------------------------------------------
+
+Alla luce di queste considerazioni si può
+dare un significato fisico concreto a quanto visto in conclusione al precedente capitolo sui potenziali elettrodinamici in quanto
+le equazioni qui ottenute hanno la stessa forma delle \eqref{eqn:potenziali_maxwell}.
+I risultati ottenuti nella gauge di Coulomb, ovvero
+\[
+    \vb{B}=\curl{\vb{A}}\quad\quad \vb{E}-\pdv{\vb{A}}{t} \quad\quad \laplacian\vb{A}-\epsilon\mu \pdv[2]{\vb{A}}{t}=0
+\]
+danno informazioni sulle onde elettromagnetiche: il campo elettrico ed il campo magnetico sono ortogonali fra loro
+e ortogonali alla direzione di propagazione dell'onda; il rapporto fra i loro moduli vale $v=(\epsilon\mu)^{-\rec{2}}$.
+[PERCHè?]

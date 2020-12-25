@@ -1,0 +1,137 @@
+Il problema dell'elettrostatica consiste nel calcolare, note le cariche totali possedute da dei conduttori,
+il campo elettrico generato e la distribuzione delle cariche sui conduttori stessi.
+Con distribuzioni di carica note, la soluzione è concettualmente semplice: basta applicare la \eqref{eqn:E_distribuzione}
+per ottenere il campo elettrico e di seguito tutte le grandezze cercate. In presenza di conduttori
+la distribuzione di cariche libere è però influenzata dalla reciproca interazione. Per riuscire a risolvere il problema
+risultano allora di fondamentale importanza le due equazioni di Maxwell trovate.
+\begin{thm}
+Il potenziale soddisfa la seguente equazione
+\begin{equation}
+\laplacian V=-\frac{\rho}{\epsilon_0}
+\end{equation}
+equivalente alla prima equazione di Maxwell \eqref{eqn:prima_maxwell} ed alla terza \eqref{eqn:terza_maxwell}.
+\end{thm}
+L'equazione presentata nel teorema si chiama \textit{equazione di poisson}
+\begin{proof}
+  Per definizione $\vb{E}=-\grad{V}$. Dalla prima equazione di Maxwell si ha che:
+  \[
+  \frac{\rho}{\epsilon_0}=\div{\vb{E}}=\div{(-\grad{V})}=-\laplacian{V}
+  \]
+  dimostrando in questo modo sia l'equazione di Poisson che l'equivalenza fra quest'ultima e la prima equazione di Maxwell.
+    L'ultima parte della tesi si ottiene facilmente: essendo $\vb{E}$ espresso come gradiente di $V$ allora
+    la terza equazione di Maxwell è verificata e viceversa, se la terza equazione di Maxwell è verificata
+    allora il campo elettrico è conservativo e può quindi essere espresso in termini di gradiente di una funzione scalare.
+\end{proof}
+
+\begin{thm}[Esistenza e unicità della soluzione all'equazione di Poisson]
+Fissata la funzione $\rho$ localizzata in una porzione finita di spazio, l'equazione di Poisson ammette
+    una ed una sola soluzione che soddisfi le condizioni al contorno del dominio di definizione.
+\end{thm}
+Questo risultato è importante nel caso in cui siano presenti dei conduttori: in caso contrario infatti
+il potenziale e di conseguenza il campo elettrico sono forniti direttamente dalla \ref{eqn:V_rho}.
+Segue direttamente l'importante corollario:
+\begin{cor}
+  L'equazione di Poisson caratterizza completamente il potenziale.
+\end{cor}
+Si può allora dire che il problema generale dell'elettrostatica consista nel risolvere l'equazione di Poisson
+con determinate condizioni al contorno.
+
+Si elencano ora le tre situazioni che si presentano più di frequente.
+
+\textit{Problema di Dirichlet - Non sono presenti cariche localizzate; il campo è generato
+da un sistema di conduttori di geometria nota, di cui si conoscono i potenziali.}
+L'equazione di Poisson si riduce in questo caso all'equazione di Laplace
+\[
+    \laplacian{V}=0
+\]
+Il problema è definito dal punto di vista matematico, essendo note le condizioni al contorno ($V=0$ all'infinito,
+$V=V_i$ sulla superficie dell'i-esimo conduttore). I passi risolutivi sono i seguenti:
+\begin{enumerate}
+    \item si risolve l'equazione di Poisson ottenendo il potenziale nello spazio circostante i conduttori;
+    \item dal potenziale si può ricavare il campo;
+    \item il valore del campo in prossimità dei conduttori consente di calcolare la densità di carica superficiale;
+    \item integrando la densità di ogni conduttore sulla sua superficie si ottine la carica disposta sui conduttori;
+    \item avendo le cariche ed essendo i potenziali noti è possibile ricavare i coefficienti di capacità.
+\end{enumerate}
+
+\textit{Non sono presenti cariche localizzate; il campo è generato
+da un sistema di conduttori di geometria nota, di cui si conoscono le cariche.}
+Questo problema è l'inverso del problema di Dirichlet
+I passi risolutivi sono i seguenti:
+\begin{enumerate}
+    \item si scelgono in modo arbitrario i potenziali dei conduttori;
+    \item si risolve il problema di Dirichlet relativo;
+    \item ricavati i coefficenti di capacità, si ottenogno i potenziali veri a partire dalle cariche note;
+    \item si risolve il problema di Dirichlet relativo ai potenziali trovati.
+\end{enumerate}
+
+\textit{Sono presenti cariche localizzate con distribuzione $\rho$ nota; è inoltre presente
+un sistema di conduttori di geometria nota, di cui si conoscono le cariche.}
+Il potenziale dell'i-esimo conduttore, per il principio di sovrapposizione, è dato da
+\[
+    V_i=V_i(\rho)+\sum_{j=1}^N p_{ij}Q_j
+\]
+Di questa equazione sono noti i coefficienti di potenziale determinati dalla geometria del
+sistema, mentre non si conoscono i potenziali generati dalla distribuzione di carica.
+I passi risolutivi sono i seguenti:
+\begin{enumerate}
+    \item si scelgono in modo arbitrario i potenziali dei conduttori;
+    \item si risolve il problema di Dirichlet relativo;
+    \item ricavate le cariche relative, si può invertire l'equazione per i potenziali dei conduttori
+        in modo da ricavare i potenziali dovuti alla distribuzione di carica;
+    \item si risolve l'equazione per i potenziali dei conduttori usando le cariche note.
+\end{enumerate}
+
+Si elencano ora tre casi notevoli in cui il problema generale dell'elettrostatica può
+essere risolto senza ricorrere all'equazione di Poisson.
+
+\subsubsection{Metodo delle cariche immagine}
+Si consideri un conduttore $S$ collegato a terra, in modo che il suo potenziale sia 0, e che siano presenti
+N cariche puntiformi $Q_i$. Se la geometria del conduttore è semplice, si può immaginare di eliminare il
+conduttore posizionando dalla parte opposta delle $Q_i$ rispetto al conduttore, M cariche $Q'_i$, dette cariche immagie, in modo tale
+che il potenziale complessivo su $S$ sia
+comunque nullo. Nella porzione di spazio $\tau$ che contiene le $Q_i$ la distribuzione di carica e le condizioni
+al contorno sono le stesse sia in presenza delle cariche immagine che della distribuzione di carica sul conduttore
+indotta dalle $Q_i$, perciò per il
+teorema di unicità la configurazione di potenziale in $\tau$ è la stessa in entrambi i casi.
+
+Il grande vantaggio di questo metodo è che introducendo le cariche immagine il potenziale è calcolabile usando
+l'espressione per il potenziale generato da un numero discreto di cariche.
+
+\subsubsection{Equazione di Laplace undimensionale}
+Se il sistema è costituito da piani omogeneamente carichi, infiniti e paralleli fra loro, il potenziale
+dipende esclusivamente dalla coordinata $x$ ortogonale ai piani. L'equazione di Laplace si riduce allora a
+\[
+    \dv[2]{V}{x}=0
+\]
+Di conseguenza $V(x)=ax+b$, con le costanti determinate dalle condizioni al contorno.
+
+\subsubsection{Separazione di variabili}
+L'equazione di Laplace nel caso tridimensionale può essere risolta ipotizzando che il potenziale sia nella forma
+\[
+    V(x,y,z)=X(x)Y(y)Z(z)
+\]
+Questo è possibile solo se la decomposizione è compatibile con le equazioni al contorno assegnate.
+Sostituendo nell'equazione di Laplace e dividendo per $XYZ$ si ottiene:
+\[
+    \rec{X}\dv[2]{X}{x}+\rec{Y}\dv[2]{Y}{y}+\rec{Z}\dv[2]{Z}{z}=0
+\]
+Affinchè la somma sia nulla per ogni valore di $X$, $Y$, $Z$ è necessario chee ciascuno dei
+termini della somma sia costante, ovvero
+\[
+    \begin{split}
+        & \rec{X}\dv[2]{X}{x} = K^2_1 \\
+        & \rec{Y}\dv[2]{Y}{y} = K^2_2 \\
+        & \rec{Z}\dv[2]{Z}{z} = -K^2_3
+    \end{split}
+\]
+con $K^2_1+K^2_2-K^2_3=0$.
+La soluzione delle tre equazioni è
+\[
+    \begin{split}
+        & X =A_1\cos(K_1x+B_1) \\
+        & Y =A_2\cos(K_2y+B_2) \\
+        & Z =A_3\cos((K_1+K_2)^{\rec{2}}z+B_3) \\
+    \end{split}
+\]
+I vaori delle costanti si trovano imponendo le condizioni al contorno.

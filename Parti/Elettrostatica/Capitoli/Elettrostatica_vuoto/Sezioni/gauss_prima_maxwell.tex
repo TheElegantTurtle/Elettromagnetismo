@@ -1,0 +1,87 @@
+\begin{thm}
+    Data una qualunque superficie chiusa $S$ nel vuoto, il flusso del campo elettrostatico $\Phi_S(\vb{E})$
+    dipende esclusivamente dalle cariche interne alla superficie secondo la legge
+    \[
+        \Phi_S(\vb{E})=\frac{Q_{TOT}^{int}}{\epsilon_0}
+    \]
+\end{thm}
+\begin{proof}
+    Si consideri il caso in cui all'interno della superficie S sia presente solo una carica puntiforme Q. Il flusso elementare è
+    allora dato da
+    \[
+        d\Phi_S(\vb{E})=\vb{E}\vdot \dd{\vb{S}}=\frac{1}{4\pi\epsilon_0}\frac{Q}{r^2}\vu{r}\vdot\vu{n}\,\dd{S}
+    \]
+    Il prodotto scalare rappresenta la proiezione di $\vu{n}$ su $\vu{r}$, ovvero la proiezione di $d\vb{S}$ sull'elemento di
+    superficie di una sfera di raggio r e centro in Q, ma allora il rapporto fra questa proiezione ed $r^2$ è per definizione
+    l'angolo solido sotteso alla superficie infinitesima $d\Omega$. In conclusione si ha
+    \[
+        d\Phi_S(\vb{E})=\frac{Q}{4\pi\epsilon_0}\dd{\Omega}
+    \]
+    Il flusso totale è allora
+    \[
+        \Phi_S(\vb{E})=\int \dd{\Phi_S(\vb{E})}=\frac{Q}{4\pi\epsilon_0}\int\dd{\Omega}=\frac{Q}{4\pi\epsilon_0}4\pi=\frac{Q}{\epsilon_0}
+    \]
+    Per il principio di sovrapposizione e la linearità dell'integrale si arriva facilmente alla tesi.
+
+    Si consideri ora il caso in cui sia presente una carica puntiforme $Q_e$ esterna alla superficie.
+    Si considerino i coni che danno origine agli angoli solidi $d\Omega$ in ogni direzione dello spazio:
+    di questi si è interessati solo a quelli che intercettano S. Il flusso di campo elettrico attraverso le due superfici
+    originate dall'intersezione fra i coni e S vale in modulo $Q_e\,d\Omega/4\pi\epsilon_0 $per entrambe le superfici, con
+    segno però opposto a causa del fatto che la proiezione avviene in un caso con un angolo inferiore a $\pi/2$ e nell'altro
+    caso con un angolo superiore a $\pi/2$. Il contributo complessivo è quindi nullo.
+\end{proof}
+
+\begin{cor}
+    Nel caso in cui si abbia una distribuzione continua di carica, invece che un insieme di cariche puntiformi,
+    vale ancora la tesi del teorema di Gauss e il flusso è dato da
+    \[
+        \Phi_S(\vb{E})=\rec{\epsilon_0}\int \omega\,\dd{\mu}
+    \]
+\end{cor}
+
+Come è evidente dalla dimostrazione, il teorema permette di calcolare il flusso indipendentemente dalla forma della superficie o
+dalla posizione occupata dalle singole cariche interne. Si rivela dunque uno strumento estremamente utile per calcolare, noto
+il campo elettrico, le cariche presenti in una porzione di spazio o viceversa, nota la distribuzione di carica, di
+ricavare il campo elettrico. Si presenta tuttavia come una diretta conseguenza della legge di Coulomb\footnote{Si
+osservi infatti come il punto chiave della dimostrazione, ovvero l'identificazione dell'angolo solido, dipenda direttamente dal
+fatto che la leggge di Coulomb vada come $1/r^2$.} e non aggiunge quindi informazioni rispetto a quelle già note.
+Il teorema di Gauss fornisce inoltre alcune indicazioni utili alla rappresentazione del campo elettrico.
+\begin{defn}[Linea di forza del campo]
+    Si definisce \textit{linea di forza del campo} una linea che è in ogni suo punto tangente alla direzione del campo.
+\end{defn}
+\begin{defn}[Tubo di flusso]
+    Presa una linea chiusa, in ogni suo punto passa una linea di forza del campo. La superficie tubolare definita da queste
+    linee di forza è detta tubo di flusso.
+\end{defn}
+Nel caso del campo elettrico $\vb{E}$ si consideri una porzione di tubo di flusso compresa fra due superfici $S_1$
+ed $S_2$: assieme alla superficie laterale queste due superfici definiscono una superficie chiusa $S$. Per il teorema di Gauss,
+se non sono presenti cariche interne ad S, il flusso totale $\Phi_S^{tot}(\vb{E})=0$. Inoltre, per definizione di linea
+di forza il flusso attraverso la superficie laterale del tubo è nullo.
+Si ha quindi, tenendo conto della diversa orientazione di $S_1$ ed $S_2$ rispetto a $S$, $\Phi_{S_1}(\vb{E})=\Phi_{S_2}(\vb{E})$.
+Siccome quanto detto è indipendente dalla porzione di tubo scelta si ha che il flusso del campo elettrico è una caratteristica del
+tubo di flusso. Da questo segue che la sezione del tubo di flusso si riduce nelle zone in cui il campo elettrico è maggiore
+, ovvero le linee di forza si addensano, e viceversa.
+
+Risulta conveniente espriere in forma locale il teorema di Gauss.
+\begin{cor}[Prima equazione di Maxwell]
+    Nell'ipotesi che sia possibile applicare il teorema della divergenza al campo elettrico
+    \begin{equation}
+        \label{eqn:prima_maxwell}
+        \div{\vb{E}}=\frac{1}{\epsilon_0}\rho
+    \end{equation}
+\end{cor}
+\begin{proof}
+Applicando il teorema della divergenza alla legge di Gauss si ricava che
+\[
+    \Phi_S(\vb{E})=\int_\tau \div{\vb{E}} \dd{\tau}=\frac{1}{\epsilon_0}\int_\tau \rho\, \dd{\tau}
+\]
+Siccome il teorema di Gauss vale qualunque sia la superficie di integrazione, la formula appena ottenuta deve valere qualunque sia
+il volume di intergazione, il che implica l'uguaglianza delle integrande, cioè la tesi.
+\end{proof}
+
+La limitazione di questa equazione rispetto a quella fornita dal teorema di Gauss è situata nel fatto che viene richiesta la
+validità del teorema della divergenza, ovvero che il campo elettrico sia derivabile in ogni punto del dominio considerato. Il
+vantaggio risiede però nel fatto che il teorema di Gauss lega la distribuzione di carica interna alla superficie col campo
+sulla superficie (e quindi nel caso non stazionario, una variazione della distribuzione di carica non si traduce in una
+simultanea variazione del campo) mentre l'equazione di Maxwell lega grandezze calcolate nella stessa posizione e può
+dunque essere immediatamente generalizzata al caso non stazionario.

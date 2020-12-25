@@ -1,0 +1,122 @@
+I procedimenti usati nei paragrafi precedenti non possono essere usati per generalizzare anche la quarta equazione di Maxwell, infatti
+
+\begin{obs}
+    L'estensione al caso non stazionario della quarta equazione di Maxwell non può essere
+    ottenuto rendendo dipendenti dal tempo le grandezze che in essa compaiono.
+\end{obs}
+\begin{proof}
+    Si applichi l'operatore divergenza alla quarta equazione di Maxwell
+    \[
+        \div(\curl{\vb{B}})=\div(\mu_0\vb{J})=\mu_0\div{\vb{J}}
+    \]
+    La divergenza del rotore è sempre nulla, quindi segue che $\div{\vb{J}}=0$.
+    Dall'equazione di coninutià \eqref{eqn:continuità} si ottiene che questo è vero se e solo se
+    \[
+        \pdv{\rho}{t}=0
+    \]
+    Ovvero se e solo se la variazione della densità di carica è nulla
+    e questo succede se e solo se ci si trova nel caso stazionario.
+\end{proof}
+
+La generalizzazione viene, di fatto, fatta un po' a culo.
+\begin{defn}[Densità di corrente di spostamento]
+    Si definisce densità di corrente di spostamento il vettore
+    \[
+        \vb{J}_S=\epsilon_0\pdv{\vb{E}}{t}
+    \]
+\end{defn}
+\begin{defn}[Corrente di spostamento]
+    Si definisce corrente di spostamento il flusso della densità di corrente di spostamento attraverso una superficie.
+\end{defn}
+Si osservi come dimensionalmente questa sia effettivamente una densità di corrente, infatti dalla definizione di campo
+elettrico $[\epsilon_0 E]=[q/r^2]=C/m^2$ e quindi $[\epsilon_0\pdv*{E}{t}]=A/m^2=[J]$.
+\begin{defn}[Densità di corrente totale generalizzata]
+    Si definisce densità totale di corrente generalizzata $\vb{J}_t$
+    \[
+        \vb{J}_t=\vb{J}+\epsilon_0\pdv{\vb{E}}{t}
+    \]
+\end{defn}
+La seguente osservazione si rivela fondamentale e giustifica l'introduzione della corrente di spostamento.
+\begin{obs}
+    La densità di corrente totale generalizzata si riduce alla densità di corrente nel caso stazionario e ha sempre divergenza nulla.
+\end{obs}
+\begin{proof}
+    La dimostrazione della prima parte dell'asserto è banale e si ottiene semplicemente considerando che nel caso stazionario
+    la variazione del campo elettrico è nulla. Per quanto riguarda la seconda parte invece, si consideri l'equazione di continuità
+    \eqref{eqn:continuità} e usando le equazioni di Maxwell per introdurre i campi, ovvero sostituendo al posto della densità di carica
+    l'espressione fornita dalla prima equazione di Maxwell, si ottiene
+    \[
+        \div{\vb{J}}+\pdv{\rho}{t}=\div{\vb{J}}+\epsilon_0\pdv{t}(\div{\vb{E}})=0
+    \]
+    Per il teorema di Schwartz è possibile scambiare la derivata parziale con la divergenza:
+    \[
+        0=\div{\vb{J}}+\div{\epsilon_0\pdv{\vb{E}}{t}}=\div(\vb{J}+\epsilon_0\pdv{\vb{E}}{t})
+    \]
+    Quello fra parentesi è proprio la densità di corrente totale generalizzata. Si è ottenuta così la tesi.
+\end{proof}
+Questi due risultati dicono che la densità di corrente totale generalizzata è un buon candidato per
+la generalizzazione della quarta equazione di Maxwell che può essere ottenuta pertanto sostituendo
+la densità di corrente usuale con la densità di corrente totale generalizzata:
+\begin{equation}
+    \curl{\vb{B}}=\mu_0\Biggl(\vb{J}+\epsilon_0\pdv{\vb{E}}{t} \Biggr)
+\end{equation}
+
+La validità di questa legge è confermata dall'accordo degli esperimenti coi risultati della teoria che
+si sviluppa usando questa equazione. Il seguente esempio mostra come essa sia in grado di risolvere una
+situazione all'apparenza paradossale.
+\begin{example}[Scarica del condensatore]
+    Si consideri un circuito RC aperto, con il condensatore inizialmente carico con carica $Q_0$.
+    All'istante $t=0$ viene chiuso
+    l'interruttore e il condensatore inizia a scaricarsi secondo la legge
+    \[
+        Q(t)=Q_0e^{-\frac{t}{RC}}
+    \]
+    Il campo elettrico vale quindi
+    \[
+        E=\rec{\epsilon_0}\frac{Q(t)}{S}
+    \]
+    e la corrente
+    \[
+        I(t)=\frac{Q_0}{RC}e^{-\frac{t}{RC}}
+    \]
+    Considero a questo punto un circuito di Ampère $c$ tra le maglie del condensatore e due superfici con questo circuito
+    come contorno: $S_1$ interseca il filo del circuito collegato ad una maglia del condensatore; $S_2$ all'interno
+    del volume delimitato dalle maglie del condensatore. Se valesse la "vecchia" quarta equazione di Maxwell, per il
+    teorema di Ampère la circuitazione di $\vb{B}$ su $c$ varrebbe $I$ considerando $S_1$ e $0$ considerando $S_2$. Questa aporia viene
+    risolta proprio dall'equazione di Maxewell generalizzata appena introdotta. Nel caso in cui si consideri $S_1$ infatti
+    il campo elettrico attraverso la superficie è nullo e quidi continua a valere il teorema di Ampère. Nel caso in cui
+    si consideri $S_2$ invece $\vb{J}=0$, ma $J_S=\dv*{E}{t}=I(t)/S$ da cui si ottiene una corrente in modulo uguale a $I$.
+\end{example}
+
+La generalizzazione di questa equazione ai materiali è insidiosa
+ma porta all'intuibile risultato
+\begin{equation}
+    \curl{\vb{H}}=\vb{J}+\pdv{\vb{D}}{t}
+\end{equation}
+valido per qualsiasi tipo di materiale, compresi i ferromagneti.
+
+Vengono esposte ora due conseguenze di quanto detto in questo paragrafo.
+
+\begin{obs}[Prima legge di Kirchoff generalizzata]
+    La legge di Kirchoff dei nodi è estendibile al caso non stazionario a patto di considerare sia la corrente di
+    conduzione che quella di spostamento.
+\end{obs}
+\begin{proof}
+    La dimostrazione è analoga a quella della legge di Kirchoff nel caso stazionario considerando che
+    siccome la densità di corrente totale generalizzata ha divergenza nulla, è nullo il suo flusso attraverso qualsiasi
+    superficie chiusa.
+\end{proof}
+
+\begin{obs}[Teorema della circuitazione di Ampère generalizzato]
+    Il teorema della circuitazione di Ampère è estendibile al caso non stazionario a patto di considerare sia la corrente di
+    conduzione che quella di spostamento.
+\end{obs}
+\begin{proof}
+    Anche in questo caso la dimostrazione è analoga al caso stazionario, pur di prendere la quarta equazione di
+    Maxwell generalizzata.
+\end{proof}
+Al fine del calcolo dei campi però, l'utilità pratica di questo teorema è limitata al caso quasi-stazionario,
+ovvero al caso in cui le dimensioni del sistema siano tali per cui il tempo impiegato dai segnali
+elettromagnetici per attraversarlo sia molto piccolo rispetto al tempo che caratterizza le variazioni di
+$\rho$ e $\vb{J}$. In questo caso infatti la corrente di spostamento è con buona approssimazione trascurabile all'interno
+dei buoni conduttori fino a frequenze nell'ordine delle microonde.

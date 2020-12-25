@@ -1,0 +1,83 @@
+\begin{defn}[Campo Magnetico]
+    Si definisce vettore campo magnetico
+    \[
+        \vb{H}=\rec{\mu_0}\vb{B}-\vb{M}
+    \]
+\end{defn}
+
+\begin{thm}
+    In presenza di materiali la seconda e la quarta equazione di Maxwell assumono la seguente forma:
+    \begin{equation}
+        \div{\vb{B}}=0
+    \end{equation}
+    \begin{equation}
+        \curl{\vb{H}}=\vb{J}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    L'osservazione di partenza è che la presenza dei materiali impone una semplice modifica sulle
+    equazioni di Maxwell per il campo di induzione magnetica, ovvero nella quarta equazione di Maxwell
+    oltre alla densità di corrente macroscopica va considerata anche la densità delle correnti atomiche
+    presenti nel materiale. Formalmente
+    \[
+        \curl{\vb{B}}=\mu_0(\vb{J}+\vb{J}_m)
+    \]
+    In generale, sulle superfici di separazione fra materiali, le equazioni di Maxwell non sono definite
+    in quanto $\vb{B}$ subisce una discontinuità. Ha senso limitarsi a considerare quindi sono l'interno
+    di un materiale dove $\vb{J}_m=\vb{J}_{mV}$. Di conseguenza, per la \ref{eqn:M_JmV}
+    \[
+        \curl{\vb{B}}=\mu_0 \vb{J}+ \mu_0\curl{\vb{M}}
+    \]
+    Da cui segue che
+    \[
+        \curl(\frac{\vb{B}-\mu_0\vb{M}}{\mu_0})=\vb{J}
+    \]
+    Ovvero dalla definizione di $\vb{H}$, la tesi.
+\end{proof}
+All'interno delle due equazioni non compare lo stesso campo e quindi queste non ammettono soluzione univoca a meno di
+conoscere la relazione fra $\vb{H}$ e $\vb{B}$ -ovvero, dalla definizione di campo magnetico, fra $\vb{B}$ ed $\vb{M}$.
+Questo aspetto sarà approfondito nel paragrafo sui tipi di materiali magnetici.
+
+La forma integrale della quarta equazione di Maxwell fornisce una versione per il teorema della circuitazione di
+Ampère valida nei materiali.
+\begin{cor}[Teorema della circuitazione di Ampère]
+    Prese delle correnti
+    concatenate $I_i$ con segno positivo quando vedono girare il contorno orientato $l$
+    in senso antiorario
+    \begin{equation}
+        \oint_l\vb{H}\vdot\dd{\vb{l}}=\sum \vb{I}_i
+    \end{equation}
+\end{cor}
+\begin{proof}
+    La dimostrazione è analoga a quella del teorema di Ampère nel vuoto corollario \ref{teo:Ampère}
+\end{proof}
+
+
+Come accennato, le equazioni di Maxwell per il magnetismo nella materia valgono solo
+all'interno di un materiale. Per caratterizzare i fenomeni magnetici in tutto lo spazio
+è quindi necessario risolvere le equazioni all'interno di ogni materiale che riempie
+lo spazio e poi usare delle condizioni di raccordo sulla superficie che separa un
+materiale dall'altro.
+\begin{thm}
+    Passando da un mezzo materiale all'altro, la componente normale di $\vb{B}$ non subisce
+    alcuna discontinuità, così come la componente tangenziale di $\vb{H}$. In formule
+    \[
+        \vb{B}_{n1}=\vb{B}_{n2}
+    \]
+    \[
+        \vb{H}_{t1}=\vb{H}_{t2}
+    \]
+\label{teo:condizioni_raccordo_campomagnetico}
+\end{thm}
+\begin{proof}
+    Per dimostrare la prima equazione si consideri un cilindretto $C$ con le basi parallele alla
+    superficie di separazione fra due materiali; Per la seconda si consideri invece un piccolo
+    percorso rettangolare $l$ con due lati paralleli e due normali alla superficie di separazione.
+    Il flusso di $\vb{B}$ uscente dalla superficie di $C$ deve essere nullo, così come la circuitazione
+    di $\vb{H}$ su $l$ -in quanto non sono presenti correnti macroscopiche concatenate al percorso, ma solo correnti
+    microscopiche. Analogamente a quanto fatto per [REF] si ha la tesi.
+\end{proof}
+Per misurare quindi $B$ e $H$ all'interno di un materiale è sufficiente misurare $B$ e $H$ in un taglio
+sulla superficie del materiale rispettivamente ortogonale o parallelo alle linee di forza del campo.
+Le equazioni di Maxwell ricavate in questo paragrafo  non dipendono dalle correnti microscopiche. Data la
+facililità  di misurazione del campo magnetico $\vb{H}$ questa riscrittura è estremamente vantaggiosa.

@@ -1,0 +1,38 @@
+Prese due cariche $q$ e $Q$ la quantità $\vb{f}/q$ è indipendente da $q$.
+\begin{defn}
+    Si definisce campo elettrico $\vb{E}$ generato dalla carica Q il rapporto $\vb{f}/q$. Q viene detta sorgente del
+    campo; q viene detta carica di prova.
+\end{defn}
+Esplicitamente si ha
+\begin{equation}
+    \vb{E}(\vb{r})=\frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\vu{r}
+    \label{eqn:E}
+\end{equation}
+Il modulo di $\vb{E}$ viene detto \textit{intensità} del campo elettrico.
+È importante osservare che se le sorgenti sono disposte su un corpo esteso, la presenza di una carica di prova può
+modificarne la distribuzione. Convenzionalmente allora si suole definire il campo elettrico come
+\[
+    \vb{E}=\lim_{q\to 0}\frac{\vb{f}}{q}
+\]
+Questa definizione è solo formale: essendo la carica elettrica quantizzata infatti, non si può parlare di passagio
+al limite in senso matematico.
+\begin{obs}
+    Date $n$ sorgenti, il principio di sovrapposizione per la forza di Coulomb si estende banalmente al campo elettrico:
+    \[
+        \vb{E}(\vb{r})=\rec{4\pi\epsilon_0}\sum_{i=1}^n \frac{Q_i}{\abs{\vb{r}-\vb{r}_i}^3}(\vb{r}-\vb{r}_i)
+    \]
+\end{obs}
+
+Quando si ha a che fare con un elevato numero di cariche puntiformi risulta utile introdurre il concetto di \textit
+{distribuzione continua di carica} descritta da una \textit{densità di carica}:
+\begin{defn}
+    Si definisce \textit{densità di carica} una funzione $\omega(x_1,x_2\ldots x_n)$ tale che $\dd{q}=\omega\,\dd{\mu}$ con
+    $\dd{\mu}=\dd{x_1}\,\dd{x_2}\,\ldots\,\dd{x_n}$
+\end{defn}
+Si ha allora
+\begin{equation}
+    \label{eqn:E_distribuzione}
+    \vb{E}(\vb{r})=\frac{1}{4\pi\epsilon_0}\,\int\frac{\omega(\vb{r'})}{\abs{\vb{r}-\vb{r'}}^3}(\vb{r}-\vb{r'})d\mu'
+\end{equation}
+Nella pratica si parla di densità spaziale $\rho$, densità superficiale $\sigma$, densità lineare $\lambda$
+(rispettivamente $n=3$, $n=2$, $n=1$).

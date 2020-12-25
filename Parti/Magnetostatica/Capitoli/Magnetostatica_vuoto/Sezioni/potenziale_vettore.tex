@@ -1,0 +1,240 @@
+Ancora in analogia col campo elettrico, si vuole vedere se sia possibile descrivere il campo di induzione magnetica
+come l'applicazione di un'operatore differenziale ad una opportuna funzione.
+In generale non è detto che $\curl{\vb{B}}=0$ e che quindi il campo di induzione magnetica sia esprimibile come
+gradiente di una funzione scalare.
+Si introduce quindi il seguente potenziale
+\begin{defn}
+    Si definisce potenziale vettore quella funzione vettoriale $\vb{A}$ che soddisfi la seguente equazione
+    \begin{equation}
+        \label{eqn:def_potenziale_vettore}
+        \curl{\vb{A}}=\vb{B}
+    \end{equation}
+\end{defn}
+Ricordando che la divergenza di un rotore è identicamente nulla,
+si ha che la divergenza del rotore di $\vb{A}$ è nulla, ovvero condizione necessaria affinchè sia valida la
+definizione è che la divergenza di $\vb{B}$ sia nulla. Questo è garantito dalla seconda equazione di Maxwell.
+\begin{obs}[Trasformazione di gauge]
+    Il potenziale vettore è definito a meno del gradiente di una funzione scalare.
+    Ovvero se $\vb{A}$ è un potenziale vettore per il campo $\vb{B}$, anche $\vb{A'}=\vb{A}+\grad{f}$ lo è, con $f$ una funzione scalare.
+\end{obs}
+\begin{proof}
+    La dimostrazione segue direttamente dal fatto che il rotore del gradiente è nullo.
+\end{proof}
+Ovvaiamente, il potenziale vettore è definito anche a meno di una costante additiva.
+
+È possibile fare la seguente osservazione
+\begin{obs}
+    Dato un potenziale vettore $\vb{A}$ è possibile definire a partire da questo un nuovo potenziale vettore $\vb{A}'$
+    con divergenza nulla come indicato nella precedente osservazione. La condizione affinchè ciò avvenga è che
+    \[
+        \laplacian{f}=\div{\vb{A}}
+    \]
+\end{obs}
+\begin{proof}
+    La dimostrazione si ottiene imponendo che la divergenza di $\vb{A'}=\vb{A}+\grad{f}$ sia $0$.
+\end{proof}
+
+Il potenziale vettore gode di alcune proprietà generali.
+\begin{thm}
+    Dato un potenziale vettore $\vb{A}$, l'equazione definitoria locale \eqref{eqn:def_potenziale_vettore} ha una corrispondente integrale
+    \[
+        \int_S \vb{B}\vdot\vu{n}\dd{S}=\oint_l\vb{A}\vdot\dd{\vb{l}}
+    \]
+    Dove $S$ è una superficie aperta orientata e $l$ è il suo contorno. Questa relazione mostra come la circuitazione di $\vb{A}$
+    sia uguale al flusso concatenato di $\vb{B}$.
+\end{thm}
+\begin{proof}
+    La dimostrazione è immediata e si ottiene integrando sulla superficie $S$ entrambi i membri della
+    \eqref{eqn:def_potenziale_vettore} e applicando il teorema di Stokes all'integrale del rotore di $\vb{A}$
+\end{proof}
+Il fatto che il potenziale vettore abbia divergenza nulla implica che le proprietà dedotte per $\vb{B}$ valgano
+anche per $\vb{A}$.
+
+Il seguente risultato fornisce un'espressione esplicita per il potenziale vettore, con divergenza nulla.
+\begin{thm}
+    La seguente espressione esplicita per il potenziale vettore ha divergenza nulla
+    \begin{equation}
+        \vb{A}(\vb{r})=\frac{\mu_0}{4\pi}\int\frac{\vb{J}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}\dd{\tau'}
+        \label{eqn:A_I}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Per quanto visto nella dimostrazione della seconda equazione di Maxwell $\vb{B}$ può essere scritto
+    come rotore di una funzione: dalla definizione di potenziale vettore segue quindi immediatamente
+    la prima parte della tesi.
+    Resta da dimostrare che, nella forma trovata, il potenziale vettore ha divergenza nulla. Per la \eqref{app:eqn:div_scalare_vettore}
+    \[
+        \div{\vb{A}}=\frac{\mu_0}{4\pi}\int_{\tau'} \div[\frac{\vb{J}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}]\dd{\tau'}=
+        \frac{\mu_0}{4\pi}\int_{\tau'} \rec{\abs{\vb{r}-\vb{r}'}}\div{\vb{J}(\vb{r}')}\dd{\tau'}+
+        \frac{\mu_0}{4\pi}\int_{\tau'} \grad{\rec{\abs{\vb{r}-\vb{r}'}}}\vdot\vb{J}(\vb{r}')\dd{\tau'}
+    \]
+    Il primo integrale è nullo perchè la divergenza opera su $\vb{r}$ mentre $\vb{J}$ è riferito $\vb{r'}$.
+    Per quanto riguarda il secondo integrale invece, per le \eqref{app:eqn:grad_r} si può sostituire $\grad$
+    con $-\grad'$. Invertendo la \eqref{app:eqn:div_scalare_vettore} si ottiene
+    \[
+        \div{\vb{A}}=-\frac{\mu_0}{4\pi}\int_{\tau'}\grad'\vdot\Biggl[\frac{\vb{J}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}\Biggr]-
+        \rec{\abs{\vb{r}-\vb{r}'}}\grad'\vdot\vb{J}(\vb{r}') \dd{\tau'}
+    \]
+    Nel caso stazionario la divergenza di $\vb{J}$ è nulla. Per il teorema della divergenza si ha però
+    \[
+        \div{\vb{A}}=-\frac{\mu_0}{4\pi}\int_{S'}\frac{\vb{J}(\vb{r}')\vdot\vu{n}\dd{S'}}{\abs{\vb{r}-\vb{r}'}}
+    \]
+    Nell'intergale di volume, $\tau'$ deve essere abbastanza grande da contenere tutti i circuiti sui quali la densità di
+    corrente sia diversa da $0$. Se tutte le linee di corrente sono al finito, e quindi la superficie contiene tutte le linee,
+    l'integrale è nullo e di conseguenza la divergenza del potenziale vettore è nullo.
+\end{proof}
+Se la densità di corrente è localizzata solo su conduttori filiformi costituenti un circuito
+si ha $\vb{J}\dd{\tau'}=JS\dd{\vb{l}}'=I\dd{\vb{l}}'$ e allora il potenziale vettore diviene
+\begin{equation}
+    \label{eqn:potenziale_vettore_circuito_lineare}
+    \vb{A}(\vb{r})=\frac{\mu_0}{4\pi}\oint_{l'}\frac{I\dd{\vb{l}'}}{\abs{\vb{r}-\vb{r}'}}
+\end{equation}
+Nel caso di una spira piana posta molto lontano dall'osservatore, il potenziale vettore assume una forma particolarmente
+semplice. È necessario introdurre preliminarmente la seguente definizione, che rivestirà un ruolo
+centrale nei prossimi paragrafi.
+\begin{defn}[Momento magnetico]
+    Si definisce il vettore momento magnetico come
+    \[
+        \vb{m}=I\vb{S}
+    \]
+    dove il versore che definisce il verso di $\vb{S}$ è definito positivo quando vede girare la corrente in senso
+    antiorario.
+\end{defn}
+\begin{cor}
+Il potenziale vettore generato da una spira piana percorsa da corrente stazionaria $I$ posta molto
+lontano dall'osservatore, in modo tale che la distanza sia molto maggiore delle dimensioni lineari
+della spira, è
+    \begin{equation}
+        \label{eqn:potenziale_vettore_momento_magnetico}
+        \vb{A}(\vb{r})=\frac{\mu_0}{4\pi}\frac{\vb{m}\cp\vb{r}}{r^3}
+    \end{equation}
+\end{cor}
+\begin{proof}
+    Il fatto che la distanza $r$ fra spira ed osservatore sia molto maggiore delle dimensioni lineari della spira
+    implica che nella \eqref{eqn:potenziale_vettore_circuito_lineare} $\abs{\vb{r}-\vb{r}'}\simeq r$. Allora,
+    usando la \eqref{app:eqn:grad_cp}
+    \[
+        \vb{A}(\vb{r})=\frac{\mu_0 I}{4\pi}\oint_l \frac{\dd{\vb{l}'}}{r}=
+        \frac{\mu_0 I}{4\pi}\int_S \grad(\rec{r})\cp\dd{\vb{S}}\simeq
+        \frac{\mu_0 I}{4\pi} \grad(\rec{r})\cp\vb{S}
+    \]
+    dove nell'ultimo passaggio si è fatto uso del fatto che la spira è piccola. Esplicitando il gradiente
+    \[
+        \vb{A}=\frac{\mu_0 I}{4\pi}\frac{-\vb{r}}{r^3}\cp\vb{S}=
+        \vb{A}=\frac{\mu_0 }{4\pi}\frac{I\vb{S}\cp\vb{r}}{r^3}=
+        \vb{A}=\frac{\mu_0 }{4\pi}\frac{\vb{m}\cp\vb{r}}{r^3}
+    \]
+\end{proof}
+In queste espressioni la costante arbitraria di integrazione è scelta in modo che il potenziale sia nullo all'infinito.
+
+\begin{thm}[Quarta equazione di Maxwell stazionaria nel vuoto]
+    Nel vuoto vale che
+    \begin{equation}
+        \curl{\vb{B}}=\mu_0\vb{J}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Si può esprimere il rotore di $\vb{B}$ come rotore del rotore di $\vb{A}$. Per la \eqref{app:eqn:curl_curl},
+    ricordando che il potenziale vettore può essere scelto con divergenza nulla
+    \[
+        \curl{\vb{B}}=\curl\curl{\vb{A}}=-\laplacian{A}+\grad(\div{\vb{A}})=-\laplacian{A}
+    \]
+
+    Quindi
+    \[
+        \curl{\vb{B}}=-\laplacian{\frac{\mu_0}{4\pi}\int_{\tau'} \frac{\vb{J}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}}\dd{\tau'}=
+        -\frac{\mu_0}{4\pi}\int_{\tau'} \vb{J}(\vb{r}')\laplacian[\rec{\abs{\vb{r}-\vb{r}'}}]\dd{\tau'}
+    \]
+    Per la \eqref{app:eqn:laplacian_r} si ha la tesi.
+
+\end{proof}
+Questa equazione è valida solo nel caso stazionario, infatti applicando la divergenza ad entrambi i membri si ha $\mu_0\div{\vb{J}}=0$:
+affinchè la quarta equazione di Maxwell sia valida quindi è necessario che la divergenza di $\vb{J}$ sia nulla, ovvero
+è necessario trovarsi nel caso stazionario.
+
+Per esprimere la forma intergrale della quarta equazione di Maxwell è necessario introdurre due definizioni.
+\begin{defn}[Corrente concatenata ad un contorno]
+    Data una linea chiusa $l$, si dicono correnti concatenate a $l$ le correnti $I_i$ che intersecano qualunque superficie che abbia $l$ come contorno
+\end{defn}
+\begin{defn}[Grado di concatenazione]
+    Si definisce grado di concatenazione $n_i$ il numero di volte che una linea chiusa $l$ gira intorno ad una corrente concatenata $I_i$
+\end{defn}
+
+\begin{cor}[Teorema della circuitazione di Ampère]
+    Prese delle correnti concatenate $I_i$ con segno positivo quando vedono girare il contorno orientato $l$ in senso antiorario
+    \begin{equation}
+        \oint_l \vb{B}\vdot\dd{\vb{l}}=\mu_0 \sum I_i n_i
+    \end{equation}
+    \label{teo:Ampère}
+\end{cor}
+\begin{proof}
+    Si consideri una curva chiusa semplice $l$ ed una superficie $S$ che abbia $l$ come contorno,
+    orientata in modo da vedere il verso di $l$ antiorario. Si calcoli il flusso di ambo i membri
+    della quarta equazione di Maxwell attraverso questa superficie.
+    Il primo membro, per il teorema di Stokes
+    \[
+        \int_S \curl{\vb{B}}\vdot\vu{n}\dd{S}=\oint_l\vb{B}\vdot\dd{\vb{l}}
+    \]
+    Per quanto riguarda il secondo membro invece è necessario osservare che il flusso di $\vb{J}$ è non nullo
+    solo in quelle porzioni di superficie, indicate con $\Delta S_i$, attraversate dai condutori
+    che portano le correnti che generano $\vb{J}$. Si ha quindi
+    \[
+        \mu_0 \int_S \vb{J}\vdot\dd{\vb{S}}=\mu_0 \sum_i \Biggl[\int_{\Delta S_i} \vb{J}_i \vdot\dd{\vb{S}} \Biggr]=\mu_0 \sum_i I_i
+    \]
+    Se la curva non fosse semplice bisognerebbe tenere conto delle concatenazioni multiple delle correnti mediante il grado di concatenazione.
+\end{proof}
+
+Grazie a quanto visto fin'ora è possibile dedurre tre equazioni analoghe a quella di Poisson
+per il potenziale vettore nel caso statico, una per ogni componente. A causa di questa analogia,
+i metodi risolutivi sono identici a quelli visti nel caso dell'equazione di Poisson elettrostatica.
+\begin{thm}[Equazione generale del potenziale vettore statico]
+    Dato un potenziale vettore $\vb{A}$ con divergenza nulla,
+    \begin{equation}
+        \laplacian \vb{A}=-\mu_0\vb{J}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Per la quarta equazione di Maxwell
+    \[
+        \curl{\vb{B}}=\curl\curl{\vb{A}}=\mu_0\vb{J}
+    \]
+    Per la \eqref{app:eqn:curl_curl}, nell'ipotesi di divergenza nulla, si ha $\curl\curl{\vb{A}}=-\laplacian{\vb{A}}$
+    Sostituendo, si ottiene la tesi.
+\end{proof}
+Questa equazione è equivalente alla seconda ed alla quarta equazione di Maxwell in quanto, come già osservato,
+è necessario che la divergenza di $\vb{B}$ sia zero affinchè il campo possa essere scritto come rotore di
+un potenziale.
+
+\begin{example}
+    Si consideri un solenoide infinito, rettilineo, a spire serrate e uniformemente avvolte, posto in modo tale
+    che il suo asse coincida con l'asse $x$. Si indichi con $I$ la corrente circolante nel solenoide
+    e con $n$ il numero di spire per untià di lunghezza. Il sistema ha simmetria cilindrica e questo comporta,
+    tenendo conto del fatto che il solenoide essendo infinito non ha estremità, che $\vb{B}$ internamente
+    al solenoide sia indipendente dalla coordinata $x$ e che le sue linee di forza siano parallele all'asse $x$.
+    Questo non è in contraddizione col fatto che le linee di forza del campo devono essere chiuse: il solenoide
+    infinito è un'astrazione di un sitema costituito da un solenoide molto lungo - che quindi ha estremità e
+    di conseguenza linee di forza non perfettamente parallele all'asse $x$.
+    Si consideri ora un percorso rettangolare interno al solenoide, con due lati $AB$ e $CD$ di lunghezza $l$ paralleli
+    all'asse $x$: per il teorema di Ampère la circuitazione di $\vb{B}$ vale
+    \[
+        \oint_{ABCD}\vb{B} \vdot \dd{\vb{l}}=B_{AB}l-B_{CD}l=\mu_0\sum I^{conc}=0
+    \]
+    in quanto nessuna corrente è concatenata al percorso. Da questo segue che $B_{AB}=B_{CD}$, a prescindere dalla
+    posizione e dall'orientamento del percorso: il campo di induzione magnetica all'interno del solenoide non dipende
+    nemmeno dalla distanza rispetto all'asse ed è perciò uniforme.
+
+    Si consideri ora il percorso posizionato in modo tale da avere il lato $AB$ interno al solenoide ed il lato
+    $CD$ esterno. La circuitazione in questo caso vale
+    \[
+        \oint_{ABCD}\vb{B} \vdot \dd{\vb{l}}=B_{AB}l-B_{CD}l=\mu_0\sum I^{conc}=\mu_0 nl I
+    \]
+    Facendo una sezione del solenoide si ottengono due file parallele di conduttori: la corrente nei conduttori
+    appartententi ad una di queste file è entrante rispetto al piano che realizza la sezione, la corrente nei
+    conduttori dell'altra fila è uscente. Ponendosi ad una distanza tale da poter trascurare il diametro del
+    solenoide, i contrubuti che le correnti in queste due file di conduttori apportano a $\vb{B}$ sono uguali in
+    modulo ma opposte in segno\footnote{Con un ragionamento analogo si comprende intuitivamente come mai
+    all'interno del solenoide le linee di forza siano parallele all'asse $x$. Si ha infatti che i contributi
+    al campo magnetico hanno in questo caso lo stesso segno.}.
+    Ne segue che il campo magnetico esterno al solenoide è molto piccolo. Trascurandone
+    il contrubuto si ha quindi che $B_{AB}=B\simeq\mu_0 n I$.
+\end{example}

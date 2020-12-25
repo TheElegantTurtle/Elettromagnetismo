@@ -1,0 +1,118 @@
+L'analisi proposta in questo e nel prossimo paragrafo è fatta per materiali omogenei ed isotropi in cui $\mu$ sia costante.
+
+Si consideri un circuito in condizioni quasi-stazionarie, il che implica che la corrente abbia
+lo stesso valore lungo tutto il circuito, percorso da una corrente variabile nel tempo $I(t)$.
+Questa corrente genera nello spazio circostante un campo di induzione magnetica $\vb{B}(t)$ il cui
+flusso concatenato al circuito è in generale diverso da zero e variabile.
+Per la legge di Faraday-Neumann si genera nel circuito una forza elettromotrice detta \textit{autoindotta}.
+\begin{obs}
+    \begin{equation}
+        \label{eqn:induttanza}
+        \Phi(\vb{B})=LI
+    \end{equation}
+\end{obs}
+\begin{proof}
+    per la \eqref{eqn:dB} il campo di induzione magnetica è proporzionale alla corrente che percorre il circuito.
+    Poichè il flusso elementare di $\vb{B}$ attraverso ogni elemento di superficie $\dd{\vb{S}}$ è
+    proporzionale a $\vb{B}$, anche il flusso concatenato deve essere proporzionale ad $I$.
+\end{proof}
+\begin{defn}[Induttanza]
+    La costante di proporzionalità che compare nell'osservazione precedente si chiama induttanza.
+\end{defn}
+L'unità di misura per l'induttanza è detta \textit{henry}
+\[
+    [L]=\frac{w}{A}=\frac{V \vdot s}{A}=\Omega \vdot s = H
+\]
+
+\begin{obs}
+    L'induttanza per un solenoide nell'approssimazione di solenoide infinito vale
+    \[
+        L=\mu n^2 lS=\mu N^2 \frac{S}{l}
+    \]
+\end{obs}
+\begin{proof}
+    Il campo di induzione magnetica per un solenoide vale in modulo
+    \[
+        B=\mu nI
+    \]
+    ed è diretto assialmente. Il flusso concatenato ad una singola spira è $=SB$
+    e quindi il flusso concatenato a tutto il circuito vale $\Phi(\vb{B})=NS\mu nI$.
+    Ma allora l'induttanza vale
+    \[
+        L=\frac{\Phi(\vb{B})}{I}=\mu n^2 lS=\mu N^2 \frac{S}{l}
+    \]
+\end{proof}
+Nelle ipotesi\footnote{Quasi-stazionarietà e materiale omogeneo e isotropo}, dalla legge di Faraday-Neumann si ha immediatamente
+l'espressione per la forza elettromotrice autoindotta: $f_a=-L\dd{I}/\dd{t}$.
+Se il circuito con resistenza $R$ è sede di una corrente variabile nel tempo, l'equazione del circuito è
+\begin{equation}
+    \label{eqn:RL}
+    RI=f+f_a=f-L\dv{I}{t}
+\end{equation}
+Quando la geometria del circuito è semplice il termine $f_a$ risulta trascurabile, riducendosi quindi al caso stazionario.
+Quando questo termine aggiuntivo non è trascurabile (ad esempio, per la presenza nel circuito di un solenoide) si indica
+esplicitamente la presenza di un componente autoinduttivo.
+\begin{example}
+    Dopo aver chiuso  un circuito LR (circuito RL in fase di carica) la corrente nel tempo varia secondo la legge
+    \[
+        I=I_m\Bigl(1-e^{-\frac{t}{\tau}}\Bigr)
+    \]
+    con $I_m=f/R$ e $\tau=L/R$.
+    Una volta chiuso il circuito quindi la corrente aumenta passando da $0$ a $I_m$, ovvero il valore
+    che verrebbe raggiungo istantaneamente in assenza di induttanza.
+
+    Per arrivare a questo risultato bisogna semplicemente risolvere l'equazione del circuito con $f$ costante
+    e condizione iniziale $I(0)=0$.
+    Con la notazione introdotta l'equazione può essere riscritta come
+    \[
+        I=I_m-\tau \dv{I}{t}
+    \]
+    Con la sostituzione $I\rightarrow I_m-I=u$ si ha $\dv*{I}{t}=-\dv*{u}{t}$ e $u(0)=I_m$. Di conseguenza
+    \[
+        \frac{\dv{u}{t}}{u}=-\rec{\tau}
+    \]
+    Integrando ambo i membri da $0$ a $t$
+    \[
+        \ln(u)-\ln(u(0))=-\frac{t}{\tau}
+    \]
+    Mediante sostituzione inversa si ottiene l'equazione cercata.
+    Se ora in \eqref{eqn:RL} si isola $f_a$ e si inserisce l'andamento appena trovato per la corrente, si ottiene che
+    la differenza di potenziale ai capi dell'induttanza vale $f_a=-fe^{-\frac{t}{\tau}}$, ovvero
+    $f_a$ si oppone quindi ad $f$ ma diminusce col tempo fino ad azzerarsi.
+\end{example}
+
+\begin{thm}[Legge di Felici]
+    \label{teo:felici}
+    Sia data una spira con area $S$ e costituita da $N$ avvolgimenti, di resistenza $R$ e immersa in un campo
+    di induzione magnetica costante nel tempo. Detta $Q$ la carica totale che attraversa il circuito
+    \[
+        Q=\frac{\Phi_i-\Phi_f}{R}
+    \]
+    ovvero la carica totale che attraversa il circuito dipende solo dallo stato iniziale e dallo stato finale.
+    In particolare, se la spira viene portata in una zona priva di campo magnetico
+    \[
+        Q=\frac{NS[B]}{R}
+    \]
+    con $[B]$ il valor medio del campo di induzione magnetica sulla superficie della spira.
+\end{thm}
+\begin{proof}
+    Dimostriamo la prima parte dell'asserto.
+    In assenza di generatori, l'unica forza elettromotrice nel circuito è quella autoindotta la cui espressione
+    è data dalla legge di Faraday-Neumann. Per la prima legge di Ohm la corrente nel circuito allora vale
+    \[
+        I=\rec{R}f_i=-\rec{R}\pdv{\Phi_S(\vb{B})}{t}
+    \]
+    La carica totale che scorre nel circuito dall'istante iniziale al tempo $t$ allora vale
+    \[
+        Q=\int_0^t I\dd{t}=-\rec{R}\int_0^t\pdv{\Phi_S(\vb{B})}{t}\dd{t}=\frac{\Phi_i-\Phi_f}{R}
+    \]
+    Per la seconda parte, si ha che la spira è inizialmente posta in quiete nel campo
+    \[
+        \Phi_i(\vb{B})=N\int_S \vb{B}\vdot\dd{\vb{S}}=NS\Biggl(\rec{S}\int_S \vb{B}\vdot\dd{\vb{S}} \Biggr)=NS[B]
+    \]
+    Se si porta la spira in una regione in cui il campo di induzione magnetica è nullo $\Phi_f(\vb{B})=0$ e quindi
+    per quanto mostrato
+    \[
+        Q=\frac{NS[B]}{R}
+    \]
+\end{proof}

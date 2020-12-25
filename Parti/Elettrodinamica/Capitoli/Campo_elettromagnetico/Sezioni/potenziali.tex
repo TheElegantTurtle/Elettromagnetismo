@@ -1,0 +1,185 @@
+Oltre che tramite le equazioni di Maxwell, tutte le caratteristiche del campo elettromagnetico possono essere ottenute fornendo i
+quattro potenziali generalizzati $V,\vb{A}$. Il fatto che per ricavare i potenziali, da cui è deducibile il campo elettromagnetico,
+servano quattro equazioni e che ne servano sei per dedurlo a partire dalle equazioni di Maxwell non è una contraddizione: le
+equazioni di Maxwell infatti contengono al loro interno anche le condizioni affinchè il campo elettromagnetico ammetta potenziale
+- condizioni che sono date per valide nel momento in cui si assume l'esistenza di un potenziale.
+
+Il potenziale vettore $\vb{A}$ è definito da una relazione analoga a quella introdotta nel paragrafo \ref{par:potenziale_vettore}
+in quanto la seconda equazione di Maxwell, condizione necessaria per la validità della definizione,
+non varia fra caso stazionario e non stazionario. Per quanto riguarda invece il potenziale scalare
+$V$, è necessaria una generalizzazione: nel caso stazionario l'esistenza del potenziale elettrico è garantita dal fatto che il
+campo elettrico sia conservativo, ma nel caso non stazionario questo non è più vero.
+Introducendo l'equazione definitoria del potenziale vettore \eqref{eqn:def_potenziale_vettore}
+nella terza equazione di Maxwell
+\[
+    \curl{\vb{E}}=-\pdv{t}(\curl{\vb{A}})=-\curl(\pdv{\vb{A}}{t})
+\]
+Da cui
+\[
+    \curl(\vb{E}+\pdv{\vb{A}}{t})=0
+\]
+Il vettore fra parentesi è irrotazionale e ammette quindi potenziale
+\begin{defn}[potenziale scalare]
+    Si definisce potenziale scalare una funzione che soddisfi la condizione
+    \begin{equation}
+        \label{eqn:def_potenziale_scalare}
+        -\grad{V}=\vb{E}+\pdv{\vb{A}}{t}
+    \end{equation}
+\end{defn}
+Si osservi come nel caso stazionario questa definizione si riduca a quella fornita nel paragrafo \ref{par:potenziale_elettrico}.
+Condizione necessaria all'introduzione dei potenziali è la validità della seconda e della terza equazione di
+Maxwell, ovvero di quelle omogenee\footnote{In queste due equazioni infatti non compaiono i termini noti dovuti
+alle sorgenti.}, che risultano quindi identicamente soddisfatte una volta sostituiti al loro interno i
+campi con i potenziali:
+\[
+    \begin{split}
+        &\div{\vb{B}}=\div(\curl{\vb{A}})=0\\
+        &\curl{\vb{E}}+\pdv{\vb{B}}{t}=\curl(\vb{E}+\pdv{\vb{A}}{t})=-\curl{\grad{V}}=0
+    \end{split}
+\]
+Per ricavare i potenziali è quindi necessario usare la prima e la quarta equazione di Maxwell. Sostituendo le equazioni
+definitorie dei potenziali all'interno di queste ultime si ottiene
+\[
+    \begin{split}
+        &\laplacian{V}+\pdv{t}(\div{\vb{A}})=-\frac{\rho}{\epsilon}\\
+        &\laplacian{\vb{A}}-\epsilon\mu \pdv[2]{\vb{A}}{t}-\grad(\div{\vb{A}}+\epsilon\mu\pdv{V}{t})=-\mu\vb{J}
+    \end{split}
+\]
+L'aver introdotto i potenziali non sembra aver semplificato di molto le equazioni da risolvere per trovare le caratteristiche del campo
+elettromagnetico, dato che queste quattro equazioni non sono disaccoppiate. Si osservi che se i termini fra parentesi fossero
+nulli, le equazioni risulterebbero disaccoppiate e assumerebbero una forma molto semplice.
+Siccome i potenziali non sono univocamente definiti risulta allora
+importante cercare la trasformazione più generale che lasci invariati i campi e vedere se tramite questa sia possibile
+semplificare le equazioni.
+\begin{thm}
+    Dati due potenziali $\vb{A}$ e $V$ che soddisfano rispettivamente la \eqref{eqn:def_potenziale_vettore} e la
+    \eqref{eqn:def_potenziale_scalare} si possono produrre dei potenziali $\vb{A}'$ e $V'$ tali che da entrambe le coppie di potenziali
+    sia deducibile lo stesso campo elettromagnetico. Affinchè questo accada la trasformazione che lega le due coppie di potenziali deve
+    essere del tipo
+    \begin{equation}
+        \label{eqn:trasformazioni_gauge}
+        \begin{cases}
+            & \vb{A}\to \vb{A}'=\vb{A}+\grad{\phi}\\
+            & V\to V'=V-\pdv{\phi}{t}
+        \end{cases}
+    \end{equation}
+    con $\phi$ una funzione scalare di classe $C^2$.
+\end{thm}
+\begin{proof}
+    La prima delle due equazioni ha dimostrazione immediata, già affrontata a suo tempo nel paragrafo \ref{par:potenziale_vettore}.
+    Per quanto riguarda la seconda invece
+    \[
+        \vb{E}'=-\grad{V'}-\pdv{\vb{A}'}{t}=-\grad{V}+\grad(\pdv{\phi}{t})-\pdv{\vb{A}}{t}-\pdv{t}(\grad{\phi})=-\grad{V}-\pdv{\vb{A}}{t}=\vb{E}
+    \]
+\end{proof}
+La trasformazione \eqref{eqn:trasformazioni_gauge} è detta \textit{trasformazione di gauge} e la funzione $\phi$ è
+detta \textit{funzione di gauge}. Un'opportuna trasformazione di gauge permette di trovare delle equazioni disaccoppiate
+per i potenziali.
+
+Se i potenziali elettrodinamici soddisfano la condizione, detta condizione di Lorentz,
+    \begin{equation}
+        \label{eqn:condizione_lorentz}
+        \div{\vb{A}}+\epsilon\mu\pdv{V}{t}=0
+    \end{equation}
+il sistema di equazioni si riducono al sistema di quattro equazioni disaccoppiate
+    \begin{equation}
+        \label{eqn:potenziali_maxwell}
+        \begin{split}
+            &\laplacian{V}-\epsilon\mu \pdv[2]{V}{t}=-\frac{\rho}{\epsilon}\\
+            &\laplacian{\vb{A}}-\epsilon\mu \pdv[2]{\vb{A}}{t}=-\mu\vb{J}
+        \end{split}
+   \end{equation}
+Quando i potenziali soddisfano la condizione di Lorentz si dice che essi appartengono alla \textit{gauge di Lorentz}.
+\begin{thm}
+    Data una coppia di potenziali $\vb{A}$ e $V$ è sempre possibile trovare una funzione $\phi$ affinchè i potenziali $\vb
+    {A}'$ e $V'$ generati a partire da questi due tramite trasformazione di gauge appartengano alla gauge di Lorentz.
+\end{thm}
+\begin{proof}
+    Si vuole dimostrare che è possibile determinare $\phi$ attraverso un'equazione differenziale che ammette sempre soluzione.
+    Bisogna avere
+    \[
+        0= \div{\vb{A}'}+\epsilon\mu\pdv{V'}{t}=\div{\vb{A}}+\epsilon\mu\pdv{V}{t}+\laplacian{\phi}-\epsilon\mu\pdv[2]{\phi}{t}
+    \]
+    Da cui segue
+    \[
+        \laplacian{\phi}-\epsilon\mu\pdv[2]{\phi}{t}= -\Biggl( \div{\vb{A}}+\epsilon\mu\pdv{V}{t} \Biggr)
+    \]
+    Per ipotesi il secondo membro è noto perchè sono noti i potenziali e quindi questa equazione ammette soluzione.
+\end{proof}
+
+La dimensione del prodotto $\epsilon\mu$ è quella dell'inverso di una velocità al quadrato ed è quindi possibile riscrivere
+le equazioni per i potenziali usando l'operatore dalemebrtiano
+\[
+    \label{eqn:potenziali_maxwell}
+    \begin{split}
+        & \square V=-\frac{\rho}{\epsilon}\\
+        & \square \vb{A}=-\mu\vb{J}
+    \end{split}
+\]
+In questo modo diventa lampante il fatto che le equazioni per i potenziali nel caso non stazionario sono analoghe
+a quelle del caso stazionario, con l'unica differenza di sostituire l'operatore laplaciano col dalembertiano: sono
+equazioni di onde con sorgente. Questa gauge risulta particolarmente adatta a descrivere problemi radiativi.
+In questa gauge una soluzione particolare e degna di nota,
+in quanto immediata generalizzazione della soluzione per il caso stazionario, è quella dei \textit{potenziali ritardati}.
+\begin{thm}[Potenziali ritardati]
+    Se le sorgenti sono localizzate in una porzione di spazio finita le \eqref{eqn:potenziali_maxwell} ammettono come soluzione
+    \begin{equation}
+        \begin{split}
+            &\vb{A}(\vb{r},t)=\frac{\mu}{4\pi}\int_{\tau}\frac{\vb{J}(\vb{r}', t-\Delta r/v)}{\Delta r}\dd{\tau'}\\
+            &V(\vb{r},t)=\rec{4\pi\epsilon}\int_{\tau}\frac{\rho(\vb{r}', t-\Delta r/v)}{\Delta r}\dd{\tau'}
+        \end{split}
+        \label{eqn:potenziali_ritardati}
+    \end{equation}
+    avendo indicato $v=1/\sqrt{\epsilon\mu}$
+\end{thm}
+Il nome \textit{potenziali ritardati} assume senso nel momento in cui si osserva che la densità di corrente e la densità di
+carica, in ogni posizione $\vb{r}'$ non vanno calcolate al tempo a cui si sta calcolando il potenziale ma ad un istante $t'=t-\Delta r/v$.
+Si può intuire come questo tempo sia quello impegato dal segnale elettromagnetico per percorrere lo spazio
+tra la posizione $\vb{r}'$ e la posizione $\vb{r}$ in cui si sta calcolando il potenziale.
+La soluzione più generale possibile si ottiene sommando ai potenziali ritardati la soluzione generale delle equazioni omogenee corrispondenti
+alle \eqref{eqn:potenziali_maxwell}. Nel prossimo capitolo si osserverà come queste soluzioni siano delle onde.
+A grande distanza dalle sorgenti localizzate, i potenziali ritardati vanno a zero molto più velocemente delle soluzioni omogenee:
+a grande distanza quindi permangono solo le onde elettromagnetiche.
+
+
+%La scelta di $\phi$ non toglie arbitrarietà ai potenziali: infatti la funzione di gauge non è univocamente determinata
+%dall'equazione che compare nella dimostrazione del teorema, ma a questa va sommata la soluzione generale dell'equazione
+%omogenea associata $\phi_0$. Presi quindi due potenziali $\vb{A}'$ e $V'$ primo apparteneneti alla gauge di Lorentz,
+%anche
+%\[
+%    \begin{cases}
+%        & \vb{A}''=\vb{A}'+\grad{\phi_0}\\
+%        & V''=V'-\pdv{\phi_0}{t}
+%    \end{cases}
+%\]
+%appartengono alla gauge di Lorentz.
+
+
+Per descrivere i problemi di interazione radiazione materia la gauge più utile è la \textit{gauge di Coulomb}.
+Se i potenziali elettrodinamici soddisfano la condizione
+    \begin{equation}
+        \div{\vb{A}}=0
+    \end{equation}
+    allora le equazioni per i potenziali si riducono al sistema di quattro equazioni disaccoppiate
+    \begin{equation}
+        \begin{split}
+            &\laplacian{V}=-\frac{\rho(\vb{r},t)}{\epsilon}\\
+            &\laplacian{\vb{A}}-\epsilon\mu \pdv[2]{\vb{A}}{t}=\epsilon\mu \grad\pdv{V}{t}-\mu \vb{J}
+        \end{split}
+    \end{equation}
+In questa gauge il potenziale scalare è quindi analogo al potenziale elettrico, con l'unica differenza che la densità di carica
+dipende dal tempo
+\[
+    V(\vb{r},t)=\rec{4\pi\epsilon}\int\frac{\rho(\vb{r}',t)}{\abs{\vb{r}-\vb{r'}}}\dd{\tau'}
+\]
+La gauge di Coulomb è utile in assenza di sorgenti: il potenziale scalare è in questo caso nullo e l'equazione
+per il potenziale vettore diventa $\square \vb{A}=0$; i campi diventano
+\[
+    \vb{B}=\curl{\vb{A}}\quad\quad \vb{E}=-\pdv{\vb{A}}{t}
+\]
+
+
+Ecco quindi che risulta giustificato il percorso seguito in questo paragrafo: per determinare i potenziali è sufficiente risolvere quattro
+equazioni differenziali disaccoppiate. Una volta noti i potenziali è possibile risalire al campo elettromagnetico tramite semplici
+operazioni di derivazione. Introducendo i potenziali l'unico ostacolo al calcolo del campo si trova nella struttura complicata delle
+funzioni che entrano in gioco ma viene eliminato qualsiasi problema relativo alla struttura delle equazioni.

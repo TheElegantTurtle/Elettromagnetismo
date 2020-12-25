@@ -1,0 +1,72 @@
+I fenomeni di polarizzazione magnetica possono essere descritti macroscopicamente intoducendo il vettore
+polarizzazione magnetica.
+\begin{defn}[Vettore polarizzazione magnetica]
+    Si definisce il vettore polarizzazione magnetica $\vb{M}$ come il momento
+    di dipolo magnetico per unità di volume posseduto dal materiale
+    \[
+        \vb{M}=\lim_{\tau\to 0}\frac{\sum \vb{m}_i}{\tau}=\frac{\dd{N}  \expval{\vb{m}}}{\dd{\tau}}
+    \]
+\end{defn}
+Con $\dd{N}$ il numero di dipoli magentici contenute nell'elemento di volume $\dd{\tau}$.
+Dalla definizione si ottiene che l'elemento di volume possiede un momento di dipolo $\dd{\vb{m}}=\vb{M}\dd{\tau}$.
+Dei ragionamenti qualitativi preliminari ad una dimostrazione rigorosa permettono di comprendere in che modo
+questo vettore sia legato alle correnti amperiane, cioè le correnti atomiche microscopiche.
+Si consideri a tal fine un cilindro di materiale polarizzato lungo l'asse del cilindro stesso (ovvero tale che
+$\vb{M}$ giaccia sull'asse del cilindro).
+Dato che gli atomi sono sempre circondati da elettroni in movimento
+l'unica possibilità per avere $M=0$ è che le spire microscopiche siano disposte casualmente
+e che quindi il momento magnetico medio sia $0$. Quando $M\neq0$ significa che le spire microscopiche
+sono prevalentemente orientate nella stessa direzione, ovvero giacciono sul piano ortogonale a $\vb{M}$.
+Se $\vb{M}$ fosse indipendente dalla posizione, allora internamente al
+materiale il valor medio delle correnti micorscopiche sarebbe nullo: infatti, prendendo un piano ortogonale
+all'asse del cilindo, prendendo un punto $P$ su questo piano, si avrebbe in media perfetta compensazione fra
+le correnti dei dipoli disposti simmetricamente a $P$. Non sarebbe nulla però la corrente sulla superficie
+laterale del cilindro, descritta da un vettore densità $\vb{J}_{mS}$ che può essere definito come
+\[
+    \dd{I_{mS}}=\vb{J}_{mS}\vdot \dd{h}\vu{n}
+\]
+dove $Q_m$ è la carica microscopica media che flusce attraverso un segmento di lunghezza $\dd{h}$ ($\vu{n}$ è il
+versore normale al segmento).
+Se Se $\vb{M}$ non fosse indipendente dalla posizione, allora alla corrente microscopica superficiale andrebbe sommato
+il contributo di una corrente microscopica interna al materiale descritta da una densità $\vb{J}_{mV}$
+\[
+    \dd{I_{mV}}=\vb{J}_{mV}\vdot \dd{\vb{S}}
+\]
+
+\begin{thm}
+    Le relazioni fondamentali tra il vettore di polarizzazione e le densità di corrente
+    di superficie e di volume in un materiale sono
+    \begin{equation}
+        \vb{J}_{mS}=\vb{M}\cp\vu{n}
+        \label{eqn:M_JmS}
+    \end{equation}
+    \begin{equation}
+        \vb{J}_{mV}=\curl{\vb{M}}
+        \label{eqn:M_JmV}
+    \end{equation}
+    con $\vu{n}$ il versore normale alla superficie del materiale.
+\end{thm}
+\begin{proof}
+    Si consideri un certo materiale di forma qualunque che occupi un volume $\tau$ delimitato da una superficie $S$.
+    Sia $\vb{M}=\vb{M}(\vb{r}')$ il vettore di polarizzazione magnetica. Allora si ha, dalla definizione di $\vb{M}$
+    \[
+        \vb{A}(\vb{r})=\frac{\mu_0}{4\pi} \int_{\tau}\frac{\dd{\vb{m}}\cp(\vb{r}-\vb{r'})}{\abs{\vb{r}-\vb{r'}}^3}=
+        \frac{\mu_0}{4\pi} \int_{\tau}\frac{\vb{M}(\vb{r'})\cp(\vb{r}-\vb{r'})}{\abs{\vb{r}-\vb{r'}}^3}\dd{\tau'}
+    \]
+    Ricordando la dimostrazione del teorema [REF] e usando l'equazione \eqref{app:eqn:curl_scalare_vettore}
+    \[
+        \vb{A}(\vb{r})=\frac{\mu_0}{4\pi} \int_{\tau}\frac{\curl'\vb{M}(\vb{r'})}{\abs{\vb{r}-\vb{r'}}}-
+        \frac{\mu_0}{4\pi} \int_{\tau}\grad'\Biggl[\frac{\vb{M}(\vb{r'})}{\abs{\vb{r}-\vb{r'}}}\Biggr]\dd{\tau}
+    \]
+    Grazie alla seconda identità di green
+    \[
+        \vb{A}(\vb{r})=\frac{\mu_0}{4\pi} \int_{\tau}\frac{\curl'\vb{M}(\vb{r'})}{\abs{\vb{r}-\vb{r'}}}+
+        \frac{\mu_0}{4\pi} \int_{S}\frac{\vb{M}(\vb{r'})\cp\vu{n}'\dd{S'}}{\abs{\vb{r}-\vb{r'}}}
+    \]
+    Ma per la \ref{eqn:A_I} il potenziale vettore può anche essere scritto come
+    \[
+        \vb{A}(\vb{r})=\frac{\mu_0}{4\pi}\int\frac{\vb{J}_{mV}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}\dd{\tau'}+
+        \frac{\mu_0}{4\pi}\int\frac{\vb{J}_{mS}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}\dd{S'}
+    \]
+    Per confronto fra le integrande si ottiene la tesi.
+\end{proof}

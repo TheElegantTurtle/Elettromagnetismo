@@ -1,0 +1,225 @@
+In questo paragrafo si vogliono studiare tre diverse sorgenti di onde elettromagnetiche.
+
+%\subsection{Carica puntiforme in moto rettilineo uniforme}
+%Si vuole calcolare il campo elettromagnetico generato da una carica in moto rettilineo uniforme. Per farlo
+%è utile passare attraverso i potenziali ritardati. Ci si pone come primo obiettivo quindi quello di
+%calcolare i potenziali ritardati per una particella carica puntiforme in qualsiasi stato di moto.
+%\begin{thm}[Potenziali di Lienard-Wieckert]
+%    I potenziali prodotti da una carica puntiforme $q$ in moto con velocità istantanea $\vb{v}$
+%    in posizione istantanea $\vb{r}_s$ sono
+%    \begin{equation}
+%        \begin{split}
+%            &V(\vb{r},t)=\rec{4\pi\epsilon_0}\frac{q}{\Delta r}\rec{1-\frac{v_r(t')}{c}}\\
+%            &\vb{A}(\vb{r},t)=\frac{\mu_0}{4\pi}\frac{q\vb{v}(t')}{\Delta r}\rec{1-\frac{v_r(t')}{c}}=
+%                V(\vb{r},t)\frac{\vb{v}(t')}{c^2}\\
+%        \end{split}
+%    \end{equation}
+%    con $v_r$ la proiezione di $\vb{v}$ sulla direzione $\vb{r}-\vb{r}_s$,
+%    $\Delta r=\abs{\vb{r}-\vb{r}_s}$ e $t'=t-\Delta r/c$.
+%\end{thm}
+%\begin{proof}
+%Per la carica puntiforme le densità che compaiono nei potenziali ritardati assumono la forma
+%    \[
+%        \begin{split}
+%            &\rho(\vb{r}',t')=q\delta^3 (\vb{r}'-\vb{r}_s(t'))\\
+%            &\vb{J}(\vb{r}',t')=q\vb{v}_s(t')\delta^3 (\vb{r}'-\vb{r}_s(t'))\\
+%        \end{split}
+%    \]
+%    dove $\delta^3$ è la delta di Dirac tridimensionale e $\vb{r}_s$, $\vb{v}_s$ sono posizione e velocità della particella.
+%    I potenziali ritardati assumono quindi la forma
+%    \[
+%        \begin{split}
+%            &V(\vb{r},t)=\frac{q}{4\pi\epsilon_0}\int_{\tau}\frac{\delta^3(\vb{r'}-\vb{r}_s(t'))}{\abs{\vb{r}-\vb{r}'}} \dd{\tau'}\\
+%            &\vb{A}(\vb{r},t)=\frac{q}{4\pi\epsilon_0}\int_{\tau}\frac{\vb{v}_s(t')\delta^3(\vb{r'}-\vb{r}_s(t'))}{\abs{\vb{r}-\vb{r}'}} \dd{\tau'}\\
+%        \end{split}
+%    \]
+%    Per poter calcolare gli integrali si usa il seguente artificio: si sostituisce $t'$ con $t^*$ e si integra tutto
+%    sulla distribuzione $\delta(t^*-t')$
+%    \[
+%        \begin{split}
+%            &V(\vb{r},t)=\frac{q}{4\pi\epsilon_0}\iint\frac{\delta^3(\vb{r'}-\vb{r}_s(t^*))}{\abs{\vb{r}-\vb{r}'}} \delta(t^*-t')\dd{t*}\dd{\tau}\\
+%            &\vb{A}(\vb{r},t)=\frac{q}{4\pi\epsilon_0}\iint\frac{\vb{v}_s(t^*)\delta^3(\vb{r'}-\vb{r}_s(t^*))}{\abs{\vb{r}-\vb{r}'}} \delta(t^*-t')\dd{t*}\dd{\tau}\\
+%        \end{split}
+%    \]
+%    Scambiando l'ordine di integrazione, l'integrale sul volume della delta di Dirac tridimensionale seleziona gli $\vb{r}'=\vb{r}_s(t*)$
+%    \[
+%        \begin{split}
+%            &V(\vb{r},t)=\frac{q}{4\pi\epsilon_0}\int\rec{\abs{\vb{r}-\vb{r}_s(t*)}} \delta(t^*-t')\dd{t'}\\
+%            &\vb{A}(\vb{r},t)=\frac{q}{4\pi\epsilon_0}\int\frac{\vb{v}_s(t^*)}{\abs{\vb{r}-\vb{r}_s(t^*)}} \delta(t^*-t')\dd{t'}\\
+%        \end{split}
+%    \]
+%    Questo integrale non può essere ancora eseguito, perchè $t'$ è una funzione della distanza fra $\vb{r}$ e $\vb{r}_s(t^*)$
+%    e quindi dipende da $t^*$.
+%    È noto che
+%    \[
+%        \delta (f(t^*))=\sum_i\frac{\delta(t^*-t_i)}{\abs{f'(t_i)}}
+%    \]
+%    dove i $t_i$ sono zeri della funzione $f$. Fissato il sistema di coordinate e la traiettoria della sorgente
+%    c'è un solo $t'$ possibile e quindi l'espressione per la delta si riduce a
+%    \[
+%        \begin{split}
+%            &\delta(t^*-t')=\delta(t*-t')(\pdv{t*}(t*-t'))^{-1}=\delta(t*-t')[\pdv{t*}(t*-(t-\rec{c}\abs{\vb{r}-\vb{s}_s(t*)}))]^{-1}=\\
+%            &=\delta(t*-t')(1+\rec{c}\frac{\vb{r}-\vb{r}_s(t')}{\abs{\vb{r}-\vb{r}_s(t')}}\vdot (-\vb{v}(t')))^{-1}\\
+%            &=\delta(t*-t')(1-frac{\vb{v}}{c}\frac{\vb{r}-\vb{r}_s}{\abs{\vb{r}-\vb{r}_s}})^{-1}\\
+%        \end{split}
+%    \]
+%
+%
+%    Sostituendo nell'integrale, si ha la tesi.
+%\end{proof}
+%
+%Si immagini ora una carica puntiforme $q$ che si muove con velocità $\vb{v}=v\vu{x}$ costante
+%($\vb{r'}=x'\vu{x}$).
+%Si vogliono calcolare i potenziali generati dalla carica nel punto $\vb{r}$ al tempo $t$.
+%Ponendo a $t=0$ il momento in cui la carica si trova in $x'=0$, al tempo $t$ la carica si trova in
+%$x'=v=vt$. Per calcolare i potenziali è però necessario conoscere la distanza fra il punto in cui si vuole calcolare
+%il potenziale e la posizione  in cui si trovava la carica al tempo $t'=t-\Delta r/c$. Chiaramente $x'=vt'$,
+%da cui segue che $\Delta r=\sqrt{(x-vt')^2+y^2+z^2}$. Invertendo l'equazione per $t'$ si trova
+%$\Delta r=c(t-t')$. Sostituendo ed elevando al quadrato si ottiene $c^2(t-t')^2=(x-v't)^2+x^2+y^2$.
+%Svolgendo i quadrati e risolvendo per $t'$
+%\[
+%    \Biggl(1-\frac{v^2}{c^2}\Biggr)t'=t-\frac{vx}{c^2}-\rec{c}\sqrt{(x-vt)^2+\Biggl(1-\frac{v^2}{c^2}\Biggr)(y^2+z^2)}
+%\]
+%Che può essere scritta in forma più compatta chiamando $\gamma^{-2}=1-v^2/c^2$
+%\[
+%    \frac{t'}{\gamma^2}=t-\frac{vx}{c^2}-\rec{c}\sqrt{(x-vt)^2+\frac{y^2+z^2}{\gamma^2}}
+%\]
+%Si trova agevolmente $\Delta r$ sostituendo il valore ottenuto per $t'$ nell'espressione $\Delta r=c(t-t')$.
+%Inserendo questo risultato nei potenziali di Lienard-Wieckert e raccogliendo un $\gamma^{-2}$ al denominatore
+%\[
+%    \begin{split}
+%        &V(\vb{r},t)=\rec{4\pi\epsilon_0}\frac{q\gamma}{\sqrt{\gamma^2(x-vt)^2+y^2+z^2}}\\
+%        &\vb{A}(\vb{r},t)=\frac{v}{c^2}V(\vb{r},t)\vu{x} \\
+%    \end{split}
+%\]
+%Ora è possibile ricavare i campi (RIVEDO CONTI)
+%\[
+%    \begin{split}
+%        &\vb{E}=-\grad{V}-\pdv{\vb{A}}{t}= \frac{q}{4\pi\epsilon_0}\frac{x\vu{x}+\gamma y\vu{y}+\gamma z \vu{z}}{(\Delta r)^3}\\
+%        &\vb{B}=\curl{\vb{A}}=\pdv{A}{z}\vu{y} - \pdv{A}{y}\vu{z}=\frac{q\gamma v}{4\pi c^2}\rec{(\Delta r)^3}(z\vu{y}-y\vu{z})\\
+%    \end{split}
+%\]
+%
+%Per comprendere l'andamento qualitativo del campo elettromagnetico ci si limiti a considerare il piano $xy$. Qui
+%$E_z=0$ e si ritrova facilmente la relazione $\vb{b}=(\vb{v}\cp\vb{E})/c^2$. Se si pone l'osservatore sull'asse $x$
+%anche la componente $y$ del campo sarà nulla e l'espressione per il campo elettrico si riduce a
+%\[
+%    \vb{E}=\rec{\gamma}\frac{q}{4\pi\epsilon_0}\frac{x}{\abs{x-vt}}\vu{x}
+%\]
+%Siccome $\gamma$ cresce al crescere della velocità, più la particella va veloce più il campo elettrico viene soppresso. Viceversa
+%ponendo l'osservatore perpendicolarmente al moto della particella, alla stessa altezza della particella, il campo si riduce a
+%\[
+%    \vb{E}= \gamma\frac{q}{4\pi\epsilon_0}\frac{x}{\abs{x-vt}}\vu{x}
+%\]
+
+\subsection{Dipolo oscillante}
+Ci si ponga nel vuoto.
+Un dipolo oscillante è costituito da due cariche uguali e opposte poste a distanza variabile nel tempo.
+Equivalentemente però, si può consdierare la distanza fissa e le cariche variabili. Il dipolo può essere
+quindi schematizzato con un segmento rettilineo di conduttore
+percorso da corrente alternata. Fisicamente questa situaione può essere realizzata prendendo un conduttore rettilineo
+con alle estremità due sfere costituenti le armature di un condensatore. Il circuito equivalente a tale dispositivo
+è costituito da un generatore di corrente alternata, una resistenza ed un condensatore tutti disposti in serie.
+Nell'ipotesi in cui
+$\lambda=c\,2\pi/\omega$ (ovvero la lunghezza d'onda della radiazione emessa) sia molto maggiore della
+lunghezza del conduttore, la corrente è indipendente dalla posizione sul conduttore. Si consideri inizialmente
+per semplicità che la corrente vari in modo armonico $I(\vb{r},t)=I(t)=I_0\cos{\omega t}$. La carica presente sulle armature del
+condensatore vale
+\[
+    q(t)=\int I\dd{t}=\frac{I_0}{\omega}\sin{\omega t}
+\]
+Sia $d$ la distanza fra le maglie del condensatore (ovvero la lunghezza del conduttore rettilineo),
+orientato ortogonamente all'asse $z$ con il centro nell'origine del sistema di coordinate.
+Le due sfere dotate di carica $+q$ e $-q$ costituiscono un dipolo con momento
+\[
+    \vb{p}=qd\vu{k}=\frac{I_0\,d}{\omega}\sin{\omega t}\vu{k}
+\]
+Ci si ponga nella gauge di Lorentz. Il potenziale vettore vale,
+per le equazioni dei potenziali ritardati \eqref{eqn:potenziali_ritardati}
+\[
+    \vb{A}(\vb{r},t)=\frac{\mu_0}{4\pi}\int_\tau
+    \frac{\vb{J}(\vb{r}',t-\abs{\vb{r}-\vb{r}'}/c)}{\abs{\vb{r}-\vb{r}'}}\dd{\tau'}
+\]
+Se $S$ è la sezione del conduttore, $\vb{J}(\vb{r},t)\vdot\vb{S}=I(t)\vu{k}$ dove per le ipotesi fatte
+$I$ non dipende da $t$.
+Inoltre siccome le coordinate con l'apice si riferiscono all'interno del conduttore $\dd{\tau'}=S\dd{z'}$.
+Nell'ipotesi di essere molto lontani dal conduttore $\abs{\vb{r}-\vb{r}'}\simeq r$ si ha
+\[
+    \vb{A}(\vb{r},t)=\frac{\mu_0}{4\pi}\int\frac{I(t-r/c)}{r}\dd{z'}\vu{k}=\frac{\mu_0 I_0 d}{4\pi}
+    \frac{\cos[\omega(t-r/c)]}{r}\vu{k}=
+    \frac{\mu_0}{4\pi}\frac{\dot{\vb{p}}(t-r/c)}{r}
+\]
+Dalla condizione di Lorentz si può ricavare il potenziale scalare. Tenendo conto che $\vb{A}=A\vu{k}$ si ha
+\[
+    \pdv{V}{t}=-\rec{\epsilon_0\mu_0}\pdv{\vb{A}}{z}=\rec{4\pi\epsilon_0}\Biggl(\frac{\ddot{p}(t-r/c)}{cr}+
+    \frac{\dot{p}(t-r/c)}{r^2} \Biggr)\frac{z}{r}
+\]
+Da cui, facendo un integrale indefinito rispetto al tempo e ponendo a zero la costante arbitraria
+\[
+    V(\vb{r},t)=\rec{4\pi\epsilon_0}\Biggl(\frac{\dot{p}(t-r/c)}{cr}+ \frac{p(t-r/c)}{r^2} \Biggr)\frac{z}{r}
+\]
+
+Si possono ora ricavare i campi a partire dalle \eqref{eqn:def_potenziale_scalare} e dalla
+\eqref{eqn:def_potenziale_vettore}. Il calcolo è semplice se effettuato in coordinate sferiche, basta tenere
+conto che $z/r=\cos{\theta}$ e che il versore $\vu{k}$ si scrive $\vu{k}=(\cos{\theta},-\sin{\theta},0)$.
+Si ottiene infine
+\[
+    \begin{split}
+        & B_r=0 \\
+        & B_\theta=0 \\
+        & B_\phi=\frac{\mu_0}{4\pi}\frac{\sin{\theta}}{r} \Biggl(\frac{\ddot{p}(t-r/c)}{c}+\frac{\dot{p}(t-r/c)}{r}\Biggr) \\
+        & E_r=\rec{4\pi\epsilon_0}\frac{2\cos{\theta}}{r} \Biggl(\frac{\ddot{p}(t-r/c)}{c}+\frac{\dot{p}(t-r/c)}{r}\Biggr) \\
+        & E_\theta=\rec{4\pi\epsilon_0}\frac{\sin{\theta}}{r} \Biggl(\frac{\ddot{p}(t-r/c)}{c^2}+\frac{\dot{p}(t-r/c)}{cr})+
+        \frac{p(t-r/c)}{r^2}\Biggr) \\
+        & E_\phi=0
+    \end{split}
+\]
+Chiaramente $\vb{B}\vdot\vb{E}=0$, a conferma che i campi sono ortogonali. Le linee di forza del campo magnetico
+sono circonferenze centrate sull'asse $z$, mentre il campo elettrico si trova nel piano $zr$. Tutti i termini che
+contribuiscono ai campo hanno una dipendenza spazio-temporale del tipo $t-r/c$ e sono divisi per potenze di $r$:
+i fronti d'onda sono dunque sfere che si propagano con velocità $c$ sulle quali l'ampiezza dipende da $\theta$
+e si attenua all'aumentare di $r$.
+
+Il vettore di Poynting vale, lasciando sottointesa la dipendenza di $p$ da $t-r/c$
+\[
+    \begin{split}
+        \vb{I}=&\frac{\vu{r}}{16\pi^2\epsilon_0}\Biggl[ \Biggl(\frac{\ddot{p}}{c^6r}\Biggr)^2 \sin^2{\theta}-
+        \Biggl(2\frac{\ddot{p}\dot{p}}{c^2r}+\frac{\dot{p}p}{r^3}+\frac{\ddot{p}p+\dot{p}^2}{cr^2}\Biggr)\frac{\sin^2{\theta}}{r^2}\Biggr]+ \\
+        +&\frac{\vu{\theta}}{16\pi^2\epsilon_0}\Biggl[ \Biggl(\frac{\ddot{p}\dot{p}}{c^2r}+\frac{\dot{p}p}{r^3}+
+        \frac{\ddot{p}p+\dot{p}^2}{cr^2}\Biggr)\frac{2\sin{\theta}\cos{\theta}}{r^2} \Biggr]
+    \end{split}
+\]
+Si considerino ora le espressioni per $\vb{p}$ e le sue derivate. Chiamando $p_0=I_0d/\omega$, si ha:
+$p=p_0\sin(\omega(t-r/c))$, $\dot{p}=\omega p_0\cos(\omega(t-r/c))$, $p=-\omega^2p_0\sin(\omega(t-r/c))$.
+Chiaramente i termini $\ddot{p}\dot{p}$ e $\dot{p}p$ hanno media temporale nulla e inoltre, mediando su un
+periodo $\ddot{p}p=-\dot{p}^2$, per cui $\ddot{p}p+\dot{p^2}=0$.
+Mediando temporalmente il vettore di Poynting quindi si ottiene
+\begin{equation}
+    \vb{I}=\frac{\sin^2{\theta}}{16\pi^2\epsilon_0 c^3}\frac{\ddot{p}}{r^2}\vb{r}\Rightarrow
+    [\vb{I}]\frac{\omega^4 p_0^2 \sin^2{\theta}}{32\pi^2\epsilon_0 c^3}\rec{r^2}\vb{r}
+    \label{eqn:valormedio_poynting}
+\end{equation}
+ovvero restano solo i termini che decrescono come $r^{-2}$. Ne segue che il flusso attraverso una sfera centrata
+nella sorgente non dipende da $r$. Questo flusso fornisce la potenza media irraggiata dal dipolo.
+\[
+    [P]=\int_S\bar{\vb{I}}\vdot\dd{\vb{S}}= \int_S \bar{\vb{I}}r^2\sin{\theta}\dd{\theta}\dd{\phi}=\frac{\omega^4 p_0^2}{2}\rec{6\pi\epsilon_0 c^3}=
+\]
+ovvero
+\begin{equation}
+    [P]=\frac{\omega^4 p_0^2}{2}\frac{\mu_0}{6\pi c}=\frac{\mu_0}{6\pi c}[p]
+    \label{eqn:potenza_dipolo}
+\end{equation}
+Per il principio di sovrapposizione, la formula trovata per la potenza è applicabile ad un dipolo oscillante con legge
+qualunque sviluppando la legge oraria in serie di Fourier o ad un insieme di dipoli oscillanti.
+Per quanto riguarda i termini inversamente proporzionali a potenze di $r$ maggiori di due, questi sono nulli quando si
+considera il flusso medio ma sono anche trascurabili quando si è lontani dal dipolo ($r>>\lambda$). Nel caso in cui
+$r<<\lambda$ questi costituiscono il \textit{campo vicino}, un campo variabile nel tempo ma localizzato intorno alla
+sorgente, al quale non è associato alcun trasporto di energia.
+
+\subsection{Carica puntiforme in moto accelerato}
+Si consideri una carica $q$ dotata di accelerazione $a$. È possibile usare gli stessi risultati ottenuti nel caso del
+dipolo oscillante a patto di sostituire $\ddot{p}^2$ con $(qa)^2$ nella \eqref{eqn:valormedio_poynting}.
+Con passaggi analoghi a quelli visti nel caso del dipolo, per velocità non relativistiche si ottiene la \textit{formula di Larmor}
+\begin{equation}
+    \bar{P}=\frac{\mu_0}{6\pi c}(qa)^2
+\end{equation}

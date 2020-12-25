@@ -1,0 +1,57 @@
+\label{par:corrente_correntestazionaria_complementi}
+L'obiettivo di questo paragrafo è mettere in evidenza alcuni aspetti delicati riguardanti l'applicazione
+del metodo dei lavori virtuali e studiare come si comporta la forza fra le maglie di un condensatore.
+A tal proposito, si condiseri un condensatore con capacità $C=\epsilon_0 S/x$, con $x$ la distanza fra le armature, ed
+energia elettrostatica $U_C$. Usando il metodo dei lavori virtuali, ovvero immaginando di spostare le armature di una
+distanza infinitesima $\delta x$, si ricava che la forza tra le armature vale
+\[
+R_x=\pdv{U_C}{x}
+\]
+
+Dalla \ref{eqn:U_condensatore}  si hanno due possibili espressioni per $U_C$
+\[
+U_C=\rec{2} \frac{Q^2}{C}=\rec{2} C (\Delta V)^2
+\]
+
+Derivando la prima di queste a $Q$ costante, ovvero consideando il condensatore isolato, si ottiene
+\[
+R_x=-\rec{2}\frac{Q^2}{\epsilon_0 S}
+\]
+che essendo negativa rappresenta una forza attrattiva.
+
+Derivando la seconda espressione a $\Delta V=fem$ costante, che equivale a considerare il condensatore
+collegato ad un generatore di forza elettromotrice costante, si ha
+\[
+R_x=\rec{2}\frac{\epsilon_0 S (\Delta V)^2}{x^2}=\rec{2}\frac{C^2 (\Delta V)^2}{\epsilon_0 S}=\rec{2}\frac{Q^2}{\epsilon_0 S}
+\]
+che ha lo stesso modulo ma verso opposto a quella già determinta. Sperimentalmente inoltre si verifica che
+è la forza attrattiva ad essere quella fisicamente corretta.
+Per comprendere l'origine di questa incongruenza, bisogna affidarsi ad alcune considerazioni di carattere termodinamico.
+In questo caso prima di applicare il metodo dei lavori virtuali ci si trova in una situazione di equilibro, ovvero di minimo
+per l'energia. Lo spostamento infinitesimo porta il sistema fuori dall'equilibrio e quindi ad un aumento dell'energia:
+ma questo è proibito dal secondo principio della termodinamica. Condizione necessaria per poter usare il metodo dei
+lavori virtuali è quindi considerare tutto il sistema suscettibile a variazioni di energia e includere fra queste ultime
+anche le variazioni di calore. Nel caso del condensatore isolato questa condizione è soddisfatta, mentre non è così
+quando si considera il condensatore legato ad un generatore. Si condieri infatti la forza esterna $F_e$ che allontana le
+maglie del condensatore della quantità $\delta x$. Questa deve essere appena maggiore della forza elettrostatica $R_x$
+e di segno opposto. L'allontanamento delle armature comporta una diminuzione della capacità ($\delta C<0$) e quindi dell'energia
+elettrostatica pari a
+\[
+\delta U_C =\delta\Biggl[\rec{2}C(x) fem^2\Biggr]=\rec{2} \delta C(x) fem^2<0
+\]
+%\rec{2}\dv{C(x)}{x}\delta x fem^2=\rec{2}\Biggl(-\frac{\epsilon_0 S}{x^2} \Biggr)\delta x fem^2
+
+Siccome $\Delta V=Ex$, se le armature si allontanano ($x$ aumenta) $E$ deve diminuire al fine di tenere costante la
+differenza di potenziale. Ma allora deve diminuire la carica sulle armature: in pratica una quantità $\delta Q$
+si sposta dall'armatura positiva a quella negativa passando per il generatore in verso opposto al campo elettromotore,
+compiendo un lavoro $\delta U_g=-fem \delta Q$. In contemporanea alla diminuzione di energia nel condensatore
+si ha un aumento di energia nel generatore, entrambe dovute al lavoro delle forze esterne. Ma siccome
+$\delta Q=\Delta V \delta C=fem \Delta C$ si ha
+\[
+\delta U_g=-fem^2 \delta C=-2 U_C>0
+\]
+In conclusione $\delta L_e=F_e\delta x \simeq -R_x\delta x= \delta U_C +\delta U_g=-\delta U_C$, ovvero
+\[
+R_x=\pdv{U_C}{x}=--\rec{2}\frac{\epsilon_0 S (\Delta V)^2}{x^2}=-\rec{2}\frac{C^2 (\Delta V)^2}{\epsilon_0 S}=-\rec{2}\frac{Q^2}{\epsilon_0 S}
+\]
+che è proprio l'espressione corretta.

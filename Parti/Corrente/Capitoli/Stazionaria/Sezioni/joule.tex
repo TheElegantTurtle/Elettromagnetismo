@@ -1,0 +1,35 @@
+Dalla  \eqref{eqn:potenza_stazionaria} emerge che la presenza di un campo elettrico che metta in moto
+le cariche libere di un conduttore implica la produzione di energia.
+Nel caso stazionario, questa energia non può essere nè energia cinetica nè energia potenziale.
+L'unica possibilità è quindi che si trasformi in energia termica, ovvero moto di agitazione disordinato.
+Questa potenza viene dissipata nell'ambiente sottoforma di calore o luce e il fenomeno prende il nome di \textit{effetto Joule}.
+\begin{thm}[legge di Joule]
+    In un conduttore ohmico si ha che
+    \begin{equation}
+        \label{eqn:effetto_joule}
+        W=RI^2
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Dalla \eqref{eqn:potenza_stazionaria} e dalla seconda legge di Ohm si ha immediatamente la tesi
+    \[
+        W=I\Delta V=I (RI)
+    \]
+\end{proof}
+
+\begin{thm}[Legge di Joule locale]
+    Si ha che la potenza trasferita dal campo elettrico alla corrente nell'unità di volume è
+    \begin{equation}
+        w=\vb{E}\vdot\vb{J} \quad\quad\quad w=\frac{\dd{L}}{\dd{\tau}\dd{t}}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Nella porzione di volume elementare del conduttore $\dd{\tau}$ sono presenti $n\dd{\tau}$
+    portatori con carica $q$. Indicando con $\dd{\vb{l}}=\vb{v}_d\dd{t}$
+    lo spostamento medio dei portatori di carica sottoposti al campo nel tempo $\dd{t}$,
+    si ha che il lavoro infinitesimo è
+    \[
+        \dd{L}=\vb{F}\vdot\dd{\vb{l}}=n\dd{\tau}q\vb{E}\vdot \dd{\vb{l}}=\vb{E}\vdot (nq\vb{v}_d)\dd{t}\dd{\tau}
+    \]
+    da cui la tesi.
+\end{proof}

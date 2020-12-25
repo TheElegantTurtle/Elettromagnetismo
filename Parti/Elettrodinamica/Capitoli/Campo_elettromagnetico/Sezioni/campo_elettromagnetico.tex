@@ -1,0 +1,138 @@
+I campi $\vb{E}$ e $\vb{B}$, così come i campi $\vb{D}$ e $\vb{H}$, sono legati alle caratteristiche
+delle sorgenti dalle equazioni di Maxwell
+%lasciare questa riga vuota
+
+\begin{minipage}[t]{0.5\textwidth}
+    \[
+        \begin{split}
+            & \div{\vb{D}}=\rho                    \\
+            & \curl{\vb{E}}=-\pdv{\vb{B}}{t}       \\
+        \end{split}
+    \]
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+    \[
+        \begin{split}
+            & \div{\vb{B}}=0                       \\
+            & \curl{\vb{H}}=\vb{J}+\pdv{\vb{D}}{t} \\
+        \end{split}
+    \]
+\end{minipage}
+Alcune considerazioni sulle equazioni di Maxwell. Le sorgenti del campo elettrico ($\rho$) e del campo magnetico ($\vb{J}$)
+non sono fra loro indipendenti ma sono legate dall'equazione di continuità \eqref{eqn:continuità} e ciò riflette
+il fatto che fisicamente le stesse cariche elettriche, che danno luogo ad una densità di carica $\rho$, quando
+sono in movimento danno luogo ad una densità di corrente. Il fatto che le cariche siano ferme o in
+movimento dipende dal sistema di riferimento scelto per descrivere il fenomeno e quindi è relativo il fatto
+di avere a che fare con un campo elettrico o con un campo magnetico.
+Nelle quattro equazioni di Maxwell inoltre è evidente una certa asimmetria: al secondo membro della prima compare la densità di carica, mentre
+il secondo membro della seconda è sempre nullo; allo stesso modo nel secondo membro della terza non compare un addendo
+equivalente alla densità di corrente presente nella quarta. Questo riflette il fatto che non c'è evidenza sperimentale dell'esistenza
+del monopolo magnetico, l'equivalente magnetico della carica elettrica.
+Infine, le equazioni di Maxwell mostrano come la derivata temporale di $\vb{E}$ sia una delle sorgenti
+di $\vb{B}$ e viceversa. Questa circostanza giustifica una trattazione unificata dei due fenomeni mediante un unico campo detto
+\textit{campo elettromagnetico}. Bisogna osservare che un campo elettromagnetico può essere presente in regioni di spazio
+prive di sorgenti e, più  avanti, si dimostrerà che esso possiede quantità di moto, energia e momento angolare. Si
+tratta quindi di un'entità fisica e non di un mero artificio introdotto per trattare i due fenomeni in maniera unificata.
+Nella trattazione del campo elettromagnetico si faranno due fondamentali approssimazioni: si considereranno le distribuzioni di
+carica come continue, sebbene a livello microscopico la carica sia quantizzata e si considereranno i campi come funzioni
+continue (approssimazione classica) nonostante la meccanica quantistica prescriva che il campo elettromagnetico sia quantizzato
+in fotoni. Queste approssimazioni sono ragionevoli per la maggior parte dei fenomeni macroscopici.
+
+Dalle considerazioni fatte emerge chiaramente l'importanza di studiare le proprietà delle equazioni di Maxwell.
+Queste sono otto equazioni scalari in dodici incognite ($\vb{E},\vb{D}$,$\vb{B},\vb{H}$), per cui è necessario
+fornire delle relazioni aggiuntive affinchè siano risolubili: queste sono le relazioni fenomenologiche che legano
+$\vb{E}$ a $\vb{D}$ e $\vb{B}$ a $\vb{H}$. In questo in modo le incognite si riducono a sei. Le otto equazioni
+non sono perciò indipendenti.
+\begin{obs}
+    La seconda equazione di Maxwell può essere dedotta dalla terza, analogamente la prima può esere dedotta dalla quarta\footnote{
+        la dimostrazione viene presentata usando le equazioni nel vuoto. Nel caso dei materiali si procede in modo analogo.}.
+\end{obs}
+\begin{proof}
+    Applicando l'operatore divergenza alla terza equazione di Maxwell si ha
+    \[
+        -\div{\pdv{\vb{B}}{t}}=-\pdv{t}\div{\vb{B}}=\div(\curl{\vb{E}})=0
+    \]
+    dove si è usato il teorema di Schwarz ed il fatto che la divergenza del rotore è nulla.
+    Questo implica che $\div{\vb{B}}=cost$. Prima che venissero realizzate le sorgenti di $\vb{B}$, il campo era nullo
+    in tutto lo spazio e anche la sua divergenza doveva quindi essere nulla. Siccome tutte le equazioni usate sono
+    indipendenti da ciò che accade alle sorgenti, la costante non può che essere $0$.
+    In maniera analoga, applicando la divergenza alla quarta equazione di Maxwell si ha
+    \[
+        0=\div{\vb{J}} + \div{\pdv{\vb{D}}{t}}=-\pdv{\rho}{t} + \pdv{t}\div{\vb{D}}=\pdv{t}(-\rho + \div{\vb{D}})
+    \]
+    Avendo sostituito $\div{\vb{J}}$ con l'espressione fornita dall'equazione di continuità \eqref{eqn:continuità}.
+    Ne segue che $-\rho + \div{\vb{D}}=cost$ dalla quale si arriva alla prima equazione di Maxwell
+    per considerazioni analoghe a quelle fatte nel caso precedente.
+\end{proof}
+Ne segue quindi che tutte le proprietà dei campi elettrici e magnetici sono contenute nella terza
+e nella quarta equazione di Maxwell, ovvero un sistema di sei equazioni in sei incognite.
+Specificata la configurazione spazio-temporale delle sorgenti $\rho$ e $\vb{J}$ (configurazione che dovrà rispettare
+l'equazione di continuità), assegnate le condizioni iniziali e le condizioni al contorno, le equazioni di Maxwell
+corredate dalle opportune relazioni fenomenologiche consentono in linea di principio di
+calcolare i campi, tramite i quali è immediatamente nota l'azione subita da una carica campione (grazie alla relazione
+$\vb{F}=q(\vb{E}+\vb{v}\cp\vb{B})$).
+
+
+Un caso in cui è particolarmente semplice risolvere le equazioni di Maxwell è quello del
+campo elettromagnetico in cui un solo materiale isotropo e omogeneo riempia lo spazio.
+In questo caso è necessario aggiungere alle sorgenti macroscopiche dei campi
+anche le correnti e le cariche microscopiche che i campi inducono nel materiale, che non sono note a priori proprio perchè
+indotte dal campo. Nell'ipotesi però che il materiale sia omogeneo ed isotropo (e che non sia ferromagnetico, a meno che
+$B(H)$ sia una curva univoca e lineare),
+è sufficiente considerare le equazioni di Maxwell analoghe a quelle nel vuoto, con $\epsilon$ e $\mu$
+al posto di $\epsilon_0$ e $\mu_0$, ovvero introducendo $\vb{D}=\epsilon \vb{E}$  e $\vb{H}=\vb{B}/\mu$.
+I risultati ottenuti nel vuoto restano quindi validi validi.
+Nel caso in cui diverse porzioni dello spazio siano rimepite con materiali diversi,
+il problema viene trattato risolvendo le equazioni di Maxwell in ciascuna porzione di spazio e imponendo poi le condizioni di raccordo
+
+\begin{minipage}[t]{0.5\textwidth}
+    \[
+        \begin{cases}
+            & E_{t1}=E_{t2}\\
+            & D_{n1}=D_{n2}
+        \end{cases}
+    \]
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+    \[
+        \begin{cases}
+            & H_{t1}=H_{t2}\\
+            & B_{n1}=B_{n2}
+        \end{cases}
+    \]
+\end{minipage}
+che ovviamente, possono essere semplificate come visto sopra nel caso in cui tutti i materiali siano isotropi e omogenei.
+
+È possibile dalle equazioni di Maxwell ricavare informazioni sulle caratteristiche delle sorgenti miscroscopiche
+indotte dai campi, riscrivendo le equazioni usando i vettori polarizzazione elettrica $\vb{P}$ e magnetica $\vb{M}$
+al posto di $\vb{D}$ ed $\vb{H}$, per semplice inversione delle definizioni
+\[
+    \begin{split}
+        & \vb{D}=\epsilon_0 \vb{E} + \vb{P} \\
+        & \vb{H}=\rec{\mu_0}\vb{B} - \vb{M} \\
+    \end{split}
+\]
+Si ottiene in questo modo
+\[
+    \begin{split}
+        & \epsilon_0\div{\vb{E}}=\rho-\div{\vb{P}}\\
+        & \div{\vb{B}}=0 \\
+        & \curl{\vb{E}}=-\pdv{\vb{B}}{t}\\
+        & \rec{\mu_0}\curl{\vb{B}}=\vb{J}+\epsilon_0\pdv{\vb{E}}{t}+\pdv{\vb{P}}{t}+\curl{\vb{M}}
+    \end{split}
+\]
+Queste 8 equazioni (ricoducibili a 6 fra loro indipendenti) non sono sufficienti a ricavare le
+12 grandezze scalari $\vb{E}$, $\vb{B}$, $\vb{P}$, $\vb{M}$ a meno che i vettori di polarizzazione
+siano noti a priori, ovvero siano note a priori le condizioni che li legano ai relativi
+campi. Questo non avviene praticamente mai ma una volta risolte le equazioni con $\vb{D}$ e $\vb{H}$ è possibile
+determinare le caratteristiche delle sorgenti microscopiche per confronto.
+Infatti, rispetto alle equazioni di Maxwell nel vuoto, le equazioni appena ricavate differiscono per tre termini aggiuntivi:
+\[
+    \rho'_p=-\div{\vb{P}} \quad\quad \vb{J}'_M=\curl{\vb{M}} \quad\quad \vb{J}'_p=\pdv{\vb{P}}{t}
+\]
+che rappresentano rispettivamente la densità di carica di polarizzazione, la densità di corrente di
+magnetizzazione e la densità di corrente di polarizzazione elettrica, ovvero la densità di corrente dovuta al fatto che quando
+un dielettrico si polarizza necessariamente c'è un movimento ordinato di cariche all'interno del materiale. Quest'ultimo
+è un termine caratteristico del caso non stazionario a differenza dei primi due che invece erano presenti già nel caso stazionario.
+
+Da qui in avanti si farà riferimento solo ed esclusivamente a mezzi isotropi e omogenei.

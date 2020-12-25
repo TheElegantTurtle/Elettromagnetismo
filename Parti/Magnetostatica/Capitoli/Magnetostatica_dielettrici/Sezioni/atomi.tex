@@ -1,0 +1,58 @@
+Si vuole preliminarmente studiare il comportamento di un atomo immerso in un campo di induzione
+magnetica esterno. Per questo studio ci si limiterà all'approssimazione del modello planetario
+di Rutherford, che consente di ottenere comunque informazioni interssanti.
+
+L'idea di fondo è che un elettrone in orbita attorno al nucleo può essere visto come una spira
+percorsa da corrente. Vogliamo quindi ricavare il momento magnetico, ovvero ricavare la superficie della spira
+$S=\pi r^2$ e la corrente $I=q_e/T$, dove $T$ è il periodo.
+Detto $r$ il raggio dell'orbita e $T$ il periodo di rivoluzione, si ha dalla legge di Coulomb
+e dal secondo postulato della dinamica di Newton
+\[
+\rec{4\pi\epsilon_0}\frac{e^2}{r^2}=m_e\omega^2 r=\frac{(2\pi)^2}{T^2}m_e r
+\]
+da cui
+\[
+T=\frac{4\pi}{e}\sqrt{\pi\epsilon_0 m_e r^3}
+\]
+Il raggio dell'orbita può essere valutato a partire dal lavoro di prima ionizzazione,
+ovvero dal lavoro necessario per strappare l'elettrone dalla sua orbita e portarlo
+all'infinito. All'infinito infatti l'elettrone può essere considerato fermo e ha
+dunque energia nulla e dunque il lavoro di ionizzazione equivale all'energia posseduta
+dall'elettrone in orbita, cambiata di segno.
+\[
+L=-\Biggl(\rec{2}m_e v^2 - \rec{4\pi\epsilon_0}\frac{e^2}{r} \Biggr)=-\Biggl(\rec{2}m_e (\omega r)^2 - \rec{4\pi\epsilon_0}\frac{e^2}{r} \Biggr)=
+-\Biggl(\rec{8\pi\epsilon_0} \frac{e^2}{r} - \rec{4\pi\epsilon_0}\frac{e^2}{r} \Biggr)
+\]
+E quindi
+\[
+L=\rec{8\pi\epsilon_0} \frac{e^2}{r} \Longrightarrow  r=\frac{e^2}{8\pi\epsilon_0}\rec{L}
+\]
+
+Inserendo i dati per l'atomo di idrogeno ($L=13.5 eV$) si ottiene una corrente $I=1mA$ e
+un momento magnetico $m=9.35\vdot 10^{-24} Am^2$, in buon accordo coi dati sperimentali.
+
+Il momento magnetico è proporzionale al momento angolare orbitale dell'elettrone rispetto al
+nucleo, in quanto entrambi i vettori giacciono sull'asse perpendicolare alla spira. Siccome la carica dell'elettrone
+è negativa, i due vettori sono antiparalleli. Il loro rapporto dipende solo da caratteristiche
+intrinseche dell'elettrone e vale
+\[
+\frac{m}{L}=\frac{e^-}{2m_e}=g_0
+\]
+Viene chiamato \textit{fattore giromagnetico orbitale g}.
+Oltre al momento orbitale è necessario considerare anche il momento orbitale di spin
+$s=\hbar/2$, uguale per protone, neutrone ed elettrone, che da luogo al fattore giromagnetico
+intrinseco
+\[
+g=C\frac{e^-}{2m}
+\]
+dove $C$ è una costante che vale $2$ per l'elettrone, $2.79$ per il protone e $1.91$ per il neutrone.
+Il momento magnetico totale si ottiene come somma vettoriale del momento magnetico orbitale e di qiello di
+spin\footnote{Bisogna in realtà tenere conto anche del principio di esclusione di Pauli e della quantizzazione
+del momento angolare}, ma siccome la massa di neutrone e protone è di tre ordini di grandezza più grande rispetto a quella dell'elettrone
+il loro contributo al momento magnetico dell'atomo può spesso essere trascurato.
+
+Atomi con simmetria sferica mostrano avere momento di dipolo magnetico nullo. In generale però
+anche quando il momento di dipolo di ogni singolo atomo non è nullo, è nullo il momento complessivo
+perchè i momenti di dipolo dei singoli atomi sono disposti casualmente. Un campo magnetico esterno
+ha l'effetto di indurre un momento magnetico non nullo sul materiale, in maniera che però è diversa a seconda
+della tipologia del materiale come verrà discusso in un paragrafo dedicato.

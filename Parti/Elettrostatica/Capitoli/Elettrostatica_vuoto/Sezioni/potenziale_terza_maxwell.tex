@@ -1,0 +1,62 @@
+Si vuole studiare la forma differenziale ottenuta moltiplicando scalarmente la \ref{eqn:E} con l'elemento di linea $d\vb{l}$
+\begin{obs}
+    La forma differenziale $\vb{E}\cdot d\vb{l}$ è esatta.
+\end{obs}
+\begin{proof}
+    Per l'identità \eqref{app:eqn:grad_r}
+    \[
+        \vb{E}\vdot \dd{\vb{l}}=
+        \frac{Q}{4\pi\epsilon_0}\frac{\vu{r}}{\abs{\vb{r}-\vb{r}'}^2}\vdot \dd{\vb{l}}=
+        -\frac{Q}{4\pi\epsilon_0}\grad{\rec{\abs{\vb{r}-\vb{r}'}}}\vdot \dd{\vb{l}}
+    \]
+    Ma $\grad{f}\vdot\dd{\vb{l}}=\dd{f}$: $\vb{E}\cdot d\vb{l}$ è il differenziale di una funzione
+    ed è quindi una forma differenziale esatta.
+\end{proof}
+
+\begin{cor}[Terza equazione di Maxwell]
+    \begin{equation}
+        \label{eqn:terza_maxwell}
+        \curl{\vb{E}}=0
+    \end{equation}
+\end{cor}
+\begin{proof}
+    La dimostrazione è immediata ricordando che una formula differenziale esatta è anche chiusa.
+\end{proof}
+
+Risulta spontaneo a questo punto dare la seguente definizione:
+\begin{defn}
+    Si definisce \textit{potenziale elettrico} generato dalla carica puntiforme Q la funzione scalare $V(\vb{r})$ tale che
+    $-\dd{V}=\vb{E}\vdot\dd{\vb{l}}$, o in altre parole
+    \begin{equation}
+        \int_A^B\vb{E}\cdot d\vb{l}=V(A)-V(B)
+    \end{equation}
+\end{defn}
+Integrando l'espressione del campo elettrico generato da carica puntiforme
+si ottiene un'espressione esplicita per il potenziale:
+\[
+    V(\vb{r})=\frac{1}{4\pi\epsilon_0}\frac{Q}{\abs{\vb{r}}} + C
+\]
+
+La costante C è arbitraria. Solitamente si richiede che il potenziale all'infinito sia nullo, da cui segue $C=0$.
+I risultati ottenuti generalizzando il campo elettrico generato da carica puntiforme al campo elettrico generato da distribuzioni
+di carica continue o discrete possono essere estesi al potenziale. Emerge l'utilità del potenziale: note le distribuzioni di carica
+è molto più semplice, piuttosto che calcolare direttamente il campo elettrico (che è una funzione vettoriale),
+calcolare il potenziale e poi ricavare il campo facendone il gradiente.
+
+Quando si lavora con distribuzioni di carica, si considera l'elemento di volume $d\tau'$ il cui vettore posizione è
+$\vb{r'}$. Si ha allora la forma differenziale del potenziale
+\[
+    dV=\frac{1}{4\pi\epsilon_0}\frac{\rho\,d\tau'}{\abs{\vb{r}-\vb{r'}}}+dC
+\]
+Si impone ora che il potenziale sia nullo in una posizione $\vb{r_0}$, ovvero
+\[
+    \begin{split}
+        & 0=\frac{1}{4\pi\epsilon_0}\frac{\rho\,d\tau'}{\abs{\vb{r_0}-\vb{r'}}}+dC \\
+        & dC=-\frac{1}{4\pi\epsilon_0}\frac{\rho\,d\tau'}{\abs{\vb{r_0}-\vb{r'}}}
+    \end{split}
+\]
+Per cui si ottiene
+\begin{equation}
+    \label{eqn:V_rho}
+    V(\vb{r})=\frac{1}{4\pi\epsilon_0}\int\rho\,d\tau'\Biggl(\frac{1}{\abs{\vb{r}-\vb{r'}}} - \frac{1}{\abs{\vb{r_0}-\vb{r'}}}\Biggr)
+\end{equation}

@@ -1,0 +1,84 @@
+I fenomeni elettromagnetici sono soggetti al principio di conservazione dell'energia. Questo
+significa che l'energia del campo magnetico più l'energia dei sistemi con cui il campo
+interagisce deve essere costante nel tempo.
+Si introduce la seguente definizione
+\begin{defn}[vettore di Poynting]
+    Si definisce vettore di Poynting
+    \begin{equation}
+        \label{eqn:poynting}
+        \vb{I}=\vb{E}\cp\vb{H}=\frac{\vb{E}\cp\vb{B}}{\mu}
+    \end{equation}
+\end{defn}
+Si ha che $[I]=J/(m^2s)=W/m^2 $.
+\begin{thm}[teorema di Poynting]
+    Detta $S$ una superficie chiusa di forma costante che racchiude il campo elettromagnetico e detto $\tau$ il volume interno a questa
+    superficie, si ha che la variazione di energia del campo magnetico vale
+    \begin{equation}
+        \label{eqn:dU_em}
+        -\pdv{U}{t}=\int_S \vb{I}\vdot\dd{\vb{S}}+\int_{\tau} \vb{E}\vdot\vb{J}\dd{\tau}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    L'energia posseduta dal campo elettromagnetico contenuto in $S$ è
+    \[
+        U=\int_{\tau}\rec{2}\vb{E}\vdot\vb{D}\dd{\tau}+\int_{\tau}\rec{2}\vb{H}\vdot\vb{B}\dd{\tau}
+    \]
+    Derivando rispetto al tempo, tenendo conto che $\vb{D}=\epsilon \vb{E}$ e $\vb{B}=\mu\vb{H}$ si ha
+    \[
+        \begin{split}
+            \pdv{U}{t}&=\rec{2}\int_{\tau}\Biggl[\pdv{t} (E^2\epsilon  ) + (H^2\mu  ) \Biggr] \dd{\tau}
+            =\rec{2}\int_{\tau}\Biggl[2\Biggl( \pdv{\vb{E}}{t} \Biggr)\vdot \vb{E}\epsilon  +
+            2\Biggl(\pdv{\vb{H}}{t} \Biggr)\vdot \vb{H}\mu \Biggr]\dd{\tau} \\
+            &=\int_{\tau}\Biggl[\Biggl( \pdv{\vb{D}}{t} \vdot \vb{E} \Biggr) +
+            \Biggl( \pdv{\vb{B}}{t} \vdot \vb{H} \Biggr)\Biggr] \dd{\tau}
+        \end{split}
+    \]
+    Sostituendo le derivate sotto al segno di integrale con le espressioni fornite dalla terza e dalla quarta equazione di Maxwell
+    \[
+        \pdv{U}{t}=\int_{\tau}\Biggl[ (\curl{\vb{H}}) \vdot \vb{E} -\vb{E}\vdot\vb{J} - (\curl{\vb{E}}) \vdot \vb{H} \Biggr]\dd{\tau}
+    \]
+    Per l'identità \eqref{app:eqn:div_cp}
+    \[
+        \pdv{U}{t}=-\int_{\tau}\Biggl[ \div(\vb{E} \cp \vb{H}) + \vb{E}\vdot\vb{J} \Biggr]\dd{\tau}
+    \]
+    Separando ora i due integrali e usando il teorema della divergenza si ottiene quindi
+    \[
+        -\pdv{U}{t}=\int_{S} (\vb{E} \cp \vb{H})\vdot\dd{\vb{S}} + \int_{\tau} \vb{E}\vdot\vb{J} \dd{\tau}=
+        \int_{S} \vb{I} \vdot\dd{\vb{S}}+ \int_{\tau} \vb{E}\vdot\vb{J} \dd{\tau}
+    \]
+\end{proof}
+
+Si vuole ora dare un'interpretazione fisica a questo risultato.
+Il flusso del vettore di Poynting, se positivo, ovvero se $\vb{I}$ è "uscente" dal volume,
+comporta una diminuzione di energia nel tempo. $\vb{I}$ rappresenta lo spostamento di
+energia dentro o fuori dal volume preso in considerazione. Per afferrare il concetto, può essere
+utile scrivere il risultato del teorema in forma locale
+$-\pdv{t}\int_\tau u \dd{\tau}=\int_\tau \div{\vb{I}} \dd{\tau} +\int \vb{E}\vdot\vb{J}\dd{\tau}$
+da cui segue che $\-\pdv{t}u=\div{\vb{I}}+\vb{E}\vdot{J}$. Se non fosse presente il termine
+$\vb{E}\vdot\vb{J}$ si avrebbe un'equazione di continuità per l'energia:
+\[
+    \div{\vb{U}}+\pdv{u}=0
+\]
+Questa equazione afferma che se si ha una variazione di energia si deve avere anche una "corrente di energia"
+che la porti da qualche parte. Emerge a questo punto il significato del termine $\vb{E}\vdot\vb{J}$ che
+rappresenta una variazione dell'energia elettromagnetica per trasformazione da (o in) altre forme di energia: è
+in pratica l'energia ceduta o ricevuta dalla materia per azione del campo elettromagentico sulle cariche che
+la costituiscono,
+Si considerino a tal proposito le cariche contenute in una
+porzione infinitesima $\dd{\tau}$ del volume $\tau$. Il numero di cariche per unità di volume
+è $n=\dd{N}/\dd{\tau}$. La forza esercitata dal campo elettromagnetico su $\dd{\tau}$ è
+\[
+    \dd{\vb{F}}=\dd{N}q(\vb{E+\vb{v}_d\cp\vb{B}})=nq(\vb{E+\vb{v}_d\cp\vb{B}})\dd{\tau}
+\]
+La potenza trasferita dal campo magetico alle cariche libere presenti nell'elemento di volume è dunque
+\begin{equation}
+    \dd{P}=\dd{F}\vdot\vb{v}_d=nq\vb{v}_d\vdot (\vb{E}+\vb{v}_d\cp\vb{B})\dd{\tau}=nq\vb{v}_d\vdot \vb{E} \dd{\tau}=\vb{E}\vdot\vb{J}\dd{\tau}
+    \label{eqn:potenza_em}
+\end{equation}
+Risulta subito evidente dai passaggi come la forza causata dal campo magnetico
+non compiendo alcun lavoro non contribusca alla variazione di potenza.
+
+Complessivamente allora la \eqref{eqn:dU_em} dice che la variazione di energia è dovuta sia all'interazione
+del campo con la materia contenuta nel volume che al flusso del vettore di Poynting attraverso la superifice
+che delimita il volume. Il vettore di Poynting è allora quel
+vettore il cui flusso rappresenta l'energia del campo elettromagnetico che sfugge attraverso $S$.

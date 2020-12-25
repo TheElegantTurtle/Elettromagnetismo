@@ -1,0 +1,97 @@
+In questo paragrafo $n=\dv*{N}{\tau}$ torna ad indicare il numero di cariche per unità di volume e non
+l'indice di rifrazione.
+
+Si consideri un'onda elettromagnetica incidente su un materiale. Per quanto visto nel
+paragrafo sul vettore di Poynting il campo elettromagnetico esercita una forza sulla
+superficie. Dalla \eqref{eqn:potenza_em} si ha che la potenza assorbita dal materiale per
+unità di volume vale $w=\dv*{P}{\tau}=\vb{E} \vdot \vb{J}$.
+
+\begin{obs}
+    \[
+        \vb{J}=\sigma\vb{E}
+    \]
+    con $\sigma$ complesso. Quindi $\vb{J}$ ha lo stesso andamento di $\vb{E}$, ampiezza proporzionale
+    all'ampiezza di $\vb{E}$ ed è sfasato rispeto ad $\vb{E}$ della fase del coefficiente $\sigma$.
+\end{obs}
+\begin{proof}
+    Se il materiale è un conduttore la tesi è evidente sulla base della relazione che lega $\vb{E}$ e $\vb{J}$
+    nei conduttori. In linea del tutto generale, sotto l'effetto del campo oscillante le cariche si comportano
+    come oscillatori smorzati che compiono un moto oscillatorio forzato: per quanto visto nella dimostrazione dell'osservazione
+    \ref{obs:r_dielettrici} $\dot{\vb{r}}$ è proporzionale al campo elettrico mediante un coefficiente complesso
+    e dunque lo è anche la sua derivata -e di conseguenza, la velocità di deriva.
+    Ma siccome $\vb{J}=nq\vb{v}_d$, si ha la tesi.
+\end{proof}
+Alla luce di questo risultato,
+\[
+w=\sigma E^2
+\]
+Il valor medio della potenza su un periodo, detto $E_0$ l'ampiezza del campo elettrico
+e $\alpha$ la fase di $\sigma$, vale quindi
+\[
+    [w]=\frac{E_0^2}{2}\abs{\sigma}\cos{\alpha}
+\]
+
+\begin{thm}
+    La quantità di moto che l'onda trasferisce nell'unità di tempo all'untià di volume del materiale è diretta
+    come la velocità di propagazione dell'onda e vale
+    \[
+        [\vb{q}]=\frac{[w]}{v}\vu{v}
+    \]
+\end{thm}
+\begin{proof}
+    La quantità di moto trasferita nell'unità di tempo all'unità di volume è data dall'impulso trasferito nell'unità di tempo,
+    cioè la media temporale della forza impressa
+    per untià di volume. Dal paragrafo sul vettore di Poynting si ha che questa forza vale
+    \[
+        \vb{f}=\dv{\vb{F}}{\tau}=nq(\vb{E}+\vb{v}_d\cp\vb{B})
+    \]
+    Siccome la media temporale del campo elettrico è nulla
+    \[
+        [\vb{q}]\equiv [\vb{f}]=[nq\vb{v}_d\cp\vb{B}]=[\vb{J}\cp\vb{B}]
+    \]
+    Dato che campo elettrico e magnetico sono ortogonali e $\vb{J}$ è parallelo a $\vb{E}$
+    \[
+        [\vb{q}]=[JB]\vu{v}
+    \]
+    Tenendo conto della relazione fra i moduli di $B$ ed $E$
+    \[
+        [\vb{q}]=\frac{[\vb{J\vdot\vb{E}}]}{v}\vu{v}
+    \]
+    Ovvero la tesi.
+\end{proof}
+
+Qualora ci si trovi nel caso di assorbimento totale, ovvero nel caso in cui l'onda trasferisca al materiale tutta la sua energia,
+conviene far riferimento all'energia incidente sull'unità di superficie nell'unità di tempo, ovvero al modulo del vettore
+di Poynting.
+In questo caso al posto della potenza per unità di volume  si avrà l'intensità, ovvero potenza per unità di superficie,
+e al posto della quantita di moto per unità di volume e unità di tempo
+si avrà la quantità di moto trasferità all'unità di superficie normale all'onda nell'unità di tempo $\vb{p}$. Perciò
+\[
+    \vb{p}=\frac{I}{v}\vu{v}=\frac{\vb{I}}{v}
+\]
+Quindi, dalla definizione di vettore di Poynting
+\begin{equation}
+    \vb{p}=\frac{\vb{E}\cp\vb{B}}{\mu v}
+\end{equation}
+$p$ ha le dimensioni di una forza diviso una superficie ed è quindi effettivamente una pressione. La stessa pressione, in verso
+opposto la subisce una sorgente che emetta un'onda con intensità $I$. Una superficie perfettamente riflettente investita
+ortogonalmente dall'onda subisce una pressione doppia.
+
+Oltre alla quantità di moto le onde elettromagnetiche trasportando anche un momento angolare. Dato un polo $O$ è evidente
+infatti che le onde trasportino il momento
+\[
+    \vb{L}=\int_S\vb{r}\cp\dd{\vb{p}}
+\]
+dove $\vb{r}$ è la distanza fra il polo ed il punto dell'onda con momento $\dd{\vb{p}}$.
+Nel caso di un'onda opportunamente collimata questa espressione si semplifica a $\vb{L}=\vb{r}\cp\vb{p}$.
+Inoltre, la radiazione elettromagnetica possiede un momento angolare intrinseco quando è
+polarizzata circolarmente, ovvero quando il campo elettrico ruota attorno alla direzione di
+propagazione. Il momento angolare intrinseco vale
+\[
+    \vb{S}=\pm\omega\vb{I}
+\]
+dove il segno dipende dal verso di polarizzazione, destrorsa o sinistrorsa. Il momento angolare intrinseco è
+longitudinale, ovvero diretto come la velocità dell'onda.
+Un'onda con polarizzazione lineare, in cui il campo elettrico oscilli su un piano fisso, non possiede momento
+angolare intrinseco, in quanto può essere ottenuta come sovrapposizione di due onde identiche con polarizzazione
+circolare in un caso destrorsa e nell'altro sinistrorsa.

@@ -1,0 +1,68 @@
+Sorge spontaneo a questo punto chiedersi se e sotto quali condizioni sia possibile definire un
+potenziale scalare $\phi$ per il campo magnetico, in modo tale che $-\grad\phi=\vb{B}$.
+Condizione necessaria e sufficiente affinchè un campo vettoriale definito in un dominio $D$
+sia esprimibile come gradiente di una funzione scalare è che il campo sia irrotazionale
+e che il dominio sia semplicemente connesso.
+La quarta equazione di Maxwell mostra chiaramente che il $\curl{\vb{B}}=0$ quando $\vb{J}=0$.
+Quando la densità di corrente che genera il campo di induzione magnetica è localizzata
+al finito in un dominio $D$, è possibile prendere un insieme $B$ che la contenga completamente:
+sul dominio semplicemente connesso $D'=D\setminus B$ il campo è ora irrotazionale e può quindi
+essere definito un potenziale scalare.
+\begin{thm}
+    Sotto le opportune ipotesi di dominio, $\vb{B}=-\grad\phi$ con
+    \[
+        \phi=-\frac{\mu_0 I}{4\pi}\Omega
+    \]
+    a meno di una costante additiva ($\Omega$ è l'angolo solido).
+\end{thm}
+\begin{proof}
+    Dalla definizione di potenziale $-\dd{\phi}=\vb{B}\vdot\dd{\vb{l}}$. Esplicitando il campo
+    \[
+        -\dd{\phi}=\frac{\mu_0}{4\pi}\Biggl(\oint_l \frac{I\dd{\vb{l}'}\cp(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}\Biggr)\vdot\dd{\vb{l}}
+    \]
+    Uno spostamento $\dd{\vb{l}}$ di un osservatore nel campo è equivalente ad uno spostamento $\dd{\vb{s}}=-\dd{\vb{l}}$
+    del circuito che genera il campo, da cui
+    \[
+        \dd{\phi}=\frac{\mu_0 I}{4\pi}\oint_l \dd{\vb{l}'}\cp\frac{(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}\vdot\dd{\vb{s}}
+    \]
+    per la \eqref{app:eqn:vdot_cp} l'integranda può essere riscritta
+    \[
+        \dd{\vb{l}'}\cp\frac{(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}\vdot\dd{\vb{s}}=
+        \dd{\vb{l}'}\cp\dd{\vb{s}}\vdot\frac{-(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}=
+        \dd{\vb{S}} \vdot \frac{-(\vb{r}-\vb{r}')}{\abs{\vb{r}-\vb{r}'}^3}
+    \]
+    dove $\dd{\vb{S}}$ è l'elemento di superficie spazzato dall'elemento di circuito $\dd{\vb{l}'}$ nello spostamento $\dd{\vb{s}}$.
+    Il prodotto scalare che compare in questa espressione rappresenta la proiezione dell'elemento di superficie
+    sul raggio-vettore che va da $\vb{r}'$ a $\vb{r}$, ovvero dalla posizione in cui si trova l'osservatore alla posizione
+    dell'elemento di superficie. Ma allora l'integranda non è altro che l'angolo solido infinitesimo sotto al quale
+    l'osservatore viene "visto" da $\dd{\vb{S}}$. L'integrale, che è esteso a tutto il circuito rappresenta dunque
+    l'angolo solido $\dd{\Omega}$ sotto al quale l'osservatore viene visto dalla superficie $\dd{\Sigma}$ spazzata da tutto il circuito
+    nello spostamento $\dd{\vb{s}}$. Per l'osservatore allora il circuito si sposta variando la propria posizione di un
+    angolo solido $-\dd{\Omega}$. In conlcusione
+    \[
+        \dd{\phi}=-\frac{\mu_0 I}{4\pi}\dd{\Omega}
+    \]
+    da cui segue la tesi.
+\end{proof}
+
+\begin{cor}
+    Nell'ipotesi in cui l'osservatore sia molto lontano dalla spira, indicando con $\vb{r}$ il raggio-vettore
+    che va dal circuito all'osservatore, si ha
+    \[
+        \phi=\frac{\mu_0}{4\pi}\frac{\vb{m}\vdot\vb{r}}{r^3}
+    \]
+\end{cor}
+
+\begin{proof}
+    Nell'ipotesi in cui le dimensioni lineari della spira siano molto minori di $r$, si ha
+    \[
+        \Omega=-\frac{\vb{S}\vdot\vb{r}}{r^3}
+    \]
+    Sostituendo nell'espressione del potenziale scalare si ha la tesi.
+\end{proof}
+Si osservi la completa analogia che esiste fra questa espressione e l'espressione del potenziale prodotto da
+un dipolo elettrico: come si vedrà nel paragrafo dedicato all'interazione fra campi magnetici e circuiti
+questa analogia è molto più profonda.
+È un puro esercizio di calcolo mostrare che questa approssimazione per il potenziale scalare e
+l'approssimazione \eqref{eqn:potenziale_vettore_momento_magnetico} per il potenziale vettore
+producono lo stesso campo.

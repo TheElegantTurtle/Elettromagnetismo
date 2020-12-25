@@ -1,0 +1,61 @@
+Uno dei grandi successi della teoria dell'elettromagnetismo di Maxwell è
+la possibilità di dedurre le leggi dell'ottica.
+Le leggi di riflessione e rifrazione in particolare, derivano dalle condizioni al
+contorno fra due materiali.
+Suppongo di avere a che fare con un'onda piana (il che è ragionevole nel caso
+in cui la sorgente sia molto lontana) che incida sulla superficie di
+separazione fra due materiali con $\epsilon_1$, $mu_1$ ed $epsilon_2$, $\mu_2$.
+Per la \eqref{eqn:B_onde} noto il campo elettrico è noto anche il campo magnetico:
+per le successive considerazioni ci si può quindi limitare a considerare il campo
+elettrico. In generale, si avrà a che fare con tre diversi campi elettrici
+\[
+\begin{split}
+&\vb{E}=\vb{E}_0 \exp {i(\vb{k}\vdot{r}-\omega t +\phi)} \quad\quad \text{(incidente)}\\
+&\vb{E}'=\vb{E}'_0 \exp {i(\vb{k}'\vdot{r}-\omega' t +\phi')} \quad\quad \text{(riflesso)}\\
+&\vb{E}''=\vb{E}''_0 \exp {i(\vb{k}''\vdot{r}-\omega'' t +\phi'')} \quad\quad \text{(rifratto)}\\
+\end{split}
+\]
+Di questi, solo il campo incidente è noto.
+
+Si immagini senza perdita di generalità che la propagazione avvenga solo nel piano $yz$ e si
+ponga lo $0$ dell'asse $z$ al livello della superficie di separazione fra i due mezzi.
+La condizione di raccordo per il campo elettrico $E_{t1}=E_{t2}$ implica l'uguaglianza
+dei moduli e delle fasi dei campi incidente, rifletto e rifratto. L'uguaglianza delle fasi
+permette di dedurre le leggi di riflessione e rifrazione; l'uguaglianza dei moduli,
+oltre a queste due leggi, consente di ricavare informazioni sulla polarizzazione dell'onda
+a scapito di un calcolo più lungo e tedioso. Ci si concentrerà solo sull'uguaglianza delle
+fasi. Si ha dunque
+\[
+\vb{k}\vdot{r}+\omega t+\phi=\vb{k}'\vdot{r}+\omega' t+\phi'=\vb{k}''\vdot{r}+\omega'' t+\phi''
+\]
+Si tratta di un'uguaglianza fra polinomi nelle variabili $y,z,t$. L'uguaglianza è soddisfatta
+per ogni valore di $y,z,t$ se e solo se sono uguali i coefficienti.
+Banalmente $\phi=\phi'=\phi''$ e $\omega=\omega'=\omega''$: non si hanno sfasamenti
+nel passaggio fra i mezzi e la pulsazione dipende esclusivamente dalla sorgente.
+Il discorso è solo leggermente più complesso per l'uguaglianza
+$\vb{k}\vdot\vb{r}=\vb{k}'\vdot\vb{r}=\vb{k}''\vdot\vb{r}$.
+Per il sistema di riferimento scelto $k_x=0$ e $z=0$, da cui segue
+$k_y y=k_x'x+k_y'y=k_x''x+k_y''y$. Uguagliando nuovamente termine a termine e
+chiamando $\theta$, $\theta'$, $\theta''$ l'angolo
+che i tre raggi formano con la perpendicolare alla superficie di separazione si ha
+\[
+\begin{split}
+&0=k_x'=k_x''\\
+&k y\sin{\theta}=k'y\sin{\theta'}=k''\sin{\theta''}\\
+\end{split}
+\]
+La prima equazione afferma che se il raggio incidente propaga nel piano $yz$, anche i raggi
+riflesso e rifratto propagano nello stesso piano. Per quanto concerne la seconda si osservi che
+\[
+\frac{n}{c}v=\lambda\nu=\lambda\frac{\omega}{2\pi}=\rec{k}\omega
+\]
+Per quanto visto $\omega$ non dipende dal mezzo, mentre $n$ dipende dal mezzo per definizione:
+anche $k$ deve dipendere dal mezzo. Si ottiene quindi
+\[
+\begin{split}
+&n_1 y \sin{\theta}=n_2 y \sin{\theta'}\\
+&n_1 y \sin{\theta}=n_1 y \sin{\theta''}\\
+\end{split}
+\]
+Dalla prima segue la nota legge di rifrazione $n_1\sin{\theta}=n_2\sin{\theta'}$;
+la legge di riflessione $\theta=\theta''$

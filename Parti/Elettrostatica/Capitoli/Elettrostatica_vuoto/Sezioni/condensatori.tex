@@ -1,0 +1,249 @@
+Dipendendo il potenziale linearmente dalla carica, il rapporto $Q/V$ è costante ed è allora giustificata la seguente definizione
+\begin{defn}[Capacità]
+    Si definisce capacità C il rapporto
+    \[
+        C=\frac{Q}{V}
+    \]
+\end{defn}
+
+Si considerino due conduttori $S_1$ ed $S_2$ sufficientemente vicini, affinchè interagiscano per induzione. Fissata la configurazione
+geometrica, venga fornita a $S_1$ una carica $Q_1$, mantenendo pari a zero la carica di $S_2$. Moltiplicando per un fattore
+$a$ la carica $Q_1$ si dimostra che anche i potenziali generati dai due conduttori, $V'_1$ e $V'_2$, vengono motliplicati per lo
+stesso fattore: è quindi presente una relazione di proporzionalità diretta esprimibile dal sistema
+\[
+    \begin{cases}
+        & V'_1=p_{11}Q_1 \\
+        & V'_2=p_{21}Q_1
+    \end{cases}
+\]
+Ripetendo lo stesso ragionamento, fornendo questa volta una carica $Q_2$ ad $S_2$ e mantenendo nulla la carica su
+$S_1$ si ottiene
+\[
+    \begin{cases}
+        & V''_1=p_{12}Q_2 \\
+        & V''_2=p_{22}Q_2
+    \end{cases}
+\]
+Per il principio di sovrapposizione, se ad ambedue i conduttori viene fornita una carica si ottiene il sistema
+\begin{equation}
+    \label{eqn:sist_p}
+    \begin{cases}
+        & V_1=p_{11}Q_1 + p_{12}Q_2\\
+        & V_2=p_{21}Q_1 + p_{22}Q_2
+    \end{cases}
+\end{equation}
+
+I coefficenti $p_{ij}$ si chiamano \textit{coefficenti di potenziale} e dipendono solo dalla geometria del sistema. La
+situazione può essere generalizzata al caso con N conduttori ottenendo
+\[
+    V_i=\sum_{j=1}^N p_{ij}\,Q_j
+\]
+Fissate le cariche, i potenziali sono univocamente determinati. Da questo segue che la matrice rappresentativa del sistema
+deve essere non singolare, ovvero $\det{p_{ij}}\neq 0$. In virtù di questo fatto, il sistema può essere invertito ottenendo che
+\[
+    Q_i=\sum_{j=1}^N c_{ij}\,V_j
+\]
+I coefficenti $c_{ij}$ si chiamano \textit{coefficenti di induzione}. Le matrici dei coefficenti sono ovviamente legate dalla relazione:
+\[
+    \Bqty{c_{ij}}=\Bqty{p_{ij}}^{-1}
+\]
+Le matrici di induzione e di potenziale sono simmetriche.
+
+Si immagini ora un sistema di due conduttori disposti in una configurazione tale che il fenomeno di induzione che un condensatore
+esercita sull'altro sia completo, ovvero fornita una carica $Q$ al primo conduttore il secondo si carica per induzione con una
+carica $-Q$. Quando l'induzione è completa tutte le linee di campo uscenti da un conduttore terminano sull'altro conduttore.
+\begin{defn}[Condensatore]
+    Si definisce condensatore un sistema di due conduttori che goda della proprietà di cui sopra.
+\end{defn}
+Esistono tre tipi di condensatori:
+\begin{description}
+    \item[Condensatori sferici] Un conduttore è contenuto nella cavità di un altro conduttore;
+    \item[Condensatori cilindrici] Un conduttore si sviluppa lungo una linea ed è avvolto da un secondo conduttore con struttura
+        tubolare - l'induzione completa si realizza quando la lunghezza del condensatore è molto maggiore rispetto alle dimensioni trasversali;
+    \item[Condensatori piani] Due conduttori si affacciano l'un l'altro in modo tale che le dimensioni lineari della superficie siano
+        molto maggiori rispetto alla distanza - l'induzione completa si realizza nel limite di superficie infinita.
+\end{description}
+I due conduttori che formano il condensatore sono detti \textit{armature}. Un condensatore viene caricato quando si stabilisce
+una differenza di potenziale fra le armature e su di esse si distribuiscono carice uguali in modulo e di segno opposto
+(la carica totale di un condensatore carico è quindi nulla).
+
+Fornendo una carica $Q_1$ all'armatura interna di un condensatore e lasciando la seconda elettricamente isolata,
+su quest'ultima le cariche si ridistribuiscono per induzione completa in modo che la faccia interna sia dotata di carica $-Q_1$
+e quella esterna $+Q_1$. Collegandola ora a terra, l'armatura esterna resta dotata di carica $-Q_1$.
+Con un ragionamento analogo ci si rende conto che lo stesso avviene nel caso in cui quella collegata a terra fosse l'armatura interna.
+\begin{thm}
+    In un condensatore, il modulo della carica sulle maglie e la differenza di potenziale sono direttamente proporzionali.
+    \[
+        Q=C\Delta V \quad\quad C=\frac{1}{p_{11}+p_{22}-2p_{12}}
+    \]
+\end{thm}
+\begin{proof}
+    Si consideri il sistema \ref{eqn:sist_p} per il caso considerato, ricordando la proprietà di simmetria:
+    \[
+        \begin{split}
+            & V_1=p_{11}Q-p_{12}Q=(p_{11}-p_{12})Q\\
+            & V_2=p_{21}Q-p_{22}Q=(p_{21}-p_{22})Q
+        \end{split}
+    \]
+    Sottraendo membro a memebro, la tesi. La seconda espressione per $C$ si ottiene facilmente invertendo la matrice $\Bqty{p_{ij}}$.
+\end{proof}
+
+È immediato da quanto visto ricavare l'energia immagazzianata da un condensatore. Ulteriori considerazioni verrano svolte
+nel capitolo sulla corrente stazionaria, dopo aver introdotto il concetto di forza elettromotrice.
+\begin{thm}
+    Per un condensatore con capacità $C$, caricato fino ad avere una differenza di potenziale $\Delta V$ fra le armature
+    l'energia elettrostatica è
+    \begin{equation}
+        U=\rec{2}Q\Delta V=\rec{2}C(\Delta V)^2=\rec{2}\frac{Q^2}{C}
+        \label{eqn:U_condensatore}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    La distribuzione di carica è una distribuzione superficiale. Si indichino con $S_a$ ed $S_b$ le superfici delle due armature.
+    Usando l'espressione per l'energia elettrostatica \ref{eqn:energia_distribuzione}, si ha
+    tenendo a mente
+    \[
+        U=\rec{2} \int_{S_a \cup S_b} \sigma V \dd{S}=\frac{V_a}{2}\int_{S_a} \sigma\dd{S}+\frac{V_b}{2}\int_{S_b} \sigma\dd{S}=
+        \frac{V_a Q + V_b (-Q)}{2}=\rec{2} Q\Delta V
+    \]
+    Dalla definizione di capacità si ottengono le altre forme dell'asserto.
+\end{proof}
+
+Si vogliono ora ricavare delle formule specifiche per le capacità delle tre tipologie di condensatori.
+\begin{obs}[Capacità del condensatore piano]
+    Per un condensatore piano con maglie di superficie $S$ poste a distanza $d$, con le dimesioni lineari di $S$ molto maggiori di $d$ vale la formula
+    \begin{equation}
+        \label{eqn:capacità_piano}
+        C=\epsilon_0\frac{S}{d}
+    \end{equation}
+\end{obs}
+\begin{proof}
+    Quella presente sulla superficie delle maglie è una distribuzione di carica superficiale che nelle ipotesi può considerarsi infinita,
+    per cui il campo elettrico generato è
+    \[
+        \vb{E}=\frac{\sigma}{\epsilon_0}\vu{n}=\frac{Q}{S\epsilon_0}\vu{n}
+    \]
+    Da questo segue che la differenza di potenziale vale
+    \[
+        \Delta V=\int_1^2 \vb{E}\vdot d\vb{l}=\int_1^2\frac{Q}{S\epsilon_0}\vu{n}\vdot d\vb{l}=\frac{d}{S\epsilon_0}Q
+    \]
+    dato che la somma della proiezione di tutti gli elementi di linea sulla normale equivale alla distanza $d$ fra le superfici.
+    Dalla definizione di capacità come rapporto fra differenza di potenziale e carica, la tesi.
+\end{proof}
+
+\begin{obs}[Capacità del condensatore sferico]
+    Per un condensatore sferico con maglie di raggio $R_1$ ed $R_2$  poste a distanza $d=R_2-R_1$ vale la formula
+    \begin{equation}
+        \label{eqn:capacità_sferico}
+        C=4\pi\epsilon_0\frac{R_1R_2}{d}
+    \end{equation}
+    Se vale la condizione $R_1\cong R_2$ allora la formula si riduce a:
+    \[
+        C=\epsilon_0\frac{S}{d}
+    \]
+\end{obs}
+\begin{proof}
+    Nella zona tra i due conduttori il campo elettrico vale
+    \[
+        \vb{E}(r)=\frac{Q}{4\pi\epsilon_0}\frac{\vu{r}}{r^2} \quad\quad\quad R_1<r<R_2
+    \]
+    Da questo segue che la differenza di potenziale vale
+    \[
+        \Delta V=\int_{R_1}^{R_2} \frac{Q}{4\pi\epsilon_0}\frac{\vu{r}}{r^2} \vdot d\vb{l}=\frac{Q}{4\pi\epsilon_0}\frac{R_2-R_1}{R_2R_1}
+    \]
+    Scegliendo come percorso, ad esempio, il segmento giacente sul raggio delle sfere. Dalla definizione di capacità, si
+    ha la prima parte dell'asserto.
+    La seconda parte dell'asserto si ottiene considerando che la condizione $R_2\cong R_1$ implica $R_1R_2\cong R^2$. Si ha quindi
+    \[
+        C=4\pi\epsilon_0\frac{R^2}{d}=\epsilon_0\frac{S}{d}
+    \]
+\end{proof}
+
+\begin{obs}[Capacità del condensatore cilindrico]
+    Per un condensatore cilindrico con lunghezza $l$ molto maggiore dei raggi $R_1$ ed $R_2$ delle maglie ($R_1<R_2$) vale la formula
+    \begin{equation}
+        \label{eqn:capacità_cilindirco}
+        C=2\pi\epsilon_0\frac{l}{\ln(R_2/R_1)}
+    \end{equation}
+    Se vale la condizione $R_1\cong R_2$ allora la formula si riduce a:
+    \[
+        C=\epsilon_0\frac{S}{d}
+    \]
+\end{obs}
+\begin{proof}
+    Il ragionamento è analogo a quello precedente, ricordando che nella zona tra i due conduttori il campo elettrico vale
+    \[
+        \vb{E}(r)=\frac{\lambda}{2\pi\epsilon_0}\frac{\vu{r}}{r} \quad\quad\quad R_1<r<R_2
+    \]
+
+    La seconda parte dell'asserto si ottiene nuovamente considerando che la condizione $R_2\cong R_1$ implica $R_2-R_1=d<<R_2,R_1$.
+    Si ha quindi, sviluppando
+    \[
+        \ln\frac{R_2}{R_1}=\ln\frac{R_1+d}{R_1}=\ln\Biggl(1+\frac{d}{R_1} \Biggr)\cong \frac{d}{R_1}
+    \]
+    Da cui segue
+    \[
+        C=2\pi\epsilon_0\frac{l}{\ln(R_2/R_1)}=\epsilon_0\frac{2\pi R_1 l}{d}=\epsilon_0\frac{S}{d}
+    \]
+\end{proof}
+
+
+
+Si volgiono ora studiare invece i sistemi di condensatori. Si danno le seguenti definizioni:
+\begin{defn}[Condensatori in parallelo]
+    Si dicono in parallelo due consensatori collegati in modo tale che la prima armatura del primo sia collegata alla prima armatura
+    del secondo e che la seconda armatura del primo sia collegata alla seconda armatura del secondo.
+\end{defn}
+
+\begin{defn}[Condensatori in serie]
+    Si dicono in serie due consensatori collegati in modo tale che la seconda armatura del primo sia collegata alla prima armatura del secondo.
+\end{defn}
+
+Si osserva che i condensatori collegati in parallelo costituiscono di fatto un sistema di due conduttori. I condensatori collegati in
+serie invece, costituiscono un sistema di tre conduttori%aggiungo immagine ??
+\begin{thm}[Capacità dei condensatori in parallelo]
+    Dati $n$ condensatori collegati in parallelo la capacità del sistema è equivalente a quella di un unico condensatore con capacità
+    \[
+        C=\sum_{i=1}^n C_i
+    \]
+\end{thm}
+\begin{proof}
+    Si consideri per semplicità un sistema di due condensatori - le generalizzazione è banale. Considerando separatamente i due condensatori si ha
+    \[
+        \begin{cases}
+            & Q_1=C_1\Delta V_1 \\
+            & Q_2=C_2\Delta V_2
+        \end{cases}
+    \]
+    In virtù del collegamento in parallelo, le differenze di potenziale ai capi delle armature dei condensatori sono uguali. Sommando membro a membro
+    \[
+        Q_1+Q_2=(C_1+C_2)\Delta V
+    \]
+    Siccome $Q_1+Q_2$ rappresenta la carica totale del sistema, dalla definizione di capacità si  ha l'asserto.
+\end{proof}
+
+\begin{thm}[Capacità dei condensatori in serie]
+    Dati $n$ condensatori collegati in serie la capacità del sistema è equivalente a quella di un unico condensatore con capacità
+    \[
+        \frac{1}{C}=\sum_{i=1}^n\frac{1}{C_i}
+    \]
+\end{thm}
+\begin{proof}
+    Si consideri nuovamente un sistema di due condensatori. Considerando separatamente i due condensatori si ha
+    \[
+        \begin{cases}
+            & \Delta V_1=\frac{ Q_1 }{C_1}\\
+            & \Delta V_2=\frac{ Q_2 }{C_2}\\
+        \end{cases}
+    \]
+    In virtù del collegamento in serie, per l'induzione completa la carica sulla seconda armatura del primo condensatore sarà uguale
+    in modulo e opposta alla carica sulla prima armatura. Un ragionamento analogo vale per il secondo condensatore, tenendo
+    però conto anche del fatto che la carica sulla prima armatura del secondo condensatore sarà uguale alla carica sulla seconda
+    armatura del primo. A questo punto quindi, sottraendo membro a membro le equazioni del sistema si ottiene:
+    \[
+        \Delta V_1 - \Delta V_2 = \Biggl(\frac{1}{C_1} + \frac{1}{C_2} \Biggr) Q
+    \]
+
+    Siccome $\Delta V_1 - \Delta V_2 $ rappresenta la caduta di potenziale ai capi del sistema di condensatori, dalla definizione di
+    capacità si  ha l'asserto.
+\end{proof}

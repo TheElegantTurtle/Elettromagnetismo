@@ -1,0 +1,239 @@
+Evidetentemente i dielettrici si comportano in modo molto diverso dai conduttori. Questa differenza di comportamento
+a livello macroscopico è ricoducibile a differenze di comportamento microscopico. I conduttori tipicamente sono metalli,
+caratterizzati da una struttura cristallina in cui ogni atomo si trova al vertice di un poliedro.
+Questa struttura fa si che gli elettroni più esterni di ciascun atomo siano liberi
+- ovvero l'energia di interazione di questi elettroni col nucleo sia inferiore all'energia di agitazione termica.
+L'applicazione di un campo elettrico induce su questi elettroni un movimento ordinato. Nei dielettrici
+gli elettroni sono invece fortemente legati al nucleo e vengono strappati dalla loro posizione
+solo in seguito a forze localizzate molto intense (come lo strofinio). Complessivamente quindi il dielettrico
+può considerarsi neutro. Nonostante questo però esso produce un campo elettrico quando possiede un momento di dipolo diverso da zero,
+che viene indotto da un campo elettrico esterno. Questo fenomeno è chiamato
+\textit{polarizzazione elettrica} e può essere di due tipi: per deformazione e per orientamento.
+Nella descrizione del fenomeno di polarizzazione si fa riferimento al campo elettrico locale $\vb{E}_l$,
+ovvero il campo agente sui singoli atomi (o sulle singole molecole) dovuto sia alle cariche libere localizzate
+che generano il campo elettrico esterno che al campo generato dagli atomi (molecole) del dielettrico meno quello considerato.
+\begin{description}
+    \item[Polarizzazione per deformazione]
+        L'atomo è schematizzabile come un sistema elettricamente neutro costituito da un nucleo puntiforme con carica $Q_+=Ze$
+        e da una distribuzione di carica a simmetria sferica variabile con carica totale $Q_-=-Q_+$ dovuta alla nube elettronica.
+        A causa della simmetria sferica
+        il campo elettrico generato dall'atomo è nullo. Se però interviene un campo elettrico esterno
+        il nucleo risente di una forza $\vb{f}_p=Ze\vb{E}_{l}$ e il baricentro della nube elettronica risente di una forza $\vb{f}_e=-Ze\vb{E}_{l}$.
+        Ne consegue che il nucleo ed il baricentro della nube elettronica
+        si allontanano di una sistanza $\vb{r}$ e si attraggono quindi con una forza $\vb{f'}$.
+        Si raggiunge una situazione di equilibrio quando $\abs{\vb{f'}}=\abs{\vb{f}_p}\bigl(=\abs{\vb{f}_e}\bigr)$: in questa situazione si hanno due
+        cariche uguali e opposte ad una distanza $\vb{r}$, ovvero un dipolo.
+        Immaginando un modello in cui gli elettroni sono legati elasticamente ai nuclei è naturale aspettarsi che,
+        per campi elettrici esterni non troppo intensi\footnote{Questa condizione è largamente rispettata
+        per tutti i campi elettrici realizzabili nella pratica},
+        $\vb{r}$ sia proporzionale all'intensità del campo elettrico.
+        Ricordando la \eqref{eqn:momento_di_dipolo} il momento di dipolo dovuto alla deformazione può quindi essere scritto come
+        \[
+            \vb{p}=\alpha_d\vb{E}_{l}
+        \]
+        $\alpha_d$ viene detta polarizzabilità elettronica.
+        Un fenomeno analogo lo si può osservare anche nelle molecole poliatomiche:
+        oltre alla polarizzazione elettronica è presente quella che viene detta \textit{polarizzazione atomica}.
+
+    \item[Polarizzazione per orientamento]
+        Molte molecole non sono simmetriche e perciò possiedono un momento di dipolo. Poichè solitamente le molecole sono orientate casualmente,
+        il momento di dipolo medio è nullo e perciò non si osservano effetti a livello macroscopico.
+        Quando però viene applicato un campo elettrico esterno i momenti di dipolo
+        tendono ad orientarsi parallelamente a questo, e quindi il valor medio risulta diverso da zero.
+        \begin{lemma}
+            Dato un insieme di dipoli praticamente liberi, per i quali siano trascurabili le mutue interazioni, il momento di dipolo medio vale
+            \begin{equation}
+                \expval{\vb{p}}=\alpha_0\vb{E}_l \quad\quad\quad \alpha_0=\frac{p_0^2}{3KT}
+            \end{equation}
+        \end{lemma}
+        \begin{proof}
+            In presenza del campo elettrico locale ogni dipolo è sottoposto ad un momento meccanico $\vb{M}=\vb{p}\cp\vb{E}_l$
+            che tende ad orientarlo come $\vb{E}_l$; l'agitazione termica invece favorisce l'orientamento casuale.
+            L'equilibrio statistico fra queste due tendenze è descritto dalla funzione di Boltzmann
+            \[
+                P(U) = A e^{-\frac{U}{k_bT}}
+            \]
+            dove $A$ è una costante di normalizzazione, $U$ è l'energia del dipolo, $k_b$
+            è la costante di Boltzmann e $T$ è la temperatura in gradi kelvin.
+            Fissato il momento di dipolo ed il modulo del campo elettrico locale, si ha per la \ref{eqn:U_dipolo}
+            $U=-p_0E_l\cos\theta=U(\theta)$, con $\theta$ l'angolo fra i due vettori.
+            Ambientando il problema in un sistema di riferimento con l'asse $z$ rivolto nello stesso verso del campo $\vb{E}_l$,
+            la probabilità che il dipolo sia orientato entro un angolo solido $\dd{\Omega}=\dd{\theta}\dd{\phi}$ è
+            \[
+                \dd{P}=P(U(\theta))\sin\theta \dd{\theta}\dd{\phi}=A e^{\frac{pE_l\cos\theta}{KT}}\sin\theta \dd{\theta}\dd{\phi}
+            \]
+            Nell'ipotesi di essere lontani dallo zero assoluto, e che l'intensità del campo locale non sia
+            troppo alta, l'esponenziale può essere sviluppato al primo ordine ottenendo:
+            \[
+                \dd{P}=A \Biggl(1 + \frac{pE_l\cos\theta}{KT}\Biggr) \sin\theta \dd{\theta}\dd{\phi}
+            \]
+            È conveniente ora cambiare variabile: $x=\cos\theta$, $\dd{x}=-\sin\theta \dd{\theta}$.
+             Si ottiene quindi
+            \[
+                \dd{P}=A \Biggl(1+\frac{pE_l}{KT}x\Biggr)\dd{x}\dd{\phi}
+            \]
+            La costante di normalizzazione si ottiene imponendo che la probabilità su tutto l'angolo
+            solido\footnote{$\phi$ va da $0$ a $2\pi$, $x$ da $1$ a $-1$.} sia 1
+            da cui segue, svolgendo l'integrale, $A=1/(4\pi)$.
+            Si osservi ora come $\vb{p}$ abbia simmetria cilindrica attorno a $\vb{E}_l$ e la componente del momento di dipolo ortogonale
+            al campo elettrico sia dunque, in media, nulla: $\expval{\vb{p}}$ è orientato come $\vb{E}_l$.
+            In modulo il valor medio del momento di dipolo vale allora
+            \[
+                \abs{\expval{\vb{p}}}=\abs{\expval{\vb{p}_{//}}}=\int_0^{2\pi}\int_0^{\pi} p \cos{\theta}\dd{P}=
+                \int_{+1}^{-1}-\rec{2}\Biggl(px + \frac{p^2E_l }{KT}x^2 \Biggr)\dd{x}=\frac{p^2}{3k_b T}E_l
+            \]
+            ovvero la tesi.
+        \end{proof}
+        $\alpha_0$ viene detta polarizzabilità molecolare.
+        Il risultato ottenuto ha evidenti analogie con quello dedotto nel caso della polarizzazione per deformazione, con la sola differenza che
+        in questo caso non è direttamente il momento di dipolo ma il suo valor medio ad essere proporzionale al campo elettrico.
+
+\end{description}
+Sulla base di queste considerazioni ci si aspetta che un dielettrico immerso in un campo elettrico
+possegga un momento di dipolo medio $\expval{\vb{p}}$ non nullo, orientato come il campo elettrico
+esterno.
+
+L'effetto macroscopico dei fenomeni appena elencati può essere descritto introducedo il vettore polarizzazione elettrica.
+\begin{defn}[Vettore polarizzazione elettrica]
+    Si definisce il vettore polarizzazione elettrica $\vb{P}$ come il momento di dipolo elettrico per unità di volume posseduto dal dielettrico
+    \[
+        \vb{P}=\lim_{\tau\to 0}\frac{\sum \vb{p}_i}{\tau}=\frac{\dd{N}  \expval{\vb{p}}}{\dd{\tau}}
+    \]
+\end{defn}
+Con $\dd{N}$ il numero di molecole contenute nell'elemento di volume $\dd{\tau}$.
+Dalla definizione si ottiene che l'elemento di volume possiede un momento di dipolo $\dd{\vb{p}}=\vb{P}\dd{\tau}$.
+Sebbene quindi le cariche in un dielettrico non siano libere di muoversi, il fatto che un dielettrico sia polarizzato
+può essere schematizzato con la presenza sulla sua superficie di cariche aggiuntive con una distribuzione $\sigma_p$
+e nel suo volume di cariche aggiuntive con distribuzione $\rho_p$.
+\begin{thm}
+    In un dielettrico polarizzato si ha che
+    \begin{equation}
+        \sigma_p=\vb{P}\vdot\vb{n}
+    \end{equation}
+    \begin{equation}
+        \label{eqn:relazione_rhop_P}
+        \rho_p=-\div{\vb{P}}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Si vuole calcoalre il campo elettrico generato da un dielettrico che occupi un volume $\tau$ e dotato di polarizzazione $\vb{P}(x',y',z')$. Dalla \eqref{eqn:V_dipolo} si ha che l'elemento di volume $\dd{\tau}$ in posizione $\vb{r'}$ porta al potenziale $V(x,y,z)=V(\vb{r})$ il contributo infinitesimo
+    \[
+        \dd{V(\vb{r})}=\rec{4\pi\epsilon_0}\frac{\vb{P}\vdot(\vb{r}-\vb{r'})}{\abs{\vb{r}-\vb{r'}}^3}\dd{\tau}
+    \]
+    Di conseguenza il potenziale su tutto lo spazio vale
+    \[
+        V(\vb{r})=\rec{4\pi\epsilon_0}\int_{\tau} \frac{\vb{P}(\vb{r'})\vdot(\vb{r}-\vb{r'})}{\abs{\vb{r}-\vb{r'}}^3}\dd{\tau'}
+    \]
+    Si può scrivere per la \eqref{app:eqn:grad_r}
+    \[
+        V(\vb{r})=\rec{4\pi\epsilon_0}\int_{\tau} \vb{P}\vdot \grad'{\rec{\abs{\vb{r}-\vb{r'}}}}\dd{\tau'}
+    \]
+    e, ricordando la \eqref{app:eqn:div_scalare_vettore}
+    \[
+        V(\vb{r})=\rec{4\pi\epsilon_0}\int_{\tau} \grad'\vdot{\Biggl(\frac{\vb{P}}{\abs{\vb{r}-\vb{r'}}}\Biggr)}\dd{\tau'}-\rec{4\pi\epsilon_0}\int_{\tau}{\frac{ \grad'\vdot\vb{P}}{\abs{\vb{r}-\vb{r'}}}}\dd{\tau'}
+    \]
+    Grazie al teorema della divergenza il primo integrale può essere riscritto, indicando con $S$ la superficie che racchiude il volume
+    \[
+        \int_{\tau} \grad'\vdot{\Biggl(\frac{\vb{P}}{\abs{\vb{r}-\vb{r'}}}\Biggr)}\dd{\tau'}=\int_{S} \frac{\vb{P}\vdot\vb{n}}{\abs{\vb{r}-\vb{r'}}}\dd{S}
+    \]
+    Siccome la soluzione al problema dell'elettrostatica deve essere unica e il potenziale deve anche essere uguale a
+    \[
+        V(\vb{r})=\rec{4\pi\epsilon_0}\int_{S} \frac{\sigma(\vb{r}')}{\abs{\vb{r}-\vb{r'}}}\dd{S'}+\rec{4\pi\epsilon_0}\int_{\tau}\frac{\rho(\vb{r}')}{\abs{\vb{r}-\vb{r'}}}\dd{\tau'}
+    \]
+    Per confronto fra le integrande si ottiene la tesi.
+\end{proof}
+Come è intuitivo, se il vettore polarizzazione è uniforme (da leggersi "è indipendente dalla posizione") il volume del dielettrico
+è complessivamente neutro e le cariche di polarizzazione si manifestano solo in superficie.
+
+Si vuole ora trovare una relazione fra il vettore polarizzazione e il campo elettrco macroscopico che agisce internamente al dielettrico.
+Per farlo, è necessario prima puntualizzare alcuni aspetti del campo elettrico locale.
+Il campo agente sulla singola molecola è generato sia dalle cariche libere che dalle molecole circostanti quella considerata:
+quest'ultimo contributo dipende fortemente sia dalla posizione che dal tempo.
+Si tratta però di posizioni e tempi molto piccoli rispetto al sistema macroscopico
+e perciò si sceglie di considerare regioni di spazio piccole rispetto al sistema macroscopico
+ma comunque grandi rispetto a lunghezze e tempi atomici: in questo modo la media dei campi elettrici
+su queste porzioni di spazio dipende in maniera regolare dalla posizione.
+Questa media viene indicata con $\vb{E}_l$ e ci si riferirà sempre a quest'ultima
+quando si parlerà di campo elettrico locale.
+
+
+Per quanto visto, ci si aspetta che il vettore polarizzazione sia proporzionale al campo elettrico locale, ovvero che abbia una forma
+\[
+    \vb{P}=n\alpha\vb{E}_l \quad\quad\quad n=\dv{N}{\tau},\,\alpha=\alpha_0+\alpha_d
+\]
+In generale la dipendenza del vettore polarizzazione dal campo elettrico può essere espressa nella forma
+\[
+    \begin{cases}
+        &  P_x=\alpha_{11}E_x+\alpha_{12}E_y+\alpha_{13}E_z \\
+        &  P_y=\alpha_{21}E_x+\alpha_{22}E_y+\alpha_{23}E_z \\
+        &  P_z=\alpha_{31}E_x+\alpha_{32}E_y+\alpha_{33}E_z
+    \end{cases}
+\]
+la matrice dei coefficenti $\alpha$, non necessariamente costanti, si chiama \textit{tensore di polarizzazione}.
+Si dice \textit{perfetto} un dielettrico con matrice di polarizzazione costante.
+Questa struttura del vettore polarizzazione diventa particolarmenete utile
+nel momento in cui si trattano \textit{solidi cristallini anisotropi}. In alcuni casi questi dielettrici,
+che prendono quando ciò si verifica il nome di \textit{ferroelettrici}, possono presentare una polarizzazione elettrica permanente
+che segue una \textit{curva di isteresi} in funzione di $\vb{E}$.
+In questi materiali si parla di \textit{piezoelettricità}, ovvero la polarizzazione
+dipende dalle sollecitazioni meccaniche a cui il cristallo è sottopsto.
+
+Si introduce ora
+\begin{defn}[Suscettibilità elettrica]
+    Si definisce suscettibilità elettrica
+    \[
+        \chi=\frac {P}{\epsilon_0E}
+    \]
+\end{defn}
+
+\begin{obs}
+    Per sostanze a bassa densità
+    \[
+        \chi=\frac{n}{\epsilon_0}\alpha=\frac{n}{\epsilon_0}\Biggl(\alpha_d+\frac{p^2}{3KT}\Biggr)
+    \]
+\end{obs}
+\begin{proof}
+    L'ipotesi di bassa densità implica che le interazioni reciproche fra le molecole siano trascurabili, per cui $\vb{E}_l\simeq\vb{E}$. Da questo segue
+    \[
+        \epsilon_0\chi\vb{E}=\vb{P}=n\Biggl(\alpha_d+\frac{p^2}{3KT}\Biggr)\vb{E}_l \simeq n\Biggl(\alpha_d+\frac{p^2}{3KT}\Biggr)\vb{E}
+    \]
+    Si ha quindi la tesi.
+\end{proof}
+
+Per i liquidi densi invece l'interazione fra molecole non è trascurabile. Si da il seguente lemma di cui viene omessa la dimostrazione.
+\begin{lemma}[relazione di Lorentz]
+    Nell'ipotesi in cui il campo generato dalle molecole sia puramente dipolare, la distribuzione dei dipoli sia uniforme,
+    il momento dei dipoli sia parallelo al campo esterno e che i momenti di dipolo siano tutti uguali fra loro si ha:
+    \[
+        \vb{E}_l=\vb{E}+\frac{\vb{P}}{3\epsilon_0}
+    \]
+\end{lemma}
+
+\begin{thm}[relazione di Clausius-Mossotti]
+    Per un dielettrico perfetto, nelle ipotesi del lemma
+    \[
+        \alpha=\frac{3\epsilon_0}{n}\frac{\epsilon_r-1}{\epsilon_r-2}
+    \]
+\end{thm}
+\begin{proof}
+    Il vettore polarizzazione vale
+    \[
+        \vb{P}=n\alpha\Biggl(\vb{E}+\frac{\vb{P}}{3\epsilon_0}\Biggr)
+    \]
+    da cui
+    \[
+        \vb{P}=\Biggl(\frac{n\alpha}{1-\frac{n\alpha}{3\epsilon_0}}\Biggr)\vb{E}
+    \]
+    Per confronto con la definizione di suscettibilità elettrica si ha
+    \[
+        \chi=\frac{n\alpha}{1-\frac{n\alpha}{3\epsilon_0}}\rec{\epsilon_0}=\frac{3n\alpha}{3\epsilon_0-n\alpha}
+    \]
+    Si introduce per i dielettrici perfetti l'uguaglianza simbolica $\chi=\epsilon_r-1$,
+    che più avanti nel capitolo troverà una giustificazione\footnote{Si vedano le considerazioni in calce
+    al teorema \ref{thm:problema-elettrostatica-dielettrici}}.
+    \[
+        \epsilon_r-1=\frac{3n\alpha}{3\epsilon_0-n\alpha}
+    \]
+    Risolvendo l'equazione per $\alpha$ si trova la tesi.
+
+\end{proof}

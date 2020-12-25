@@ -1,0 +1,63 @@
+In analogia con quanto fatto col campo elettrico si vuole ora studiare
+il flusso del campo di induzione magnetica attraverso una superficie chiusa.
+\begin{thm}[Seconda equazione di Maxwell stazionaria nel vuoto]
+    Nel vuoto il campo $\vb{B}$ generato da un circuito attraversato da corrente stazionaria è solenoidale, ovvero
+    \begin{equation}
+        \div{\vb{B}}=0
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Per la \eqref{app:eqn:grad_r}
+    \[
+        \vb{B}(x,y,z)=-\frac{\mu_0}{4\pi}\int_\tau \vb{J}(\vb{r}')\cp\grad[\rec{\abs{\vb{r}-\vb{r}'}}]\dd{\tau'}
+    \]
+    Per la formula \eqref{app:eqn:curl_scalare_vettore}, l'integranda può essere riscritta come
+    \[
+        \vb{J}(\vb{r}')\cp\grad[\rec{\abs{\vb{r}-\vb{r}'}}]=
+        \rec{\abs{\vb{r}-\vb{r}'}}[\curl{\vb{J}}(\vb{r}')]-\curl[\frac{\vb{J}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}]=
+        -\curl[\frac{\vb{J}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}]
+    \]
+    in quanto il vettore densità di corrente dipende solo dalle coordinate $(x',y',z')$ mentre il gradiente opera sulle $(x,y,z)$.
+    Per lo stesso motivo, si può affermare che
+    \[
+        \vb{B}(x,y,z)=\frac{\mu_0}{4\pi}\int_{\tau'} \curl[\frac{\vb{J}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}]=
+        \curl[\frac{\mu_0}{4\pi}\int_{\tau'} \frac{\vb{J}(\vb{r}')}{\abs{\vb{r}-\vb{r}'}}]
+    \]
+    Ma la divergenza di un rotore è nulla, perciò segue immediatamente la tesi.
+\end{proof}
+\begin{cor}
+    \label{cor:flusso_B}
+    Nel vuoto, il flusso attraverso una superficie chiusa di $\vb{B}$, generato da un circuito attraversato da corrente stazionaria,
+    è nullo.
+\end{cor}
+\begin{proof}
+    Integrando sul volume la divergenza di $\vb{B}$
+    e applicando il teorema della divergenza, si ha la tesi.
+\end{proof}
+
+La seconda equazione di Maxwell permette di ottenere alcune caratteristiche fondamentali del campo di induzione magnetica.
+\begin{cor}
+    Date due superfici orientate $S$ ed $S'$ aventi lo stesso contorno e stessa orientazione si ha
+    \[
+        \Phi_S(\vb{B})=\Phi_{S'}(\vb{B})
+    \]
+    Ovvero, il flusso di $\vb{B}$ dipende esclusivamente da contorno e orientamento.
+\end{cor}
+\begin{proof}
+    Si consideri una superficie chiusa e la si divida in due superfici $S$ ed $S'$:
+    queste due avranno orientazione opposta e condivideranno il contorno.
+    Per la linearità del flusso e per il corollario appena dimostrato
+    si ha $0=\Phi_{S\cup S'}(\vb{B})=\Phi_{S}(\vb{B})+\Phi_{S'}(\vb{B})$,
+    ovvero $\Phi_{S}(\vb{B})=-\Phi_{S'}(\vb{B})$.
+    Cambiando orientazione ad una delle due superfici si cambia il segno del relativo flusso ottenendo la tesi.
+\end{proof}
+Si parla quindi di \textit{flusso concatenato ad un contorno}, senza far riferimento alla superficie.
+\begin{cor}
+    Le linee di forza del campo di induzione magnetica sono chiuse.
+\end{cor}
+\begin{proof}
+    Per assurdo, si cosideri una linea di forza di $\vb{B}$ non chiusa:
+    deve esistere un punto sorgente per tale linea. È possibile prendere allora una superficie chiusa piccola a piacere
+    attorno a questo punto sorgente attraverso la quale il flusso del campo è diverso da 0.
+\end{proof}
+Da questo segue immediatamente che i tubi di flusso per il campo $\vb{B}$ non hanno nè inizio nè fine.

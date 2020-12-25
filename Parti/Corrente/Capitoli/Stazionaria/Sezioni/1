@@ -1,0 +1,61 @@
+In questo paragrafo si vuole sviluppare qualche primo elemento di teoria dei circuiti lineari,
+ovvero costituiti da elementi che abbiano una caratteristica lineare.
+Il discorso verrà sviluppato facendo riferiento al modello di \textit{circuito a costanti concentrate}:
+il circuito viene considerato come costituito da elementi ideali concentrati in determinate zone
+e collegati da linee a potenziale costante -ovvero, fili a resistenza nulla. Gli elementi circuitali
+sono prevalentemente bipolari, quindi hanno solo due morsetti (uno d'entrata e uno d'uscita). Questi
+elementi circuitali sono caratterizzati completamente una volta nota la relazione che impongono fra potenziale
+e corrente ai loro capi.
+
+Si vuole anzitutto generalizzare la prima legge di Ohm. Per farlo si osservi inzialmente come
+il campo elettrico totale $\vb{E}$ è dato dalla somma fra il campo $\vb{E}_s$ che si instaura fra
+i morsetti dei generatori, il campo elettromotore $\vb{E}_e$ ed eventuali campi contro-elettromotori
+dovuti ad eventuali carichi non ohmici $\vb{E}_{ce}$.
+\begin{thm}[legge di Ohm generalizzata]
+    Su un ramo del circuito vale la seguente relazione
+    \[
+        (V_A-V_B)+\sum f_i+\sum f_{ci}=R_{AB}I
+    \]
+    con $R_{AB}$ la resistenza totale del ramo.
+\end{thm}
+\begin{proof}
+    La legge di Ohm locale correla il
+    campo totale con la densità di corrente $\vb{E}=\rho\vb{J}$. Si ottiene quindi l'equazione
+    \[
+        \vb{E}_s+\vb{E}_e+\vb{E}_{ce}=\rho\vb{J}
+    \]
+    Integrandola lungo un ramo del circuito che collega i punti $A$ e $B$, le tre componenti del campo
+    danno
+    \[
+        \begin{split}
+            &\int_A^B \vb{E}_s\vdot \dd{\vb{l}}=V_A-V_B \\
+            &\int_A^B \vb{E}_e\vdot \dd{\vb{l}}=\sum f_i \\
+            &\int_A^B \vb{E}_e\vdot \dd{\vb{l}}=\sum f_{ci} \\
+        \end{split}
+    \]
+    dove le forze elettromotrici sul ramo sono prese positive se il generatore, agendo da solo, tenderebbe
+    a spostare le cariche nel verso scelto come positivo; per le forze elettromotrici è vero il contrario.
+    Si ottiene quindi
+    \[
+        (V_A-V_B)+\sum f_i+\sum f_{ci}=\int_A^B \rho\vb{J}\vdot\dd{\vb{l}}
+    \]
+    Supponendo che le sezioni $S$ del ramo fra $A$ e $B$ siano sufficientemente piccole affinchè
+    $\vb{J}$ sia costante su ciascuna sezione si ha $I=\Phi_S(\vb{J})=JS$. Ricordando che la corrente
+    in ognu punto del ramo ha lo stesso valore, l'integrale a secondo membro diventa
+    \[
+        \int_A^B\rho\vb{J}\vdot\dd{\vb{l}}=\int_A^B\rho\frac{I}{S}\dd{\vb{l}}=I\int_A^B\rho\frac{\dd{l}}{s}=IR_{AB}
+    \]
+    L'ultima uguaglianza è giustificata dal fatto che se $\rho$ fosse costante su tutto il ramo si otterrebbe
+    prorpio la seconda legge di Ohm.
+\end{proof}
+Il seguente corollario ha dimostrazione immediata
+\begin{cor}
+In assenza di carichi non ohmici la legge di Ohm assume la forma
+    \[
+        (V_A-V_B)+\sum f_i=I\sumR_i
+    \]
+\end{cor}
+L'andamento del potenziale lungo il ramo è quindi dato da una sequenza di tratti lineari in cui il passaggio da un capo all'altro
+della resistenza $R_i$\footnote{Questa resistenza può anche essere la resistenza interna ad un generatore},
+nel verso della corrente, porta ad una caduta di potenziale $IR_i$, mentre il passaggio da un capo all'altro di un generatore
+porta ad un salto di potenziale positivo o negativo a seconda del verso nel quale il generatore spinge la corrente.

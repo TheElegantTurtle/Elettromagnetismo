@@ -1,0 +1,105 @@
+L'obiettivo di questo paragrafo è duplice: dare un significato fisico più
+concreto alla legge di Faraday-Neumann attraverso tre esempi significativi
+e esporre il concetto di flusso tagliato, utile per i risultati
+espressi nei prossimi paragrafi.
+
+\begin{defn}[Flusso tagliato]
+    Il flusso attraverso la superficie spazzata da un circuito in movimento è chiamato flusso tagliato.
+\end{defn}
+
+
+\subsubsection{Circuito variabile, B costante nel tempo}
+$\vb{B}$ costante nel tempo significa che le caratteristiche delle sorgenti del campo non cambiano nel tempo
+e che queste sorgenti sono in quiete nel sistema di riferimento scelto per descrivere il fenomeno.
+\begin{thm}
+    Dato un circuito di forma generica, il cui generico elemento $\dd{l}$ sia in moto con velocità $\vb{v}_T$,
+    immerso in un campo $\vb{B}$ costante nel tempo, la variazione del flusso concatenato al circuito è
+    pari in modulo e opposta in segno al flusso tagliato.
+\end{thm}
+\begin{proof}
+    Detta $\Sigma$ la superficie orientata attraverso la quale viene calcolato il flusso concatenato all'istante $t_0$
+    (indicato con $\Phi_i$), $\Sigma'$ la superficie attraverso cui viene calcolato il flusso $\Phi_f$ all'istante
+    $t+\dd{t}$ e $\dd{\Sigma}$ la superficie spazzata dal circuito nel suo spostamento, si ha che l'unione di queste tre superfici
+    è una superficie chiusa: il flusso totale -ovvero la somma dei flussi uscenti- deve essere nullo\footnote{Questo è vero solo
+    nell'ipotesi di campo costante nel tempo, in quanto le superfici $\Sigma$ e $\Sigma'$ sono appoggiate al circuito
+    in tempi diversi}. Si scelga convenzionalmente come verso di percorrenza positivo quello per cui la normale alla superficie del
+    circuito sia parallela alla velocità complessiva del circuito. Allora
+    \[
+        -\Phi_i+\Phi_f+\Phi_{\dd{\Sigma}}=0
+    \]
+    dove il segno meno al primo termine è dovuto al fatto che con la convenzione scelta $\Phi_i$ è
+    il flusso entrante nella superficie chiusa, mentre la somma è nulla quando riferita ai flussi uscenti.
+    Si ha quindi che
+    \[
+        \dd{\Phi} \equiv \Phi_f-\Phi_i=-\Phi_{\dd{\Sigma}}
+    \]
+    ovvero la tesi.
+\end{proof}
+L'utilità di questo risultato risiede nel fatto che è possibile trovare un'espressione esplicita per il flusso
+tagliato come mostrato nel seguente teorema.
+\begin{thm}
+    Dato un circuito di forma generica, il cui generico elemento $\dd{l}$ sia in moto con velocità $\vb{v}_T$,
+    immerso in un campo $\vb{B}$ costante nel tempo, il flusso tagliato vale
+    \[
+        \Phi_{\dd{\Sigma}}=\dd{t}\oint_l(\vb{v}_T\cp\vb{B})\vdot\dd{l}
+    \]
+\end{thm}
+\begin{proof}
+    Si vuole calcolare $\Phi_{\dd{\Sigma}}$. Per farlo, siccome $\vb{B}$ è noto per ipotesi, bisogna esprimere
+    $\dd{\vb{S}}$ in termini di grandezze note. Questo si ottiene considerando che
+    ogni elemento di circuito compie uno spostamento $\dd{\vb{s}}=\vb{v}_T\dd{t}$ e nel
+    farlo spazza la superficie $\dd{\vb{S}}=\dd{\vb{l}}\cp\dd{\vb{s}}=\dd{\vb{l}}\cp\vb{v}_T\dd{t}$.
+    \[
+        \Phi_{\dd{\Sigma}}=\int_{\dd{\Sigma}}\vb{B}\vdot\dd{\vb{S}}=\oint_l\vb{B}\vdot(\dd{\vb{l}}\cp\vb{v}_T\dd{t})
+    \]
+    Usando l'identità \eqref{app:eqn:vdot_cp} si ha la tesi.
+    % \[
+    %     \oint_l\vb{B}\vdot(\dd{\vb{l}}\cp\vb{v}_T\dd{t})=\oint_l(\vb{v}_T\dd{t}\cp\vb{B})\vdot\dd{\vb{l}}
+    % \]
+\end{proof}
+
+\begin{cor}
+    Nel caso di circuito in moto con velocità $\vb{v}_T$ in un campo $\vb{B}$ costante, il campo elettromotore indotto è
+    \[
+        \vb{E}_i=\vb{v}_T\cp\vb{B}
+    \]
+\end{cor}
+\begin{proof}
+    Per i due risultati appena dimostrati $\dv*{\Phi}{t}=-\Phi_{\dd{\Sigma}}/\dd{t}=-\oint_l(\vb{v}_T\dd{t}\cp\vb{B})\vdot\dd{\vb{l}}$.
+    Confrontando il primo e l'ultimo membro dell'uguaglianza con la legge di Faraday-Neumann si ha la tesi.
+\end{proof}
+L'interpretazione fisica del fenomeno dell'induzione elettromagnetica è quindi immediata nelle ipotesi del corollario:
+le cariche costrette a muoversi nel campo di induzione magnetica per via del moto del circuito, sono sottoposte alla forza di Lorentz.
+Nonostante la forza di Lorentz non compia lavoro la forza elettromotice può essere diversa da $0$:
+il lavoro dissipato dalla corrente nel circuito è compiuto dalla forza esterna che mantiene $\vb{v}_T$ costante
+o è compiuto a spese dell'energia cinetica, per cui il circuito rallenta fino a fermarsi.
+
+
+
+\subsubsection{Circuito rigido, sorgenti di B stazionarie in moto}
+Si consideri un circuito $C$ in quiete nel sistema di riferimento inerziale $sr=Oxyz$. Supponendo che le
+sorgenti di $\vb{B}$ siano in uno stato stazionario, ovvero con caratteristiche costanti nel tempo,
+una variazione del flusso può avvenire solo se queste cariche si muovono rispetto a $sr$ con una velocità $\vb{v}$.
+Nell'ipotesi che ci sia una sola sorgente del campo il cui moto sia
+di pura traslazione con $v$ costante, è possibile considerare un sistema di riferimento inerziale
+$sr'=O'x'y'z'$ rispetto al quale la sorgente è in quiete. $sr$ si muove rispetto ad $sr'$ con
+velocità $\vb{v}'=-\vb{v}$. $sr'$ si trova allora nelle stesse condizioni discusse nel caso del circuito variabile e
+campo costante nel tempo: le cariche risentono della forza di Lorentz ($\vb{F}'_l=q\vb{v}'\cp\vb{B}'$) come nel caso precedente.
+In $sr$, dove il circuito è fermo, non si ha nessuna forza di Lorentz. A partire da considerazioni relativistiche però si può dedurre che
+il moto delle sorgenti di $\vb{B}$ provochi l'insorgere di un campo $\vb{E}_l$ che esercita sui
+portatori di carica del circuito una forza $\vb{F}_l=q\vb{E}_l$ equivalente alla forza di Lorentz $\vb{F}'_l$.
+Per $v<<c$ si ha $\vb{B}\simeq\vb{B}'$, da cui $\vb{E}_l=\vb{v}'\cp\vb{B}'=-\vb{v}\cp\vb{B}$.
+
+In virtù dell'additività di $\vb{B}$ il ragionamento fatto è estendibile al caso di più sorgenti.
+
+
+
+\subsubsection{Circuito rigido, sorgenti di B ferme non stazionarie}
+Il circuito $C$ e le sorgenti del campo di induzione magnetica non sono in moto relativo fra loro.
+Le sorgenti di $\vb{B}$ non stazionarie sono dei circuiti nei quali le correnti di alimentazione
+non sono costanti. L'effetto è che in ogni punto di $C$ il campo $\vb{B}$ sia variabile nel tempo,
+esattamente come visto del caso del circuito in moto relativo con le sorgenti del campo.
+È ragionevole perciò aspettarsi quindi che anche in questo caso si abbia come effetto un campo elettromotore,
+sebbene questo non sia causato dalla forza di Lorenz. In effetti questo campo è presente ed è una
+conseguenza della generalizzazione della terza equazione di Maxwell al caso non stazionario che
+verrà presentata nel prossimo paragrafo.
